@@ -1,0 +1,97 @@
+/*! jiy-guide.css v1.0.0 © inyoung524@naver.com, 2017.09.26 */
+
+@charset "utf-8";
+
+// =======================================
+// Typography
+// =======================================
+@import url(https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css);
+
+// =======================================
+// UI Kit 플러그인
+// =======================================
+@import "uni-common";
+
+// =======================================
+// Guide Style
+// =======================================
+body {
+    height: 100vh;
+    background: #ededed;
+}
+.guide {
+    margin-bottom: 0;
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: rem(20px);
+    }
+}
+.wrap {
+    article {
+        .title {
+            font-size: rem(28px);
+            font-weight: bold;
+            color: #1566c1;
+            letter-spacing: -0.03em;
+            &:before {
+                content: "\f013";
+                font-family: "FontAwesome";
+                font-size: rem(20px);
+                color: #1566c1;
+                padding-right: rem(10px);
+                vertical-align: text-bottom;
+            }
+        }
+    }
+    .all-link {
+        @include span(full);
+        margin-top: rem(20px);
+        .location {
+            padding: rem(20px) rem(20px) rem(14px) rem(20px);
+            border: 1px solid #ddd;
+            margin-bottom: rem(20px);
+            background: #fff;
+            .link {
+                line-height: rem(24px);
+                letter-spacing: -0.03em;
+                &.check {
+                    &:before {
+                        content: "\f00c";
+                        color: #e51d68;
+                    }
+                }
+                &:before {
+                    content: "\f0c1";
+                    font-family: "FontAwesome";
+                    font-size: rem(10px);
+                    color: #ccc;
+                    padding-right: rem(5px);
+                    vertical-align: top;
+                }
+                a {
+                    color: #333;
+                    display: inline-block;
+                    > span {
+                        display: inline-block;
+                        color: #e51d68;
+                        margin-left: 4px;
+                        margin-bottom: 0;
+                    }
+                }
+                span {
+                    font-size: rem(12px);
+                    color: #aaa;
+                    letter-spacing: 0.05em;
+                    display: block;
+                    margin-left: 20px;
+                    margin-bottom: 6px;
+                    &:before {
+                        content: "(";
+                    }
+                    &:after {
+                        content: ")";
+                    }
+                }
+            }
+        }
+    }
+}
