@@ -46,7 +46,7 @@ var dir = {
     'js' : SRC + '/assets/js',
 };
 
-// 자바스크립트 프래임워크(framework) 병합
+// 자바스크립트 프래임워크(framework) & 라이브러리(Library) 병합
 var js_order = [
     dir.js + '/smooth-scroll.js',
     dir.js + '/svg-injector.min.js',
@@ -55,12 +55,14 @@ var js_order = [
     dir.js + '/jquery.accordion.js',
     dir.js + '/jquery.tabs.js',
     dir.js + '/jquery.carousel.js',
+    dir.js + '/owl.carousel.min.js',
 ];
 
 // 자바스크립트 유지관리 파일 이동
 var moveJS = [
+    dir.js + '/modernizr-2.8.3.min.js', // Modernizr 2.8.3
+    dir.js + '/jquery-3.2.1.min.js', // jQuery 3.2.1
     dir.js + '/jquery-ui.min.js', // jQuery 1.12.0
-    dir.js + '/jquery-1.11.3.min.js', // jQuery 1.11.3
     dir.js + '/uni-common.js', // 공통 작업 자바스크립트
 ];
 
@@ -80,15 +82,15 @@ var minCSS = [
 // =======================================
 // 기본 업무
 // =======================================
-gulp.task('default', ['remove', 'server', 'font:move']);
-
+gulp.task('default', ['server', 'font:move']);
+// 'remove', 
 // =======================================
 // 빌드 업무
 // =======================================
 gulp.task('build', function() {
     compress.css = true;
     compress.js  = true;
-    gulp.start('remove');
+    // gulp.start('remove');
     gulp.start('htmlSSI');
     gulp.start('sass');
     gulp.start('js');
@@ -114,7 +116,7 @@ gulp.task('watch', function() {
 // =======================================
 // 폴더 제거 업무
 // =======================================
-gulp.task('remove', shell.task('rm -rf ' + BUILD + ' ' + BUILD + '/assets/css/map '));
+// gulp.task('remove', shell.task('rm -rf ' + BUILD + ' ' + BUILD + '/assets/css/map '));
 
 // =======================================
 // 서버 업무
@@ -156,7 +158,9 @@ gulp.task('sass', function() {
     return gulp.src( moveCSS )
         .pipe(sourcemaps.init())
         .pipe( sass({
-            'outputStyle': 'compact'
+            // 'outputStyle': 'compact'
+            outputStyle: 'compact',
+            includePaths: ['node_modules/susy/sass']
         }).on('error', sass.logError) )
         .pipe( sourcemaps.write( './map' ) )
         .pipe( gulp.dest(BUILD + '/assets/css') )

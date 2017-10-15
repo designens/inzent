@@ -8,7 +8,7 @@
     padding: $p;
     border-radius: 3px;
 }
-@mixin btn-type-1 ($fz: 14px, $color: null, $bg: $skyblue, $mix-color: #000) {
+@mixin btn-type-1 ($fz: 14px, $color: null, $bg: skyblue, $mix-color: #000) {
     font-size: $fz;
     color: $color;
     text-shadow: 0 0 1px mix($mix-color, $bg, 8%);

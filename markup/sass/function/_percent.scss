@@ -2,3 +2,7 @@
 @function percent($v){
     @return (100%/$v);
 }
+// 현재 퍼센트 계산
+@function target-percent($target, $context){
+    @return $target/$context * 100%;
+}

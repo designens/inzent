@@ -9,23 +9,24 @@ $susy: (
 	// Math
 	// 유동형(Fluid), 고정형(Static) width 설정 (fluid, static)
 	// ※ 고정형으로 설정할 경우, column-width 값도 설정해줘야 함
-	math: Fluid,
+	math: fluid,
 
 	// Output
 	// 레이아웃 출력 모드 설정 (float, isolate)
 	// ※ 현재 Susy 버전은 Float을 메인으로 출력하지만, 향후 Flexbox 등 다양한 방법 지원 예정
 	output: float,
+	// output: isolate,
 
 	// Columns
 	columns: 6,
 
 	// Gutters
 	// 거터의 폭 설정 (1/4, <gutter-width>/<column-width>)
-	gutters: 22px/165px,
+    gutters: 0px/53px,
 
 	// Column Width
 	// 컬럼의 폭 설정 (false, null, <length>)
-	column-width: 165px,
+	column-width: 53px,
 
 	// Gutter Position
 	// 거터의 방향 설정 (after, before, split, inside, inside-static)
@@ -46,15 +47,15 @@ $susy: (
 		// 그리드 이미지: (hide, show, show-columns, show-baseline)
 		// ※ 그리드 이미지를 보여줌, 만약 Compass vertical rhythms을 사용할 경우,
 		// $base-line-height 설정 값에 따라 베이스라인을 그려줌.
-		image: hide,
-		// image: show,
+		// image: hide,
+		image: show,
 
 		// 그리드 컬럼 색상: (rgba(#66f, .25), <color>)
 		color: rgba(#4590E6, 0.25),
 
 		// 그리드 모드: (background, overlay)
 		// ※ overlay 설정일 경우, 컨테이너 요소의 ::before 요소를 사용하여 오버레이 함.
-		output: background,
+		output: overlay,
 
 		// 그리드 토글 버튼 방향: (top right, <direction>)
 		// ※ overlay 설정에서만 사용 가능.

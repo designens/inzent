@@ -1,0 +1,8 @@
+@mixin slidedown($duration: 3s, $timing: ease) {
+    animation-name: slideDown;
+    -webkit-animation-name: slideDown;
+    animation-duration: 3s; 
+    -webkit-animation-duration: 3s;
+    animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+}

@@ -34,7 +34,7 @@
         height: 50px;
         line-height: 50px;
         padding: 0 30px;
-        background: url($popup-title) center no-repeat;
+        // background: url($popup-title) center no-repeat;
         @extend %clearfix;
         h4 {
             float: left;

@@ -1,0 +1,4 @@
+// 미디어쿼리 내부 Placeholder 호출
+@mixin extend($placeholder) {
+      @extend %#{$placeholder};
+}

@@ -1,0 +1,58 @@
+$transition-timing: 300ms;
+$font-label-color: #fff;
+$bg-label-color: transparent;
+$bg-label-hover-color: transparent;
+
+.toggle {
+    position: relative;
+    .toggle-trigger {
+        display: none;
+    }
+}
+.toggle-label {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    height: 42px;
+    line-height: 42px;
+    background-color: $bg-label-color;
+    color: $font-label-color;
+    transition: background-color $transition-timing;
+    &:hover {
+        background-color: $bg-label-hover-color;
+    }
+    &::before {
+        position: absolute;
+        top: 21px;
+        left: -17px;
+        width: 9px;
+        height: 1px;
+        background: $font-label-color;
+        content: "";
+    }
+    &::after {
+        position: absolute;
+        top: 17px;
+        left: -13px;
+        width: 1px;
+        height: 9px;
+        background: $font-label-color;
+        content: "";
+        transform: rotate(0deg);
+    }
+    .toggle-trigger:checked ~ &::after {
+        transform: rotate(-90deg);
+        transition: transform 0.25s ease;
+    }
+}
+
+.toggle-container {
+    opacity: 0;
+    height: 0;
+    transition: max-height $transition-timing, opacity $transition-timing 100ms;
+    .toggle-trigger:checked ~ & {
+        opacity: 1;
+        height: auto;
+        transition: min-height 1ms, opacity 1ms 0ms;
+    }
+}

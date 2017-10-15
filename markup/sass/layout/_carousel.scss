@@ -15,11 +15,15 @@
     height: 400px;
     overflow: hidden;
     .ui-carousel__tablist--wrapper {
-        @include w-center ($position: absolute, $w-percent: 50%);
-        bottom: 20px;
-        z-index: 100;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
         .ui-carousel__indicators {
-            float: left;
+            @include w-center ($position: absolute, $w-percent: 50%);
+            bottom: 20px;
             li {
                 float: left;
             }
@@ -27,8 +31,7 @@
     }
     .ui-carousel__tabpanel-wrapper {
         position: relative;
-        width: 100vw;
-        height: 400px;
+        height: auto;
         &:after {
             content: '';
             display: block;
@@ -41,7 +44,6 @@
 .ui-carousel__tabpanel {
     position: relative;
     float: left;
-    width: 100vw;
     overflow: hidden;
     > a {
         display: block;
@@ -59,8 +61,6 @@
     width: 18px;
     height: 18px;
     color: #333;
-    margin-top: -5px;
-    margin-right: 5px;
     border-radius: 50%;
     background: #fff;
     box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.6);
@@ -70,12 +70,12 @@
     }
     &::before {
         @include wh-center ($position: absolute, $h-percent: 50%, $w-percent: 50%);
-        @include fa($fa-icon: "\f04b", $fz: 10px);
+        @include fa($icon: "\f04b", $fz: 10px);
         padding-left: 2px;
     }
     &.is-play {
         &::before {
-            @include fa($fa-icon: "\f04c", $fz: 10px);
+            @include fa($icon: "\f04c", $fz: 10px);
             padding-left: 0;
         }
     }
@@ -84,26 +84,25 @@
 // 인티케이터 버튼
 .ui-carousel__tab {
     display: block;
-    width: 10px;
-    height: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    border-radius: 5px;
-    background: #fff;
-    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: #a3b4b9;
+    border: 1px solid #fff;
     transition: all 0.2s cubic-bezier(0.01, 0.35, 0, 1.01);
     &:hover, &:focus {
-        background: #eaeaea;
-        transform: scale(1.3);
+        background: #a3b4b9;
+        transform: scale(1.2);
     }
     &.active {
-        background: #003964;
-        width: 24px;
+        background: #3466a2;
         &:hover {
             cursor: default;
         }
         &:focus {
-            background: #003964;
+            background: #3466a2;
         }
     }
 }
@@ -115,21 +114,25 @@
     width: 24px;
     height: 46px;
     margin-top: -23px;
-    transition: all 0.2s ease;
+    transition: all 0.2s cubic-bezier(0.01, 0.35, 0, 1.01);
     cursor: pointer;
-    &:hover, &:focus {
-        text-shadow: 1px 1px 3px 0px rgba(255, 255, 255, 0.8);
-    }
+    z-index: 999;
     &.ui-carousel__button--prev {
         left: 0;
         &:before {
-            @include fa($fa-icon: "\f104", $fz: 16px);
+            @include fa($icon: "\f104", $fz: 16px);
         }
     }
     &.ui-carousel__button--next {
         right: 0;
         &:before {
-            @include fa($fa-icon: "\f105", $fz: 16px);
+            @include fa($icon: "\f105", $fz: 16px);
+        }
+    }
+    &:hover, &:focus {
+        transform: scale(1.2);
+        &:before {
+            color: #3466a2;
         }
     }
 }

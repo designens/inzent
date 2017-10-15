@@ -5,7 +5,9 @@
 // =======================================
 // Framework import
 // =======================================
-@import "lib/susy/susy"
+@import "susy"
+@import "lib/font-awesome/font-awesome"
+@import "lib/owl.carousel.min"
 
 // =======================================
 // Base Design
@@ -26,11 +28,18 @@
 @import "function/percent"
 
 // =======================================
+// Animation
+// =======================================
+@import "animation/slideDown"
+@import "animation/slideUp"
+
+// =======================================
 // Mixin
 // =======================================
+@import "mixin/extend"
+@import "mixin/placehoder"
 @import "mixin/align"
 @import "mixin/ellipsis"
-@import "mixin/placehoder"
 @import "mixin/fa-icon"
 @import "mixin/psd-fz"
 @import "mixin/psd-lh"
@@ -45,6 +54,8 @@
 @import "mixin/arrow"
 @import "mixin/list-type"
 @import "mixin/hexagon"
+@import "mixin/slide-down"
+@import "mixin/slide-up"
 
 // =======================================
 // Placeholder
@@ -52,6 +63,7 @@
 @import "placeholder/clearfix"
 @import "placeholder/row"
 @import "placeholder/box-hidden"
+@import "placeholder/box-visible"
 @import "placeholder/text-hidden"
 @import "placeholder/button-type"
 
@@ -64,7 +76,6 @@
 // =======================================
 // Layout
 // =======================================
-@import "layout/carousel"
 @import "layout/table"
 @import "layout/popup"
 @import "layout/content"

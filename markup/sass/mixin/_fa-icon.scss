@@ -1,7 +1,7 @@
-@mixin fa ($fa-icon: " ", $fz: null, $color: null) {
+@mixin fa ($icon: " ", $fz: null, $color: null) {
     $retina-fz: retina($fz);
     font-family: 'FontAwesome';
-    content: $fa-icon;
+    content: $icon;
     font-size: $retina-fz;
     font-size: rem($retina-fz);
     color: $color;
