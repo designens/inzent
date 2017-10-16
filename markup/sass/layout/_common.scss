@@ -231,9 +231,6 @@
 #container {
     display: block;
     min-height: 670px;
-    padding-top: 50px;
-    padding-bottom: 30px;
-
     @extend %clearfix;
     /* Content 영역 */
     .content-area {
