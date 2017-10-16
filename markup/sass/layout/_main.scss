@@ -279,21 +279,27 @@
                 .owl-prev {
                     position: absolute;
                     top: 50%;
-                    left: 20px;
+                    left: 21px;
                     width: 22px;
                     height: 35px;
                     &:before {
                         @include fa($icon: "\f104", $fz: 60px, $color: #bbc7cf);
                     }
+                    &:hover, &:focus {
+                        transform: scale(1.2);
+                    }
                 }
                 .owl-next {
                     position: absolute;
                     top: 50%;
-                    right: 20px;
+                    right: 21px;
                     width: 22px;
                     height: 35px;
                     &:before {
                         @include fa($icon: "\f105", $fz: 60px, $color: #bbc7cf);
+                    }
+                    &:hover, &:focus {
+                        transform: scale(1.2);
                     }
                 }
             }
@@ -329,6 +335,14 @@
         @include susy-breakpoint(em($max-mobile)) {
             .owl-carousel {
                 padding: 74px 100px 0 100px;
+                .owl-nav {
+                    .owl-prev {
+                        left: 0;
+                    }
+                    .owl-next {
+                        right: 0;
+                    }
+                }
             }
         }
         @include susy-breakpoint(em($tablet) em($desktop)) {
@@ -339,6 +353,14 @@
         @include susy-breakpoint(em($desktop)) {
             .owl-carousel {
                 padding: 74px 170px 0 170px;
+                .owl-nav {
+                    .owl-prev {
+                        left: 20px;
+                    }
+                    .owl-next {
+                        right: 20px;
+                    }
+                }
             }
         }
     }
