@@ -107,6 +107,7 @@
         .top-search-area {
             @include layout(6 22px/165px);
             @include span(4 at 2 isolate);
+            padding: 0;
         }
     }
 }
