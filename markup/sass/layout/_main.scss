@@ -373,6 +373,22 @@
     .headline {
         display: none;
     }
+    .popup-zone-carousel-count {
+        position: absolute;
+        top: 6px;
+        right: 80px;
+        @include psd-fz(13px);
+        span {
+            color: #3a434a;
+            &:first-child {
+                font-weight: bold;
+                &:after {
+                    font-weight: normal;
+                    content: " / ";
+                }
+            }
+        }
+    }
     .popup-zone-carousel {
         height: 196px;
         .ui-carousel__tabpanel-wrapper {
