@@ -262,28 +262,33 @@
 /* Container : 서브 헤드라인 영역
 /* =======================================*/
 .sub-headline {
-    height: 90px;
-    background: #e1f1ff url($bg-sub-top-title) no-repeat;
-    background-position: right -20px center;
+    background: #e1f1ff;
     .wrap {
-        @include h-center ($position: relative, $h-percent: 50%);
-        h2 {
-            @include psd-fz(20px);
-        }
-        p {
-            display: none;
+        height: 90px;
+        background: url($bg-sub-top-title) no-repeat;
+        background-position: right -21px center;
+        .headline {
+            @include h-center ($position: relative, $h-percent: 50%);
+            h2 {
+                @include psd-fz(20px);
+            }
+            p {
+                display: none;
+            }
         }
     }
     @include susy-breakpoint(em($desktop)) {
-        height: 110px;
-        text-align: center;
-        background-position: right 34px center;
         .wrap {
-            h2 {
-                @include psd-fz(26px);
-            }
-            p {
-                display: block;
+            height: 110px;
+            text-align: center;
+            background-position: right center;
+            .headline {
+                h2 {
+                    @include psd-fz(26px);
+                }
+                p {
+                    display: block;
+                }
             }
         }
     }
