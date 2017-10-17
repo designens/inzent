@@ -104,7 +104,7 @@
                     background: $bd-or-icon-color;
                     content: "";
                 }
-                &:hover, &:focus {
+                &:hover, &:focus, &.active {
                     font-weight: 500;
                     color: $font-lnb-sub-menu-active;
                     &:before {

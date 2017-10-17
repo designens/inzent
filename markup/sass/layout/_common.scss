@@ -2,17 +2,17 @@
 /* Container Layout Style
 /* =======================================*/
 .wrap {
-    @include layout(6 0px/53px);
+    @include layout(6 0px/60px);
     @include container(100%);
     min-width: $min-mobile;
-    padding: 0 21px;
+    padding: 0 20px;
     // Mobile만 적용
     @include susy-breakpoint(em($max-mobile)) {
-        @include layout(6 0px/96px);
+        @include layout(6 0px/80px);
     }
     // Tablet 이상
     @include susy-breakpoint(em($tablet)) {
-        @include layout(6 0px/113px);
+        @include layout(6 0px/120px);
     }
     // Tablet만 적용
     @include susy-breakpoint(em($tablet) em($desktop)) {
@@ -114,7 +114,7 @@
     @include susy-breakpoint(em($desktop)) {
         @include layout(10 0/110);
         .wrap {
-            @include container($desktop);
+            padding: 0 20px;
             .menu {
                 @include span(9);
             }
@@ -133,7 +133,6 @@
     @extend %clearfix;
     .wrap {
         position: relative;
-        margin: 0;
         .logo {
             position: absolute;
             left: 50%;
@@ -177,6 +176,7 @@
     @include susy-breakpoint(em($tablet)) {
         .wrap {
             @include layout(6 0/113);
+            padding: 0;
             .logo {
                 position: static;
                 left: auto;
@@ -190,8 +190,6 @@
     }
     @include susy-breakpoint(em($tablet) em($desktop)) {
         .wrap {
-            margin: 0;
-            padding: 0;
             .logo {
                 position: absolute;
                 left: 50%;
@@ -202,7 +200,7 @@
     @include susy-breakpoint(em($desktop)) {
         .wrap {
             @include layout(10 0/110);
-            @include container($desktop);
+            padding: 0 20px;
             .logo {
                 @include span(2);
                 background-position: left center;
@@ -214,7 +212,7 @@
                 }
                 #gnb-menu {
                     display: block;
-                    text-align: right;
+                    text-align: center;
                     visibility: visible;
                 }
             }

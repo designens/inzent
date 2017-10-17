@@ -21,9 +21,6 @@
             @include psd-fz(18px);
             padding: 0 28px;
         }
-        &:last-child {
-            margin-right: 30px;
-        }
     }
 }
 #gnb-all-menu {
@@ -197,6 +194,9 @@
                     border-bottom: 3px solid #0066b3;
                     &:hover, &:focus {
                         color: #0066b3;
+                    }
+                    &:before, &:after {
+                        background-color: transparent;
                     }
                 }
                 &.open {
