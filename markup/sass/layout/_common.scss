@@ -113,7 +113,6 @@
     }
     @include susy-breakpoint(em($desktop)) {
         @include layout(10 0/110);
-        padding: 0 21px;
         .wrap {
             @include container($desktop);
             .menu {
@@ -201,7 +200,6 @@
         }
     }
     @include susy-breakpoint(em($desktop)) {
-        padding: 0 21px;
         .wrap {
             @include layout(10 0/110);
             @include container($desktop);

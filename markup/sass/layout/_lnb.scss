@@ -28,17 +28,15 @@
     }
 }
 .accordion-lnb {
-    border-bottom: 1px solid #dcdcdc;
+    border-bottom: 1px solid $bd-or-icon-color;
     margin-top: 5px;
     > li {
-        border-bottom: 1px solid #dcdcdc;
-        color: #333;
+        border-bottom: 1px solid $bd-or-icon-color;
         [class*="link"] {
             position: relative;
-            color: #333;
+            color: $font-lnb-title;
             @include psd-fz(16px);
             padding: 9px 20px;
-            border-bottom: 1px solid #CCC;
             .icon-toggle {
                 position: absolute;
                 display: block;
@@ -73,12 +71,12 @@
             border-bottom: 0;
         }
         &.open {
-            background: #00baf2;
+            background: $bg-lnb-title-open;
             [class*="link"] {
-                color: #fff;
+                color: $font-lnb-title-active;
                 .icon-toggle {
                     &:after {
-                        background: #fff;
+                        background: $font-lnb-title-active;
                         transform: rotate(90deg);
                         transition: transform 0.25s ease;
                     }
@@ -90,12 +88,12 @@
         background: #fff;
         padding: 10px 0;
         > li {
-            font-weight: normal;
             padding: 2px 20px;
             > a {
                 position: relative;
                 display: block;
                 padding-left: 22px;
+                color: $font-lnb-sub-menu;
                 &:before {
                     position: absolute;
                     top: 10px;
@@ -103,14 +101,14 @@
                     display: block;
                     width: 10px;
                     height: 2px;
-                    background: #dcdcdc;
+                    background: $bd-or-icon-color;
                     content: "";
                 }
                 &:hover, &:focus {
-                    color: #003761;
-                    text-decoration: underline;
+                    font-weight: 500;
+                    color: $font-lnb-sub-menu-active;
                     &:before {
-                        background: #003761;
+                        background: $font-lnb-sub-menu-active;
                     }
                 }
             }
