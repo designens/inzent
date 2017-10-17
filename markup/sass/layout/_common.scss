@@ -110,9 +110,9 @@
     }
     @include susy-breakpoint(em($desktop)) {
         @include layout(10 0/110);
+        padding: 0 21px;
         .wrap {
-            max-width: $desktop + 42;
-            padding: 0 21px;
+            @include container($desktop);
             .menu {
                 @include span(9);
             }
@@ -198,11 +198,10 @@
         }
     }
     @include susy-breakpoint(em($desktop)) {
+        padding: 0 21px;
         .wrap {
             @include layout(10 0/110);
-            max-width: $desktop + 42;
-            padding: 0 21px;
-            margin: 0 auto;
+            @include container($desktop);
             .logo {
                 @include span(2);
                 background-position: left center;
@@ -233,9 +232,33 @@
     min-height: 670px;
     @extend %clearfix;
     /* Content 영역 */
+    &.sub-content {
+        padding: 0 21px;
+        .wrap {
+            margin-top: 42px;
+            margin-bottom: 30px;
+            @include susy-breakpoint(em($tablet)) {
+                .wrap {
+                    margin-top: 0;
+                }
+            }
+            @include susy-breakpoint(em($tablet) em($desktop)) {
+                .wrap {
+                    margin-bottom: 60px;
+                }
+            }
+            @include susy-breakpoint(em($desktop)) {
+                .wrap {
+                    margin-bottom: 120px;
+                }
+            }
+        }
+    }
     .content-area {
-        @include span(4 last);
-        margin-bottom: 90px;
+        width: 100%;
+        @include susy-breakpoint(em($desktop)) {
+            width: target-percent(836, 1100);
+        }
         .headline {
             height: 58px;
             line-height: 58px;

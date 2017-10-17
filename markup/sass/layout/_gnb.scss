@@ -87,7 +87,7 @@
                     height: 13px;
                     background: $font-gnb-title;
                     content: "";
-                    transform: rotate(-90deg);
+                    transform: rotate(0deg);
                     transition: transform 0.25s ease;
                 }
             }
@@ -107,7 +107,7 @@
                     background: $bg-gnb-title-selected;
                     transition: background 0.25s ease;
                     &:after {
-                        transform: rotate(0deg);
+                        transform: rotate(90deg);
                         transition: transform 0.25s ease;
                     }
                 }

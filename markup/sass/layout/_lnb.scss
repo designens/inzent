@@ -2,7 +2,10 @@
 /* LNB 영역
 /* =======================================*/
 .lnb {
-    @include span(2);
+    float: left;
+    display: none;
+    width: target-percent(230, 1100);
+    margin-right: target-percent(34, 1100);
     margin-bottom: 30px;
     h3 {
         display: block;
@@ -11,110 +14,89 @@
         color: #fff;
         text-align: center;
         letter-spacing: -0.03em;
-        background: $bg-lnb-title no-repeat;
+        background: url($bg-lnb-title) no-repeat;
+    }
+    @include susy-breakpoint(em($desktop)) {
+        display: block;
+        + .content-area {
+            width: target-percent(836, 1100);
+        }
     }
 }
 .accordion-lnb {
-    border: 1px solid #cad7e0;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-bottom: 1px solid #dcdcdc;
+    margin-top: 5px;
     > li {
-        border-bottom: 1px solid #cad7e0;
-        font-size: 16px;
+        border-bottom: 1px solid #dcdcdc;
         color: #333;
-        font-weight: bold;
         [class*="link"] {
             position: relative;
-            color: #4D4D4D;
+            color: #333;
             font-size: 16px;
-            font-weight: bold;
-            padding: 15px 20px;
+            padding: 9px 20px;
             border-bottom: 1px solid #CCC;
-            .fa-angle-down {
+            .icon-toggle {
                 position: absolute;
                 display: block;
-                top: 18px;
-                right: 18px;
-                font-size: 18px;
-                color: #333;
-                transform: rotate(0deg);
+                top: 50%;
+                right: 20px;
+                width: 13px;
+                height: 13px;
+                margin-top: -7px;
+                &:before {
+                    position: absolute;
+                    top: 5px;
+                    right: 0;
+                    width: 13px;
+                    height: 3px;
+                    background: #b1b1b3;
+                    content: "";
+                }
+                &:after {
+                    position: absolute;
+                    top: 0;
+                    right: 5px;
+                    width: 3px;
+                    height: 13px;
+                    background: #b1b1b3;
+                    content: "";
+                    transform: rotate(0deg);
+                    transition: transform 0.25s ease;
+                }
             }
         }
         &:last-child, [class*="link"] {
             border-bottom: 0;
-            ul {
-                border-bottom-left-radius: 8px;
-                border-bottom-right-radius: 8px;
-            }
         }
         &.open {
-            background: #cee4f5;
+            background: #00baf2;
             [class*="link"] {
-                position: relative;
-                color: #003761;
-                padding-left: 33px;
-                &:before {
-                    position: absolute;
-                    left: 20px;
-                    bottom: 16px;
-                    width: 6px;
-                    height: 2px;
-                    background: #003761;
-                    content: "";
-                }
-                .fa-angle-down {
-                    color: #003761;
-                    transform: rotate(180deg);
-                    transition: transform 0.25s ease;
-                }
-            }
-            &:last-child {
-                [class*="link"] {
-                    border-bottom-left-radius: 8px;
-                    border-bottom-right-radius: 8px;
-                }
-            }
-        }
-        &.selected {
-            background: #003761;
-            [class*="link"] {
-                position: relative;
-                color: #f0f8ff;
-                padding-left: 33px;
-                &:before {
-                    position: absolute;
-                    left: 20px;
-                    bottom: 16px;
-                    width: 6px;
-                    height: 2px;
-                    background: #f0f8ff;
-                    content: "";
-                }
-                .fa-angle-down {
-                    color: #f0f8ff;
-                    transform: rotate(180deg);
-                    transition: transform 0.25s ease;
+                color: #fff;
+                .icon-toggle {
+                    &:after {
+                        background: #fff;
+                        transform: rotate(90deg);
+                        transition: transform 0.25s ease;
+                    }
                 }
             }
         }
     }
     [class*="sub"] {
-        background: #f0f8ff;
-        padding: 9px 0;
+        background: #fff;
+        padding: 10px 0;
         > li {
             font-weight: normal;
-            padding: 9px 24px;
+            padding: 2px 20px;
             a {
                 position: relative;
                 display: block;
-                padding-left: 11px;
-                letter-spacing: -0.06em;
+                padding-left: 22px;
                 &:before {
                     position: absolute;
                     left: 0;
                 }
                 &:hover, &:focus {
-                    font-weight: bold;
                     color: #003761;
                     text-decoration: underline;
                 }
@@ -131,11 +113,11 @@
             }
             > a {
                 &:before {
-                    top: 11px;
+                    top: 10px;
                     display: block;
-                    width: 3px;
-                    height: 3px;
-                    background: #757575;
+                    width: 10px;
+                    height: 2px;
+                    background: #dcdcdc;
                     content: "";
                 }
                 &:hover, &:focus {
