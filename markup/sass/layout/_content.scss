@@ -1,4 +1,53 @@
 /* =======================================*/
+/* Content : 컨텐츠 영역
+/* =======================================*/
+.content-area {
+    .headline {
+        margin-bottom: 30px;
+        .sub-title {
+            color: #333;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #666;
+            clear: both;
+        }
+        .site-location {
+            height: 35px;
+            line-height: 35px;
+            a {
+                float: left;
+                @include psd-fz(13px);
+                color: #333;
+                img {
+                    vertical-align: -2px;
+                }
+                &:after {
+                    display: inline-block;
+                    font-family: 'FontAwesome';
+                    @include psd-fz(16px);
+                    content: "\f105";
+                    padding: 0 4px;
+                    vertical-align: -1px;
+                }
+                &:first-child {
+                    &:after {
+                        content:"";
+                    }
+                }
+                &:last-child {
+                    font-weight: 500;
+                    &:after {
+                        content:"";
+                    }
+                }
+            }
+        }
+    }
+    .content {
+        @include psd-lh(1.5);
+    }
+}
+
+/* =======================================*/
 /* 메인 > 로그인 > 외부로그인
 /* (html/login.html)
 /* =======================================*/

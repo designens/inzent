@@ -1566,17 +1566,25 @@
 /* =======================================*/
 html { font-size: 10px; }
 
-html body { font-family: "Noto Sans Korean", sans-serif, serif; font-size: 1.4rem; -webkit-font-smoothing: antialiased; color: #464646; line-height: 21px; }
+html[lang="ko-KR"], html[lang="ko"] { font-family: "Noto Sans Korean", sans-serif, serif; }
 
-h2, h3, h4 { font-weight: 500; }
+html[lang="en"] { font-family: Arial, sans-serif, serif; }
+
+html body { font-size: 1.4rem; color: #464646; line-height: 21px; }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) { html body { -webkit-font-smoothing: antialiased; } }
+
+h1, h2, h3, h4 { font-weight: 500; }
 
 h5, h6 { font-weight: 600; }
+
+h1 { font-size: 30px; font-size: 3rem; line-height: 45px; line-height: 4.5rem; }
 
 h2 { font-size: 26px; font-size: 2.6rem; line-height: 39px; line-height: 3.9rem; }
 
 h3 { font-size: 23px; font-size: 2.3rem; line-height: 34.5px; line-height: 3.45rem; }
 
-h4 { font-size: 18px; font-size: 1.8rem; line-height: 27px; line-height: 2.7rem; }
+h4 { font-size: 20px; font-size: 2rem; line-height: 30px; line-height: 3rem; }
 
 h5 { font-size: 16px; font-size: 1.6rem; line-height: 24px; line-height: 2.4rem; }
 
@@ -1863,7 +1871,7 @@ h6 { font-size: 14px; font-size: 1.4rem; line-height: 21px; line-height: 2.1rem;
   .participating-services ul li:nth-of-type(1) { width: 22%; }
   .participating-services ul li:nth-of-type(2) { width: 28%; } }
 
-@media (min-width: 68.75em) { .participating-services h4 { margin-right: 30px; }
+@media (min-width: 68.75em) { .participating-services h4 { font-size: 18px; font-size: 1.8rem; margin-right: 30px; }
   .participating-services ul li { padding: 0 33px; } }
 
 /*# sourceMappingURL=map/uni-main.css.map */

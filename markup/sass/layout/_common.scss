@@ -5,10 +5,10 @@
     @include layout(6 0px/53px);
     @include container(100%);
     min-width: $min-mobile;
+    padding: 0 21px;
     // Mobile만 적용
     @include susy-breakpoint(em($max-mobile)) {
         @include layout(6 0px/96px);
-        margin: 0 21px;
     }
     // Tablet 이상
     @include susy-breakpoint(em($tablet)) {
@@ -90,15 +90,17 @@
         }
     }
     @include susy-breakpoint(em($tablet)) {
-        @include layout(6 0/113);
         display: block;
         .wrap {
             .menu {
-                @include span(5);
+                display: inline-block;
+                width: -webkit-calc( 100% - 110px );
+                width: -moz-calc( 100% - 110px );
+                width: calc( 100% - 110px );
             }
             .link {
-                display: block;
-                @include span(1);
+                display: inline-block;
+                width: 110px;
                 @include last;
             }
         }
@@ -106,6 +108,7 @@
     @include susy-breakpoint(em($tablet) em($desktop)) {
         .wrap {
             margin: 0;
+            padding: 0;
         }
     }
     @include susy-breakpoint(em($desktop)) {
@@ -182,7 +185,6 @@
             }
             .btn-agency {
                 display: block;
-                @include span(1);
                 @include  last;
             }
         }
@@ -190,6 +192,7 @@
     @include susy-breakpoint(em($tablet) em($desktop)) {
         .wrap {
             margin: 0;
+            padding: 0;
             .logo {
                 position: absolute;
                 left: 50%;
@@ -233,100 +236,54 @@
     @extend %clearfix;
     /* Content 영역 */
     &.sub-content {
-        padding: 0 21px;
-        .wrap {
-            margin-top: 42px;
+        .content-area {
             margin-bottom: 30px;
-            @include susy-breakpoint(em($tablet)) {
-                .wrap {
-                    margin-top: 0;
-                }
+        }
+        @include susy-breakpoint(em($tablet)) {
+            .content-area {
+                margin-top: 0;
             }
-            @include susy-breakpoint(em($tablet) em($desktop)) {
-                .wrap {
-                    margin-bottom: 60px;
-                }
+        }
+        @include susy-breakpoint(em($tablet) em($desktop)) {
+            .content-area {
+                margin-bottom: 60px;
             }
-            @include susy-breakpoint(em($desktop)) {
-                .wrap {
-                    margin-bottom: 120px;
-                }
+        }
+        @include susy-breakpoint(em($desktop)) {
+            margin-top: 42px;
+            .content-area {
+                margin-bottom: 120px;
             }
         }
     }
 }
 
 /* =======================================*/
-/* Container : 컨텐츠 영역
+/* Container : 서브 헤드라인 영역
 /* =======================================*/
 .sub-headline {
-    height: 110px;
-    text-align: center;
-    background: #e1f1ff url($bg-sub-top-title) right 34px center no-repeat;
+    height: 90px;
+    background: #e1f1ff url($bg-sub-top-title) no-repeat;
+    background-position: right -20px center;
     .wrap {
         @include h-center ($position: relative, $h-percent: 50%);
+        h2 {
+            @include psd-fz(20px);
+        }
+        p {
+            display: none;
+        }
     }
-}
-.sub-content {
-    .content-area {
-        width: 100%;
-        @include susy-breakpoint(em($desktop)) {
-            width: target-percent(836, 1100);
-        }
-        .headline {
-            height: 58px;
-            line-height: 58px;
-            /* Sub Page : Title 공통 */
-            .sub-title {
-                float: left;
-                position: relative;
-                font-weight: bold;
-                padding-left: 30px;
-                &:before, &:after {
-                    position: absolute;
-                    top: 1px;
-                }
-                &:before {
-                    left: 0;
-                    @include fa($icon: "\f105", $fz: 30px, $color: #495157);
-                }
-                &:after {
-                    left: 9px;
-                    @include fa($icon: "\f105", $fz: 30px, $color: #495157);
-                }
+    @include susy-breakpoint(em($desktop)) {
+        height: 110px;
+        text-align: center;
+        background-position: right 34px center;
+        .wrap {
+            h2 {
+                @include psd-fz(26px);
             }
-            /* Sub Page : Location 공통 */
-            .site-location {
-                float: right;
-                a {
-                    @include psd-fz(12px);
-                    color: #666;
-                    img {
-                        vertical-align: text-top;
-                    }
-                    &:before {
-                        display: inline-block;
-                        font-family: 'FontAwesome';
-                        @include psd-fz(16px);
-                        content: "\f105";
-                        padding: 0 4px 0 2px;
-                    }
-                    &:first-child {
-                        &:before {
-                            content:"";
-                        }
-                    }
-                    &:last-child {
-                        color: #333;
-                    }
-                }
-            }
-        }
-        .content {
-            padding: 0 10px;
-            line-height: 1;
-            > * {
-                line-height: 1.5;
+            p {
+                display: block;
             }
         }
     }

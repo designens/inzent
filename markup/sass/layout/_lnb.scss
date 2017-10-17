@@ -16,9 +16,13 @@
         letter-spacing: -0.03em;
         background: url($bg-lnb-title) no-repeat;
     }
+    + .content-area {
+        width: 100%;
+    }
     @include susy-breakpoint(em($desktop)) {
         display: block;
         + .content-area {
+            float: right;
             width: target-percent(836, 1100);
         }
     }
@@ -32,7 +36,7 @@
         [class*="link"] {
             position: relative;
             color: #333;
-            font-size: 16px;
+            @include psd-fz(16px);
             padding: 9px 20px;
             border-bottom: 1px solid #CCC;
             .icon-toggle {

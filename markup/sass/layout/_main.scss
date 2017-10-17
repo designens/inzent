@@ -821,6 +821,7 @@
     }
     @include susy-breakpoint(em($desktop)) {
         h4 {
+            @include psd-fz(18px);
             margin-right: 30px;
         }
         ul {

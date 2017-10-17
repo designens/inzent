@@ -1572,17 +1572,25 @@
 /* =======================================*/
 html { font-size: 10px; }
 
-html body { font-family: "Noto Sans Korean", sans-serif, serif; font-size: 1.4rem; -webkit-font-smoothing: antialiased; color: #464646; line-height: 21px; }
+html[lang="ko-KR"], html[lang="ko"] { font-family: "Noto Sans Korean", sans-serif, serif; }
 
-h2, h3, h4 { font-weight: 500; }
+html[lang="en"] { font-family: Arial, sans-serif, serif; }
+
+html body { font-size: 1.4rem; color: #464646; line-height: 21px; }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) { html body { -webkit-font-smoothing: antialiased; } }
+
+h1, h2, h3, h4 { font-weight: 500; }
 
 h5, h6 { font-weight: 600; }
+
+h1 { font-size: 30px; font-size: 3rem; line-height: 45px; line-height: 4.5rem; }
 
 h2 { font-size: 26px; font-size: 2.6rem; line-height: 39px; line-height: 3.9rem; }
 
 h3 { font-size: 23px; font-size: 2.3rem; line-height: 34.5px; line-height: 3.45rem; }
 
-h4 { font-size: 18px; font-size: 1.8rem; line-height: 27px; line-height: 2.7rem; }
+h4 { font-size: 20px; font-size: 2rem; line-height: 30px; line-height: 3rem; }
 
 h5 { font-size: 16px; font-size: 1.6rem; line-height: 24px; line-height: 2.4rem; }
 
@@ -1688,6 +1696,29 @@ h6 { font-size: 14px; font-size: 1.4rem; line-height: 21px; line-height: 2.1rem;
 
 @media only screen and (max-width: 760px) { .popup.mobile { top: 0; left: 0; right: 0; bottom: 0; width: 100%; max-height: 100vh; transform: inherit; }
   .popup.mobile .popup-content { max-height: calc(100% - 50px); padding: 20px; } }
+
+/* =======================================*/
+/* Content : 컨텐츠 영역
+/* =======================================*/
+.content-area .headline { margin-bottom: 30px; }
+
+.content-area .headline .sub-title { color: #333; padding-bottom: 10px; border-bottom: 2px solid #666; clear: both; }
+
+.content-area .headline .site-location { height: 35px; line-height: 35px; }
+
+.content-area .headline .site-location a { float: left; font-size: 13px; font-size: 1.3rem; color: #333; }
+
+.content-area .headline .site-location a img { vertical-align: -2px; }
+
+.content-area .headline .site-location a:after { display: inline-block; font-family: 'FontAwesome'; font-size: 16px; font-size: 1.6rem; content: "\f105"; padding: 0 4px; vertical-align: -1px; }
+
+.content-area .headline .site-location a:first-child:after { content: ""; }
+
+.content-area .headline .site-location a:last-child { font-weight: 500; }
+
+.content-area .headline .site-location a:last-child:after { content: ""; }
+
+.content-area .content { line-height: 3; line-height: 0.3rem; }
 
 /* =======================================*/
 /* 메인 > 로그인 > 외부로그인
