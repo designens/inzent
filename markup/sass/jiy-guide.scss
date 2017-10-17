@@ -72,9 +72,14 @@ body {
                     display: inline-block;
                     > span {
                         display: inline-block;
-                        color: #e51d68;
                         margin-left: 4px;
                         margin-bottom: 0;
+                        &.red {
+                            color: #e51d68;
+                        }
+                        &.blue {
+                            color: #257de0;
+                        }
                     }
                 }
                 span {

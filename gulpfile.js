@@ -242,10 +242,10 @@ gulp.task('iconfont:move', function(){
  });
 
 // =======================================
-// web font 업무
+// web font 이동 업무
 // =======================================
 
 gulp.task('font:move', function(){
-    gulp.src(SRC + '/assets/fonts/*')
+    gulp.src(SRC + '/assets/fonts/**/*')
         .pipe( gulp.dest( BUILD + '/assets/fonts' ) );
  });

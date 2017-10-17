@@ -88,32 +88,14 @@
         > li {
             font-weight: normal;
             padding: 2px 20px;
-            a {
+            > a {
                 position: relative;
                 display: block;
                 padding-left: 22px;
                 &:before {
                     position: absolute;
-                    left: 0;
-                }
-                &:hover, &:focus {
-                    color: #003761;
-                    text-decoration: underline;
-                }
-                &.active {
-                    font-weight: bold;
-                    color: #003761;
-                    padding-left: 12px;
-                    &:before {
-                        @include fa($icon: "\f054", $fz: 10px, $color: #003761);
-                        top: 5px;
-                        background: transparent;
-                    }
-                }
-            }
-            > a {
-                &:before {
                     top: 10px;
+                    left: 0;
                     display: block;
                     width: 10px;
                     height: 2px;
@@ -121,22 +103,10 @@
                     content: "";
                 }
                 &:hover, &:focus {
+                    color: #003761;
+                    text-decoration: underline;
                     &:before {
                         background: #003761;
-                    }
-                }
-            }
-            > ul {
-                li {
-                    padding-top: 9px;
-                    padding-left: 10px;
-                    a {
-                        &:before {
-                            top: -3px;
-                            background: transparent;
-                            color: #757575;
-                            content: "-";
-                        }
                     }
                 }
             }

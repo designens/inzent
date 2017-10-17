@@ -254,6 +254,20 @@
             }
         }
     }
+}
+
+/* =======================================*/
+/* Container : 컨텐츠 영역
+/* =======================================*/
+.sub-headline {
+    height: 110px;
+    text-align: center;
+    background: #e1f1ff url($bg-sub-top-title) right 34px center no-repeat;
+    .wrap {
+        @include h-center ($position: relative, $h-percent: 50%);
+    }
+}
+.sub-content {
     .content-area {
         width: 100%;
         @include susy-breakpoint(em($desktop)) {
