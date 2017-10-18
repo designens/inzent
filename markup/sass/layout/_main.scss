@@ -537,7 +537,7 @@
             clear: both;
             &:before {
                 position: absolute;
-                top: 13px;
+                top: 15px;
                 left: 0;
                 display: block;
                 width: 3px;
@@ -547,15 +547,33 @@
             }
             .title-text {
                 float: left;
+                @include span(4);
+                height: 33px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow:ellipsis;
                 padding-left: 13px;
+                padding-right: 10px;
             }
             .date-text {
                 float: right;
+                text-align: right;
+                @include span(2 last);
                 color: #888;
             }
         }
     }
-    @include susy-breakpoint(em($tablet)) {
+    @include susy-breakpoint(em($tablet) em($desktop)) {
+        ul {
+            li {
+                .title-text {
+                    @include span(5);
+                }
+                .date-text {
+                    @include span(1 last);
+                }
+            }
+        }
     }
     @include susy-breakpoint(em($desktop)) {
         padding-bottom: 0;
@@ -565,6 +583,16 @@
         margin-bottom: 0;
         .headline {
             margin-top: 0;
+        }
+        ul {
+            li {
+                .title-text {
+                    width: 270px;
+                }
+                .date-text {
+                    width: auto;
+                }
+            }
         }
     }
 }
