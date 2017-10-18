@@ -42,90 +42,53 @@
             }
         }
     }
-    .content {
-        @include psd-lh(1.5);
-    }
 }
 
 /* =======================================*/
-/* 메인 > 로그인 > 외부로그인
-/* (html/login.html)
+/* 자료검색 > 소장자료 검색 > 초기화면
+/* (html/resources-search.html)
 /* =======================================*/
-.login-bg {
-    position: relative;
-    background: #fafafa;
-    .login-area {
-        @include wh-center ($position: absolute);
-        width: 740px;
-        h2 {
-            font-size: 50px;
-            margin-bottom: 40px;
-        }
-    }
+.keyword-search-area {
+    background: #f1f1f1;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
-.login-content {
-    .form-group {
-        @include w-center ($position: absolute);
-        top: 50px;
-        width: 406px;
-        @extend %clearfix;
-        .input-area {
-            float: left;
-            width: 316px;
-            @include input-type ($w: 220px, $h: 34px, $p: 0 10px, $bdc: #e6e9eb);
-            label {
-                float: left;
-                font-weight: bold;
-                letter-spacing: -0.04em;
-                color: #002644;
-            }
-            input {
-                float: right;
-                margin-bottom: 8px;
+@include susy-breakpoint(em($desktop)) {
+    .keyword-search-area {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        .ul-list-type {
+            @include layout(7 10px/100px);
+            max-width: 836px;
+            margin: 0 38px;
+            li {
+                .search-1st {
+                    @include span(1);
+                    .select-box {
+                        @include select-box($w: 100px);
+                    }
+                }
+                .search-2nd {
+                    @include span(5);
+                }
+                .search-3rd {
+                    @include span(1 last);
+                    .select-box {
+                        @include select-box($w: 100px);
+                    }
+                }
             }
         }
-        .btn-login {
-            float: right;
-            letter-spacing: -0.01em;
-            background: #003761;
-            border-bottom: 3px solid #002644;
-            @include btn-size ($dp: inline-block, $w: 76px, $h: 76px);
-            @include btn-type-2 ($color: #fff, $bdb: #002644, $bg: #003761);
-        }
-    }
-}
-.login-content {
-    .checkbox-type {
-        @include w-center ($position: absolute);
-        top: 147px;
-        width: 220px;
-        label {
-            letter-spacing: -0.04em;
-        }
-    }
-}
-.login-content {
-    .btn-link-set {
-        text-align: center;
-        margin-top: 190px;
-    }
-}
-.login-content {
-    .information {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        color: #4c4c4c;
-        text-align: center;
-        height: 75px;
-        line-height: 75px;
-        border-bottom-left-radius: 7px;
-        border-bottom-right-radius: 7px;
-        border-top: 1px solid #afc0cc;
-        background: #e5f4ff;
-        span {
-            color: #0c314c;
+        .dl-list-type {
+            @include layout(7 10px/100px);
+            max-width: 836px;
+            margin: 0 38px;
+            dt {
+                @include span(1);
+            }
+            dd {
+                @include span(6 last);
+            }
         }
     }
 }

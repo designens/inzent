@@ -1,11 +1,11 @@
-@mixin input-type ($w: 242px, $h: 30px, $p: 0 10px, $bdc: #dbdbdb, $bg: #fff) {
+@mixin input-type ($w: 130px, $h: 35px, $p: 0 10px, $bd: #c4c4c4, $bg: #fff) {
     min-width: $w;
     input {
         width: $w;
         height: $h;
         line-height: $h;
         padding: $p;
-        border: 1px solid $bdc;
+        border: 1px solid $bd;
         background: $bg;
         &:focus {
             border: 1px solid #002847;

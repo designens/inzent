@@ -3,11 +3,11 @@
 // =======================================
 
 // Input Color 설정
-$input-checked: #002847;
+$input-checked: #191919;
 $input-focus: $input-checked;
-$input-border: #dbdbdb;
+$input-border: #c4c4c4;
 $input-bg: #fff;
-$input-sz: 14px;
+$input-sz: 18px;
 
 .checkbox-type {
     input {
@@ -34,7 +34,7 @@ $input-sz: 14px;
             + label {
                 &:before {
                     outline: none;
-                    border-color: $input-focus;
+                    // border-color: $input-focus;
                 }
             }
         }
@@ -42,7 +42,7 @@ $input-sz: 14px;
             + label {
                 &:before {
                     color: $input-checked;
-                    border-color: $input-focus;
+                    // border-color: $input-focus;
                 }
             }
         }

@@ -499,6 +499,7 @@
                 display: block;
             }
             .copyright {
+                display: block;
                 @include psd-fz(12px);
             }
         }
@@ -507,6 +508,9 @@
         display: none;
         padding-top: 45px;
         text-align: right;
+        .select-box {
+            @include select-box ($w: 150px, $h: 28px);
+        }
         .btn-site-link-move {
             width: 51px;
             height: 28px;
@@ -551,13 +555,13 @@
             @include span(6);
             padding-bottom: 10px;
         }
-        .site-link-area {
-            display: block;
-            @include span(6);
-            text-align: left;
-            padding-top: 0;
-            padding-bottom: 45px;
-        }
+        // .site-link-area {
+        //     display: block;
+        //     @include span(6);
+        //     text-align: left;
+        //     padding-top: 0;
+        //     padding-bottom: 45px;
+        // }
     }
     @include susy-breakpoint(em($desktop)) {
         @include layout(6 22px/165px);
@@ -728,80 +732,49 @@
 /* =======================================*/
 /* 탭 스타일
 /* =======================================*/
-.tablist {
-    /* 탭의 갯수 t1~t8 까지 class 생성 */
-    /* @include tabs(컬럼 수) */
-    @include tabs(8);
-    width: 932px;
-    margin-left: -1px;
-    [role="tab"] {
-        &:first-child {
-            span {
-                border-top-left-radius: 4px;
-                border-bottom-left-radius: 4px;
-            }
-        }
-        &:last-child {
-            span {
-                border-top-right-radius: 4px;
-                border-bottom-right-radius: 4px;
-            }
-        }
-        span {
-            display: block;
-            text-align: center;
-            width: 100%;
+.tab-area {
+    .tab-menu {
+        height: 40px;
+        border-bottom: 1px solid $bd-tab-menu-ber;
+        margin-bottom: 20px;
+        @extend %clearfix;
+        a[role="button"] {
+            float: left;
+            display: inline-block;
             height: 40px;
-            line-height: 36px;
-            background: #f5dfd7;
-            border: 2px solid #f1c7b7;
-        }
-        &[aria-selected='true'] {
-            span {
-                position: relative;
-                font-weight: bold;
-                color: #fff;
-                line-height: 35px;
-                background: #d14411;
-                border: 0;
-                box-shadow: 1px 1px 4px 3px rgba(#d14411, 0.3) inset;
-                &:before {
-                    position: absolute;
-                    bottom: 0;
-                    left: 50%;
-                    margin-left: -5px;
-                    @include arrow($dir: top, $size: 6px, $color: #fff);
-                    content: "";
-                }
-            }
-        }
-        &:hover, &:focus {
-            span {
-                position: relative;
-                font-weight: bold;
-                color: #fff;
-                line-height: 40px;
-                background: #d14411;
-                border: 0;
-                box-shadow: 1px 1px 4px 3px rgba(#d14411, 0.3) inset;
-                &:before {
-                    position: absolute;
-                    bottom: -12px;
-                    left: 50%;
-                    @include arrow($dir: bottom, $size: 6px, $color: #d14411);
-                    content: "";
-                }
+            line-height: 38px;
+            padding: 0 40px;
+            color: $font-tab-menu-default;
+            border: 1px solid $bd-tab-menu-ber;
+            &.active {
+                color: $font-tab-menu-active;
+                background: $bg-tab-menu-active;
             }
         }
     }
 }
-.panel-group {
-    margin-top: 12px;
-    width: 100%;
-    min-height: 480px;
-    [role="tabpanel"] {
-        &[aria-hidden='true'] {
-            display: none;
+
+/* =======================================*/
+/* 리스트 스타일
+/* =======================================*/
+.ul-list-type {
+    li {
+        display: block;
+        margin-bottom: 10px;
+        @extend %clearfix;
+    }
+}
+.dl-list-type {
+    @extend %clearfix;
+    dt, dd {
+        display: block;
+        height: 35px;
+        line-height: 35px;
+        @extend %clearfix;
+    }
+    @include susy-breakpoint(em($desktop)) {
+        dt, dd {
+            display: inline-block;
         }
     }
 }

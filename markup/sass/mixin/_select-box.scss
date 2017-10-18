@@ -1,17 +1,8 @@
-@mixin select-box ($w: 150px, $h: 28px, $icon-top: 0) {
+@mixin select-box ($w: 130px, $h: 35px) {
+    $lh: $h - 2;
     position: relative;
     width: $w;
     height: $h;
-    &:before {
-        position: absolute;
-        top: $icon-top;
-        right: 10px;
-        font-family: 'FontAwesome';
-        content: "\f0dd";
-        font-size: 17px;
-        color: #343434;
-        pointer-events: none;
-    }
     label {
         position: absolute;
         width: 100%;
@@ -22,10 +13,10 @@
     select {
         width: 100%;
         height: $h;
-        line-height: $h - 2;
-        padding: 0 10px;
-        border: 1px solid #dbdbdb;
-        background: #fff;
+        line-height: $lh;
+        padding: 0 26px 0 10px;
+        border: 1px solid #c4c4c4;
+        background: #fff url($icon-select-box-down) right 10px center no-repeat;
         /* 기본 버튼 속성 무시*/
         -webkit-appearance: none;
         -ms-appearance: none;
