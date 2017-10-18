@@ -16,7 +16,8 @@ $input-sz: 18px;
         opacity: 0;
         + label {
             position: relative;
-            padding-left: (8 + $input-sz);
+            padding-left: (5 + $input-sz);
+            padding-right: 10px - 2;
             &:before {
                 position: absolute;
                 top: 2px;

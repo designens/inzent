@@ -7,6 +7,24 @@
         padding: $p;
         border: 1px solid $bd;
         background: $bg;
+    }
+    input {
+        &::-webkit-input-placeholder {
+            /* Chrome/Opera/Safari*/
+            color: inherit;
+        }
+        &::-moz-placeholder {
+            /* Firefox 19+*/
+            color: inherit;
+        }
+        &:-ms-input-placeholder {
+            /* IE 10+*/
+            color: inherit !important;
+        }
+        &:-moz-placeholder {
+            /* Firefox 18-*/
+            color: inherit;
+        }
         &:focus {
             border: 1px solid #002847;
         }

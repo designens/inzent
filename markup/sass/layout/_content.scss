@@ -78,6 +78,10 @@
                     }
                 }
             }
+            .dl-list-type {
+                margin: 0;
+                margin-top: 10px;
+            }
         }
         .dl-list-type {
             @include layout(7 10px/100px);
