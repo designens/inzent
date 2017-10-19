@@ -79,6 +79,9 @@
             .select-box {
                 @include span(1);
             }
+            .checkbox-type {
+                @include gallery(2 of 4);
+            }
             .input-type {
                 position: relative;
                 width: 100%;
@@ -122,15 +125,18 @@
                 }
             }
             dd {
-                @include layout(2 20px/335px);
+                @include layout(4 26px/153px);
+                .checkbox-type {
+                    @include gallery(1 of 4);
+                }
                 .select-box {
-                    @include span(1);
+                    @include span(2);
                 }
                 .input-type {
                     input {
-                        @include span(1);
+                        @include span(2);
                         &:last-child {
-                            @include last();
+                            @include last;
                         }
                     }
                 }
@@ -152,10 +158,6 @@
                     @include span(1 last);
                 }
             }
-            .dl-list-type {
-                margin: 0;
-                margin-top: 10px;
-            }
         }
         .dl-list-type {
             @include layout(7 10px/102px);
@@ -165,6 +167,13 @@
             }
             dd {
                 @include span(6 last);
+                .checkbox-type {
+                    width: auto;
+                    float: none;
+                    clear: none !important;
+                    margin-right: initial !important;
+                    margin-left: initial !important;
+                }
                 .select-box {
                     @include select-box($w: 130px);
                 }
