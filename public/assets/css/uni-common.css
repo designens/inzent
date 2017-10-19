@@ -2178,7 +2178,7 @@ head:hover ~ .wrap:before, head:hover ~ body .wrap:before { position: absolute; 
 
 .btn-set-area form, .btn-set-area button, .btn-set-area a { width: 100%; float: left; margin-left: 0; margin-right: 0; margin-bottom: 2%; }
 
-@media (min-width: 30em) and (max-width: 47.5em) { .btn-set-area form, .btn-set-area button, .btn-set-area a { width: 49%; float: left; margin-bottom: 2%; }
+@media (min-width: 22.5em) and (max-width: 47.5em) { .btn-set-area form, .btn-set-area button, .btn-set-area a { width: 49%; float: left; margin-bottom: 2%; }
   .btn-set-area form:nth-child(2n + 1), .btn-set-area button:nth-child(2n + 1), .btn-set-area a:nth-child(2n + 1) { margin-left: 0; margin-right: -100%; clear: both; margin-left: 0; }
   .btn-set-area form:nth-child(2n + 2), .btn-set-area button:nth-child(2n + 2), .btn-set-area a:nth-child(2n + 2) { margin-left: 51%; margin-right: -100%; clear: none; } }
 

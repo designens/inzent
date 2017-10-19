@@ -584,20 +584,19 @@
     @extend %clearfix;
     form, button, a {
         @include span(full);
-        margin-bottom: gutter()
+        margin-bottom: gutter();
     }
-    @include susy-breakpoint(em($max-mobile) em($tablet)) {
+    @include susy-breakpoint(em($min-mobile) em($tablet)) {
         form, button, a {
             @include gallery(3 of 6);
-            margin-bottom: gutter()
+            margin-bottom: gutter();
         }
     }
     @include susy-breakpoint(em($tablet) em($desktop)) {
         @include layout(8 8px/83px);
         form, button, a {
             @include gallery(2 of 8);
-            // margin-top: 8px;
-            margin-bottom: gutter()
+            margin-bottom: gutter();
         }
     }
     @include susy-breakpoint(em($desktop)) {

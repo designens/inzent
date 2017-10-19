@@ -50,32 +50,106 @@
 /* =======================================*/
 .keyword-search-area {
     background: #f1f1f1;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-@include susy-breakpoint(em($desktop)) {
-    .keyword-search-area {
-        padding-top: 15px;
-        padding-bottom: 15px;
+    padding: 15px;
+    .ul-list-type {
+        @include layout(5 10px/58px);
+        li {
+            .search-1st {
+                @include span(2);
+            }
+            .search-2nd {
+                @include span(3 firest);
+            }
+            .search-3rd {
+                @include span(2 last);
+            }
+        }
+    }
+    .dl-list-type {
+        margin-top: 15px;
+        dt {
+            line-height: 2;
+            &:before {
+                top: 12px;
+            }
+        }
+        dd {
+            @include layout(2 26px/152px);
+            line-height: 2;
+            .select-box {
+                @include span(1);
+            }
+            .input-type {
+                position: relative;
+                width: 100%;
+                &:before {
+                    position: absolute;
+                    top: 3px;
+                    left: 50%;
+                    margin-left: -5px;
+                    content: "~";
+                }
+                input {
+                    @include span(1);
+                    &:last-child {
+                        @include last();
+                    }
+                }
+            }
+        }
+    }
+    @include susy-breakpoint(em($tablet) em($desktop)) {
+        @include layout(7 10px/102px);
         .ul-list-type {
-            @include layout(7 10px/100px);
-            max-width: 836px;
-            margin: 0 38px;
             li {
                 .search-1st {
                     @include span(1);
-                    .select-box {
-                        @include select-box($w: 100px);
-                    }
                 }
                 .search-2nd {
                     @include span(5);
                 }
                 .search-3rd {
                     @include span(1 last);
-                    .select-box {
-                        @include select-box($w: 100px);
+                }
+            }
+        }
+        .dl-list-type {
+            margin-top: 15px;
+            dt {
+                line-height: 2;
+                &:before {
+                    top: 12px;
+                }
+            }
+            dd {
+                @include layout(2 20px/335px);
+                .select-box {
+                    @include span(1);
+                }
+                .input-type {
+                    input {
+                        @include span(1);
+                        &:last-child {
+                            @include last();
+                        }
                     }
+                }
+            }
+        }
+    }
+    @include susy-breakpoint(em($desktop)) {
+        padding: 15px 31px;
+        .ul-list-type {
+            @include layout(7 10px/102px);
+            li {
+                .search-1st {
+                    @include span(1);
+                }
+                .search-2nd {
+                    @include span(5);
+                }
+                .search-3rd {
+                    @include span(1 last);
                 }
             }
             .dl-list-type {
@@ -84,14 +158,28 @@
             }
         }
         .dl-list-type {
-            @include layout(7 10px/100px);
+            @include layout(7 10px/102px);
             max-width: 836px;
-            margin: 0 38px;
             dt {
                 @include span(1);
             }
             dd {
                 @include span(6 last);
+                .select-box {
+                    @include select-box($w: 130px);
+                }
+                .input-type {
+                    @include input-type($w: 130px);
+                    &:before {
+                        left: 144px;
+                    }
+                    input {
+                        margin-right: 26px;
+                        &:last-child {
+                            float: none;
+                        }
+                    }
+                }
             }
         }
     }
