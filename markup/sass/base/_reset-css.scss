@@ -158,6 +158,7 @@ textarea {
 input {
     &[type="reset"], &[type="button"], &[type="submit"] {
         line-height: normal !important;
+        cursor: pointer;
     }
     &[type="button"], &[type="text"], &[type="image"], &[type="submit"] {
         -webkit-appearance: none;

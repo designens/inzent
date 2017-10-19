@@ -1,5 +1,5 @@
 // =======================================
-// 체크박스, 라디오 버튼 공통 타입
+// 체크박스, 라디오 버튼 공통 요소
 // =======================================
 
 // Input Color 설정
@@ -10,6 +10,7 @@ $input-bg: #fff;
 $input-sz: 18px;
 
 .checkbox-type {
+    display: inline-block;
     input {
         position: absolute;
         cursor: pointer;

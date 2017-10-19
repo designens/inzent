@@ -1589,7 +1589,7 @@ textarea:focus::-moz-placeholder { /* Mozilla Firefox 19+ */ color: transparent;
 
 textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */ color: transparent; }
 
-input[type="reset"], input[type="button"], input[type="submit"] { line-height: normal !important; }
+input[type="reset"], input[type="button"], input[type="submit"] { line-height: normal !important; cursor: pointer; }
 
 input[type="button"], input[type="text"], input[type="image"], input[type="submit"] { -webkit-appearance: none; -webkit-border-radius: 0; }
 
@@ -1619,6 +1619,8 @@ input[type="date"], input focus { box-shadow: none; -webkit-box-shadow: none; -m
 
 @media print { code[class*="language-"], pre[class*="language-"] { text-shadow: none; }
   html * { color: #000; background: #fff; } }
+
+.checkbox-type, .radio-type { display: inline-block; }
 
 .checkbox-type input, .radio-type input { position: absolute; cursor: pointer; opacity: 0; }
 
@@ -1660,15 +1662,13 @@ input[type="date"], input focus { box-shadow: none; -webkit-box-shadow: none; -m
 
 .popup .popup-headline:after, .popup .popup-content:after { clear: both; }
 
-.popup .popup-content .popup-btn-set .popup-close, .popup .popup-content .popup-btn-set .popup-save { display: inline-block; min-width: 66px; height: 30px; line-height: 28px; text-align: center; padding: 0 10px; border-radius: 3px; }
+.popup .popup-content .popup-btn-set .popup-save { font-weight: 500; color: #333; border: 2px solid #585858; background: #fff; }
 
-.popup .popup-content .popup-btn-set .popup-close { font-size: 14px; color: #333; text-shadow: 0 0 1px #7cbed8; border: 1px solid skyblue; background: skyblue; }
+.popup .popup-content .popup-btn-set .popup-save:hover, .popup .popup-content .popup-btn-set .popup-save:focus { border-color: #3466a2; transition: all .3s ease; }
 
-.popup .popup-content .popup-btn-set .popup-close:hover, .popup .popup-content .popup-btn-set .popup-close:focus, .popup .popup-content .popup-btn-set .popup-close:active { border-color: #7ab9d4; background: #7ab9d4; transition: all .3s ease; }
+.popup .popup-content .popup-btn-set .popup-close { color: #fff; background: #3466a2; }
 
-.popup .popup-content .popup-btn-set .popup-save { font-size: 14px; color: #fff; text-shadow: 0 0 1px #003359; border: 1px solid #003761; background: #003761; }
-
-.popup .popup-content .popup-btn-set .popup-save:hover, .popup .popup-content .popup-btn-set .popup-save:focus, .popup .popup-content .popup-btn-set .popup-save:active { border-color: #003257; background: #003257; transition: all .3s ease; }
+.popup .popup-content .popup-btn-set .popup-close:hover, .popup .popup-content .popup-btn-set .popup-close:focus { background: #585858; transition: all .3s ease; }
 
 /* =======================================*/
 /* Base Fonts Style Settings

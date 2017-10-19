@@ -576,6 +576,65 @@
 }
 
 /* =======================================*/
+/* 버튼 스타일
+/* ===============
+========================*/
+.btn-set-area {
+    margin-top: 20px;
+    @extend %clearfix;
+    form, button, a {
+        @include span(full);
+        margin-bottom: gutter()
+    }
+    @include susy-breakpoint(em($max-mobile) em($tablet)) {
+        form, button, a {
+            @include gallery(3 of 6);
+            margin-bottom: gutter()
+        }
+    }
+    @include susy-breakpoint(em($tablet) em($desktop)) {
+        @include layout(8 8px/83px);
+        form, button, a {
+            @include gallery(2 of 8);
+            // margin-top: 8px;
+            margin-bottom: gutter()
+        }
+    }
+    @include susy-breakpoint(em($desktop)) {
+        text-align: center;
+        form, button, a {
+            width: auto;
+            float: none;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+        *:last-child {
+            margin-right: 0;
+        }
+    }
+}
+// 버튼 내부 아이콘
+.btn-icon {
+    position: relative;
+    &:before {
+        padding-right: 5px;
+        @include fa($icon: "\f002", $fz: 22px, $color: #fff);
+    }
+}
+// 버튼 기본 사이즈
+.btn-size {
+    @include extend(btn-size);
+}
+// 버튼 기본 스타일
+.btn-defult {
+    @include extend(btn-defult);
+}
+// 버튼 활성화 스타일
+.btn-blue {
+    @include extend(btn-blue);
+}
+
+/* =======================================*/
 /* 폼 그룹 스타일
 /* =======================================*/
 .input-type,
@@ -693,6 +752,7 @@
         border: 1px solid #002847;
     }
 }
+
 /* =======================================*/
 /* 아코디언 스타일
 /* =======================================*/
@@ -751,7 +811,7 @@
 .ul-list-type {
     li {
         display: block;
-        margin-bottom: 10px;
+        line-height: 45px;
         @extend %clearfix;
     }
 }
@@ -775,7 +835,6 @@
     }
     dt, dd {
         display: block;
-        height: 45px;
         line-height: 45px;
         @extend %clearfix;
     }

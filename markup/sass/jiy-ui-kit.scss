@@ -180,16 +180,6 @@
             margin-top: 0;
         }
     }
-    button {
-        margin-top: 30px;
-        margin-right: 10px;
-        &:first-child {
-            margin-top: 10px;
-        }
-        &:last-child {
-            margin-right: 0;
-        }
-    }
 }
 
 // =======================================
@@ -219,25 +209,6 @@
     [class^="arrow-"] {
         display: inline-block;
         margin-right: 10px;
-    }
-}
-
-// =======================================
-// 아코디언 스타일
-// =======================================
-.accordion-test {
-    h3 {
-        font-size: 20px;
-        color: #69c;
-        margin-bottom: 10px;
-        .fa {
-            font-size: 16px;
-            margin-right: 10px;
-            vertical-align: 2px;
-        }
-    }
-    .aco-base {
-        margin-bottom: 20px;
     }
 }
 
@@ -272,12 +243,8 @@
 .all-pages-view-area {
     @extend .form-group;
 }
-
-// =======================================
-// 탭 스타일
-// =======================================
-.tablist {
-    width: 100%;
+.btn-type-sample {
+    @extend .form-group;
 }
 
 // =======================================

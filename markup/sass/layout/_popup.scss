@@ -97,10 +97,10 @@
             text-align: center;
             padding: 30px;
             .popup-save {
-                @extend %btn-type-1-03;
+                @extend %btn-defult;
             }
             .popup-close {
-                @extend %btn-type-1-01;
+                @extend %btn-blue;
             }
             button {
                 width: 104px;
