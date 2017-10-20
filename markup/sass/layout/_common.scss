@@ -337,10 +337,10 @@
     text-align: center;
     margin-top: 20px;
     @extend %clearfix;
-    .mobile-number {
+    .mobile-page {
         display: inline-block;
         margin: 0 18px;
-        .now-number {
+        .now-page {
             width: 65px;
             height: 32px;
             line-height: 30px;
@@ -349,7 +349,7 @@
             color: #305ed6;
             border: 1px solid #d3d4d8;
         }
-        .all-number {
+        .all-page {
             display: inline-block;
             min-width: 65px;
             height: 32px;
@@ -360,21 +360,21 @@
             
         }
     }
-    .pc-number {
+    .pc-page {
             display: none;
         }
     @include susy-breakpoint(em($tablet)) {
-        .mobile-number {
+        .mobile-page {
             display: none;
         }
     }
     @include susy-breakpoint(em($tablet) em($desktop)) {
-        .pc-number {
+        .pc-page {
             display: inline-block;
         }
     }
     @include susy-breakpoint(em($desktop)) {
-        .pc-number {
+        .pc-page {
             display: inline-block;
         }
     }

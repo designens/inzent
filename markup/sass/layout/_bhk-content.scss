@@ -1,0 +1,17 @@
+.bhk {
+    &:before, &:after {
+        position: absolute;
+        top: 1px;
+    }
+    &:before {
+        left: 0;
+        @include fa($icon: "\f105", $fz: 30px, $color: #495157);
+    }
+    &:after {
+        left: 9px;
+        @include fa($icon: "\f105", $fz: 30px, $color: #495157);
+    }
+    .input {
+        @include input-type ($w: 220px, $h: 35px, $p: 0 10px, $bd: #e6e9eb);
+    }
+}
