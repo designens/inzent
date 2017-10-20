@@ -26,6 +26,46 @@
 }
 
 /* =======================================*/
+/* 영역 숨김 / 표시 설정
+/* =======================================*/
+.area-hidden {
+    display: none;
+    visibility: hidden;
+}
+.area-visible {
+    display: none;
+    visibility: visible;
+}
+
+/* =======================================*/
+/* 공간 지우기 설정
+/* =======================================*/
+.pt-zero {
+    padding-top: 0 !important;
+}
+.pb-zero {
+    padding-bottom: 0 !important;
+}
+.pl-zero {
+    padding-left: 0 !important;
+}
+.pr-zero {
+    padding-right: 0 !important;
+}
+.mt-zero {
+    margin-top: 0 !important;
+}
+.mb-zero {
+    margin-bottom: 0 !important;
+}
+.ml-zero {
+    margin-left: 0 !important;
+}
+.mr-zero {
+    margin-right: 0 !important;
+}
+
+/* =======================================*/
 /* Skip Navigation 설정
 /* =======================================*/
 .skip-link {
@@ -294,81 +334,124 @@
 /* 페이징 스타일
 /* =======================================*/
 .paging {
-    display: inline-block;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
     @extend %clearfix;
-    @include w-center ($position: relative, $w-percent: 50%);
+    .mobile-number {
+        display: inline-block;
+        margin: 0 18px;
+        .now-number {
+            width: 65px;
+            height: 32px;
+            line-height: 30px;
+            text-align: right;
+            padding-left: 10px;
+            color: #305ed6;
+            border: 1px solid #d3d4d8;
+        }
+        .all-number {
+            display: inline-block;
+            min-width: 65px;
+            height: 32px;
+            text-align: right;
+            &:before {
+                content: "/ ";
+            }
+            
+        }
+    }
+    .pc-number {
+            display: none;
+        }
+    @include susy-breakpoint(em($tablet)) {
+        .mobile-number {
+            display: none;
+        }
+    }
+    @include susy-breakpoint(em($tablet) em($desktop)) {
+        .pc-number {
+            display: inline-block;
+        }
+    }
+    @include susy-breakpoint(em($desktop)) {
+        .pc-number {
+            display: inline-block;
+        }
+    }
     button {
-        float: left;
         position: relative;
         display: inline-block;
-        width: 36px;
-        height: 36px;
+        min-width: 32px;
+        height: 32px;
         vertical-align: top;
-        padding: 0 4px;
-        border-top: 1px solid #c2c2c2;
-        border-left: 1px solid #c2c2c2;
-        border-bottom: 1px solid #c2c2c2;
+        border: 1px solid #d3d4d8;
         &:before, &:after {
             position: absolute;
-            top: 12px;
+            top: 4px;
         }
         &.first-prev {
+            margin-right: 2px;
             margin-left: 0;
             &:before {
-                left: 9px;
-                @include fa($icon: "\f053", $fz: 12px, $color: #879dad);
+                left: 8px;
+                @include fa($icon: "\f104", $fz: 22px, $color: #494a4e);
             }
             &:after {
-                right: 11px;
-                @include fa($icon: "\f053", $fz: 12px, $color: #879dad);
+                right: 8px;
+                @include fa($icon: "\f104", $fz: 22px, $color: #494a4e);
             }
         }
         &.prev {
+            margin-right: 2px;
             &:before {
-                left: 12px;
-                @include fa($icon: "\f053", $fz: 12px, $color: #879dad);
+                left: 10px;
+                @include fa($icon: "\f104", $fz: 22px, $color: #494a4e);
             }
         }
         &.last-next {
-            border-right: 1px solid #c2c2c2;
+            margin-left: 2px;
             &:before {
-                left: 10px;
-                @include fa($icon: "\f054", $fz: 12px, $color: #879dad);
+                left: 8px;
+                @include fa($icon: "\f105", $fz: 22px, $color: #494a4e);
             }
             &:after {
-                right: 9px;
-                @include fa($icon: "\f054", $fz: 12px, $color: #879dad);
+                right: 8px;
+                @include fa($icon: "\f105", $fz: 22px, $color: #494a4e);
             }
         }
         &.next {
+            margin-left: 2px;
             &:before {
-                right: 12px;
-                @include fa($icon: "\f054", $fz: 12px, $color: #879dad);
+                right: 10px;
+                @include fa($icon: "\f105", $fz: 22px, $color: #494a4e);
             }
         }
         &:focus, &:active, &.selected {
-            border-bottom: 3px solid #112a3d;
+            background: #494a4e;
+            border-color: transparent;
             &:before, &:after {
-                color: #003761;
+                color: #fff;
             }
         }
     }
     a {
-        float: left;
         display: inline-block;
-        width: 36px;
-        height: 36px;
-        line-height: 34px;
-        padding: 0 4px;
-        border-top: 1px solid #c2c2c2;
-        border-left: 1px solid #c2c2c2;
-        border-bottom: 1px solid #c2c2c2;
+        min-width: 32px;
+        height: 32px;
+        line-height: 30px;
+        padding: 0 10px;
+        margin: 0 2px;
+        border: 1px solid #d3d4d8;
+        &:first-child {
+            margin-left: 18px;
+        }
+        &:last-child {
+            margin-right: 18px;
+        }
         &:focus, &:active, &.selected {
-            font-weight: bold;
-            color: #003761;
-            border-bottom: 3px solid #112a3d;
+            background: #494a4e;
+            border-color: transparent;
+            color: #fff;
         }
     }
 }
@@ -810,12 +893,17 @@
 .ul-list-type {
     li {
         display: block;
-        line-height: 45px;
+        line-height: 35px;
+        margin-bottom: 10px;
         @extend %clearfix;
     }
 }
 .dl-list-type {
     @extend %clearfix;
+    margin-bottom: 10px;
+    &:last-child {
+        margin-bottom: 0;
+    }
     dt {
         position: relative;
         padding-left: 13px;
@@ -823,7 +911,7 @@
         color: #333;
         &:before {
             position: absolute;
-            top: 22px;
+            top: 16px;
             left: 0;
             display: block;
             width: 3px;
@@ -834,7 +922,7 @@
     }
     dt, dd {
         display: block;
-        line-height: 45px;
+        line-height: 35px;
         @extend %clearfix;
     }
     @include susy-breakpoint(em($desktop)) {

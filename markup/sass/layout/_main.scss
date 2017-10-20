@@ -53,9 +53,8 @@
                     top: 16px;
                     left: 18px;
                     @include fa($icon: "\f002", $fz: 24px, $color: #fff);
-                    text-indent: initial;
+                    text-indent: 0;
                 }
-                
             }
         }
         .searh-keyword {
@@ -70,7 +69,7 @@
                 top: 5px;
                 left: 14px;
                 @include fa($icon: "\f002", $fz: 14px, $color: #fff);
-                text-indent: initial;
+                text-indent: 0;
             }
             a {
                 position: relative;
@@ -470,8 +469,8 @@
                 height: 24px;
                 border-top: 1px solid #d3d3d3;
                 border-bottom: 1px solid #d3d3d3;
-                border-radius: initial;
-                box-shadow: initial;
+                border-radius: 0;
+                box-shadow: none;
                 &:before {
                     color: #76a7cc;
                 }
@@ -499,7 +498,7 @@
                 }
             }
             .ui-carousel__button--prev {
-                left: initial;
+                left: auto;
                 right: 47px;
             }
             .ui-carousel__button--next {

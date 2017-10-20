@@ -50,12 +50,13 @@
 /* =======================================*/
 .keyword-search-area {
     background: #f1f1f1;
-    padding: 15px;
+    padding: 20px 10px;
     .ul-list-type {
         @include layout(5 10px/58px);
         li {
             .search-1st {
                 @include span(2);
+                margin-bottom: 5px;
             }
             .search-2nd {
                 @include span(3 firest);
@@ -66,13 +67,6 @@
         }
     }
     .dl-list-type {
-        margin-top: 15px;
-        dt {
-            line-height: 2;
-            &:before {
-                top: 12px;
-            }
-        }
         dd {
             @include layout(2 26px/152px);
             line-height: 2;
@@ -103,10 +97,12 @@
     }
     @include susy-breakpoint(em($tablet) em($desktop)) {
         @include layout(7 10px/102px);
+        padding: 20px 15px;
         .ul-list-type {
             li {
                 .search-1st {
                     @include span(1);
+                    margin-bottom: 0;
                 }
                 .search-2nd {
                     @include span(5);
@@ -117,13 +113,6 @@
             }
         }
         .dl-list-type {
-            margin-top: 15px;
-            dt {
-                line-height: 2;
-                &:before {
-                    top: 12px;
-                }
-            }
             dd {
                 @include layout(4 26px/153px);
                 .checkbox-type {
@@ -150,6 +139,7 @@
             li {
                 .search-1st {
                     @include span(1);
+                    margin-bottom: 0;
                 }
                 .search-2nd {
                     @include span(5);
@@ -193,3 +183,8 @@
         }
     }
 }
+
+/* =======================================*/
+/* 자료검색 > 소장자료 검색 > 상세
+/* (html/resources-search-view.html)
+/* =======================================*/

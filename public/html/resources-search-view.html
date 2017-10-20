@@ -279,9 +279,9 @@
                 <header class="headline">
                     <div class="site-location">
                         <a href="#"><img src="../assets/images/icon/icon-home.svg" alt="home"/></a>
-                        <a href="#">대분류</a>
-                        <a href="#">중분류</a>
-                        <a href="#">세분류</a>
+                        <a href="#">자료검색</a>
+                        <a href="#">소장자료검색</a>
+                        <a href="#">키워드 검색</a>
                     </div>
                     <h1 class="sub-title">소장자료 검색</h1>
                 </header>
@@ -289,7 +289,65 @@
                 
                 <!-- [Start] Content 상세  -->
                 <div class="content">
-                    이 곳에 컨텐츠 내용을 작성하시면 됩니다.
+                    <div class="tab-area">
+                        <div class="tab-menu">
+                            <a class="active" href="" role="button">키워드</a>
+                            <a href="" role="button">Naver 정보</a>
+                        </div>
+                        <div class="tab-panel">
+                            <div class="keyword-search-area">
+                                <ul class="ul-list-type">
+                                     <li>
+                                        <div class="radio-type">
+                                            <input type="radio" id="search-range-01" name="search-range">
+                                            <label for="search-range-01">전체</label>
+                                         </div>
+                                        <div class="radio-type">
+                                            <input type="radio" id="search-range-02" name="search-range">
+                                            <label for="search-range-02">단행본</label>
+                                         </div>
+                                        <div class="radio-type">
+                                            <input type="radio" id="search-range-03" name="search-range">
+                                            <label for="search-range-03">연속간행물</label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                         <div class="select-box">
+                                            <label for="site-link">전체</label>
+                                            <select id="site-link" name="site-link-item">
+                                                <option selected="selected">전체</option>
+                                                <option>옵션 01</option>
+                                                <option>옵션 02</option>
+                                                <option>옵션 03</option>
+                                            </select>
+                                        </div>
+                                     </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- [Start] Paging Area -->
+                        <div class="paging">
+    <button type="button" class="first-prev" aria-label="처음으로 이동"></button>
+    <button type="button" class="prev" aria-label="이전 페이지"></button>
+    <div class="mobile-number">
+        <input class="now-number" type="number" name="now-number" aria-label="현재 페이지"><span class="all-number" aria-label="총 페이지">19</span>
+    </div>
+    <div class="pc-number">
+        <a href role="button">1</a>
+        <a href role="button">2</a>
+        <a href role="button" class="selected">3</a>
+        <a href role="button">4</a>
+        <a href role="button">5</a>
+    </div>
+    <button type="button" class="next"" aria-label="다음 페이지"></button>
+    <button type="button" class="last-next" aria-label="끝으로 이동"></button>
+</div>
+                        <!-- [End] Paging Area -->
+                        <div class="btn-set-area">
+                            <a href="" class="btn-size btn-blue" type="button">바구니넣기</a>
+                            <a href="" class="btn-size btn-defult" type="button">바구니보기</a>
+                        </div>
+                    </div>
                 </div>
                 <!-- [End] Content 상세  -->
 
