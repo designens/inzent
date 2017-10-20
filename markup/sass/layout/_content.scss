@@ -161,8 +161,8 @@
                     width: auto;
                     float: none;
                     clear: none !important;
-                    margin-right: initial !important;
-                    margin-left: initial !important;
+                    margin-right: auto !important;
+                    margin-left: auto !important;
                 }
                 .select-box {
                     @include select-box($w: 130px);
