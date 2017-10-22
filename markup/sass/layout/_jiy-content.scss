@@ -64,6 +64,9 @@
             .search-3rd {
                 @include span(2 last);
             }
+            &:last-child {
+                margin-bottom: 10px;
+            }
         }
     }
     .dl-list-type {
@@ -188,3 +191,53 @@
 /* 자료검색 > 소장자료 검색 > 상세
 /* (html/resources-search-view.html)
 /* =======================================*/
+.keyword-search-area {
+    &.view{
+        .ul-list-type {
+            @include layout(5 10px/58px);
+            li {
+                &:first-child {
+                    margin-top: -5px;
+                    margin-bottom: 0;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                    div {
+                        margin-bottom: 10px;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+                .fr-align {
+                    display: block;
+                    float: inherit;
+                }
+            }
+        }
+        @include susy-breakpoint(em($tablet)) {
+            .ul-list-type {
+                li {
+                    &:first-child {
+                        .fr-align {
+                            float: right;
+                            margin-right: -8px;
+                        }
+                    }
+                    &:last-child {
+                        @include layout(7 10px/102px);
+                        .select-box {
+                            @include span(1);
+                        }
+                        .input-type-search {
+                            @include span(6 last);
+                            &.full {
+                                min-width: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

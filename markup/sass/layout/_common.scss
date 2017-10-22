@@ -26,6 +26,23 @@
 }
 
 /* =======================================*/
+/* 아이템 정렬
+/* =======================================*/
+.fl-align {
+    float: left;
+    &:after {
+        clear: both;
+    }
+}
+
+.fr-align {
+    float: right;
+    &:after {
+        clear: both;
+    }
+}
+
+/* =======================================*/
 /* 영역 숨김 / 표시 설정
 /* =======================================*/
 .area-hidden {
@@ -331,132 +348,6 @@
 }
 
 /* =======================================*/
-/* 페이징 스타일
-/* =======================================*/
-.paging {
-    text-align: center;
-    margin-top: 20px;
-    @extend %clearfix;
-    .mobile-page {
-        display: inline-block;
-        margin: 0 18px;
-        .now-page {
-            width: 65px;
-            height: 32px;
-            line-height: 30px;
-            text-align: right;
-            padding-left: 10px;
-            color: #305ed6;
-            border: 1px solid #d3d4d8;
-        }
-        .all-page {
-            display: inline-block;
-            min-width: 65px;
-            height: 32px;
-            text-align: right;
-            &:before {
-                content: "/ ";
-            }
-            
-        }
-    }
-    .pc-page {
-            display: none;
-        }
-    @include susy-breakpoint(em($tablet)) {
-        .mobile-page {
-            display: none;
-        }
-    }
-    @include susy-breakpoint(em($tablet) em($desktop)) {
-        .pc-page {
-            display: inline-block;
-        }
-    }
-    @include susy-breakpoint(em($desktop)) {
-        .pc-page {
-            display: inline-block;
-        }
-    }
-    button {
-        position: relative;
-        display: inline-block;
-        min-width: 32px;
-        height: 32px;
-        vertical-align: top;
-        border: 1px solid #d3d4d8;
-        &:before, &:after {
-            position: absolute;
-            top: 4px;
-        }
-        &.first-prev {
-            margin-right: 2px;
-            margin-left: 0;
-            &:before {
-                left: 8px;
-                @include fa($icon: "\f104", $fz: 22px, $color: #494a4e);
-            }
-            &:after {
-                right: 8px;
-                @include fa($icon: "\f104", $fz: 22px, $color: #494a4e);
-            }
-        }
-        &.prev {
-            margin-right: 2px;
-            &:before {
-                left: 10px;
-                @include fa($icon: "\f104", $fz: 22px, $color: #494a4e);
-            }
-        }
-        &.last-next {
-            margin-left: 2px;
-            &:before {
-                left: 8px;
-                @include fa($icon: "\f105", $fz: 22px, $color: #494a4e);
-            }
-            &:after {
-                right: 8px;
-                @include fa($icon: "\f105", $fz: 22px, $color: #494a4e);
-            }
-        }
-        &.next {
-            margin-left: 2px;
-            &:before {
-                right: 10px;
-                @include fa($icon: "\f105", $fz: 22px, $color: #494a4e);
-            }
-        }
-        &:focus, &:active, &.selected {
-            background: #494a4e;
-            border-color: transparent;
-            &:before, &:after {
-                color: #fff;
-            }
-        }
-    }
-    a {
-        display: inline-block;
-        min-width: 32px;
-        height: 32px;
-        line-height: 30px;
-        padding: 0 10px;
-        margin: 0 2px;
-        border: 1px solid #d3d4d8;
-        &:first-child {
-            margin-left: 18px;
-        }
-        &:last-child {
-            margin-right: 18px;
-        }
-        &:focus, &:active, &.selected {
-            background: #494a4e;
-            border-color: transparent;
-            color: #fff;
-        }
-    }
-}
-
-/* =======================================*/
 /* Footer : 관련 사이트
 /* =======================================*/
 .footer-link-banner {
@@ -660,14 +551,15 @@
 
 /* =======================================*/
 /* 버튼 스타일
-/* ===============
-========================*/
+/* =======================================*/
 .btn-set-area {
     margin-top: 20px;
+    text-align: center;
     @extend %clearfix;
     form, button, a {
         @include span(full);
         margin-bottom: gutter();
+        vertical-align: top;
     }
     @include susy-breakpoint(em($min-mobile) em($tablet)) {
         form, button, a {
@@ -678,12 +570,37 @@
     @include susy-breakpoint(em($tablet) em($desktop)) {
         @include layout(8 8px/83px);
         form, button, a {
-            @include gallery(2 of 8);
+            @include gallery(4 of 8);
             margin-bottom: gutter();
+        }
+        &.col-1 {
+            form, button, a {
+                @include gallery(8 of 8);
+                margin-bottom: gutter();
+            }
+        }
+        &.col-3 {
+            @include layout(3 9px/224px);
+            form, button, a {
+                @include gallery(1 of 3);
+                margin-bottom: gutter();
+            }
+        }
+        &.col-4 {
+            form, button, a {
+                @include gallery(2 of 8);
+                margin-bottom: gutter();
+            }
+        }
+        &.col-5 {
+            @include layout(5 10px/130px);
+            form, button, a {
+                @include gallery(1 of 5);
+                margin-bottom: gutter();
+            }
         }
     }
     @include susy-breakpoint(em($desktop)) {
-        text-align: center;
         form, button, a {
             width: auto;
             float: none;
@@ -703,9 +620,17 @@
         @include fa($icon: "\f002", $fz: 22px, $color: #fff);
     }
 }
-// 버튼 기본 사이즈
-.btn-size {
-    @include extend(btn-size);
+// 테이블 내부 버튼 기본 사이즈
+.btn-in-size {
+    @include extend(btn-in-size);
+}
+// 테이블 외부 버튼 기본 사이즈
+.btn-out-size {
+    @include extend(btn-out-size);
+}
+// 아이템 버튼 기본 사이즈
+.btn-item-size {
+    @include extend(btn-item-size);
 }
 // 버튼 기본 스타일
 .btn-defult {
@@ -714,6 +639,142 @@
 // 버튼 활성화 스타일
 .btn-blue {
     @include extend(btn-blue);
+}
+
+/* =======================================*/
+/* 페이징 스타일
+/* =======================================*/
+.paging {
+    text-align: center;
+    margin-top: 20px;
+    @extend %clearfix;
+    .mobile-page {
+        display: inline-block;
+        margin: 0 18px;
+        .now-page {
+            width: 65px;
+            height: 32px;
+            line-height: 30px;
+            text-align: right;
+            padding-left: 10px;
+            color: #305ed6;
+            border: 1px solid #d3d4d8;
+        }
+        .all-page {
+            display: inline-block;
+            min-width: 65px;
+            height: 32px;
+            text-align: right;
+            &:before {
+                content: "/ ";
+            }
+            
+        }
+    }
+    .pc-page {
+            display: none;
+        }
+    @include susy-breakpoint(em($tablet)) {
+        .mobile-page {
+            display: none;
+        }
+    }
+    @include susy-breakpoint(em($tablet) em($desktop)) {
+        .pc-page {
+            display: inline-block;
+        }
+    }
+    @include susy-breakpoint(em($desktop)) {
+        .pc-page {
+            display: inline-block;
+        }
+    }
+    button {
+        position: relative;
+        display: inline-block;
+        min-width: 32px;
+        height: 32px;
+        vertical-align: top;
+        border: 1px solid #d3d4d8;
+        &:before, &:after {
+            position: absolute;
+            top: 3px;
+        }
+        &.first-prev {
+            margin-right: 2px;
+            margin-left: 0;
+            &:before {
+                left: 7px;
+                @include fa($icon: "\f104", $fz: 22px, $color: #494a4e);
+            }
+            &:after {
+                right: 10px;
+                @include fa($icon: "\f104", $fz: 22px, $color: #494a4e);
+            }
+        }
+        &.prev {
+            margin-right: 2px;
+            &:before {
+                left: 10px;
+                @include fa($icon: "\f104", $fz: 22px, $color: #494a4e);
+            }
+        }
+        &.last-next {
+            margin-left: 2px;
+            &:before {
+                left: 10px;
+                @include fa($icon: "\f105", $fz: 22px, $color: #494a4e);
+            }
+            &:after {
+                right: 7px;
+                @include fa($icon: "\f105", $fz: 22px, $color: #494a4e);
+            }
+        }
+        &.next {
+            margin-left: 2px;
+            &:before {
+                right: 10px;
+                @include fa($icon: "\f105", $fz: 22px, $color: #494a4e);
+            }
+        }
+        &:hover {
+            border: 1px solid #3466a2;
+            &:before, &:after {
+                color: #3466a2;
+            }
+        }
+        &:focus, &:active, &.selected {
+            background: #494a4e;
+            border-color: transparent;
+            &:before, &:after {
+                color: #fff;
+            }
+        }
+    }
+    a {
+        display: inline-block;
+        min-width: 32px;
+        height: 32px;
+        line-height: 30px;
+        padding: 0 10px;
+        margin: 0 2px;
+        border: 1px solid #d3d4d8;
+        &:first-child {
+            margin-left: 18px;
+        }
+        &:last-child {
+            margin-right: 18px;
+        }
+        &:hover {
+            color: #3466a2;
+            border: 1px solid #3466a2;
+        }
+        &:focus, &:active, &.selected {
+            background: #494a4e;
+            border-color: transparent;
+            color: #fff;
+        }
+    }
 }
 
 /* =======================================*/
@@ -802,7 +863,20 @@
         }
     }
     &.full {
-        @include input-type(100%);
+        @include input-type(100%); 
+    }
+}
+.input-type-search {
+    display: inline-block;
+    position: relative;
+    [class*="btn-"] {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    @include input-type ($p: 0 45px 0 10px, $bd: 2px solid #3466a2, $bd-focus: 2px solid #3466a2, $bg: #fff);
+    &.full {
+        @include input-type ($w: 100%, $p: 0 45px 0 10px, $bd: 2px solid #3466a2, $bd-focus: 2px solid #3466a2, $bg: #fff);
     }
 }
 
@@ -896,6 +970,9 @@
         line-height: 35px;
         margin-bottom: 10px;
         @extend %clearfix;
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 }
 .dl-list-type {

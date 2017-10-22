@@ -295,24 +295,28 @@
                             <a href="" role="button">Naver 정보</a>
                         </div>
                         <div class="tab-panel">
-                            <div class="keyword-search-area">
+                            <div class="keyword-search-area view">
                                 <ul class="ul-list-type">
                                      <li>
                                         <div class="radio-type">
                                             <input type="radio" id="search-range-01" name="search-range">
                                             <label for="search-range-01">전체</label>
-                                         </div>
+                                        </div>
                                         <div class="radio-type">
                                             <input type="radio" id="search-range-02" name="search-range">
                                             <label for="search-range-02">단행본</label>
-                                         </div>
+                                        </div>
                                         <div class="radio-type">
                                             <input type="radio" id="search-range-03" name="search-range">
                                             <label for="search-range-03">연속간행물</label>
                                         </div>
+                                        <div class="checkbox-type fr-align">
+                                            <input type="checkbox" id="data-type-01" name="data-type-01">
+                                            <label for="data-type-01">결과내 검색</label>
+                                        </div>
                                      </li>
                                      <li>
-                                         <div class="select-box">
+                                        <div class="select-box full">
                                             <label for="site-link">전체</label>
                                             <select id="site-link" name="site-link-item">
                                                 <option selected="selected">전체</option>
@@ -320,6 +324,10 @@
                                                 <option>옵션 02</option>
                                                 <option>옵션 03</option>
                                             </select>
+                                        </div>
+                                        <div class="input-type-search full">
+                                            <input type="text" placeholder="검색 키워드를 입력하세요" />
+                                            <button type="button" class="btn-in-size btn-blue">검색</button>
                                         </div>
                                      </li>
                                 </ul>
@@ -346,8 +354,8 @@
 </div>
                         <!-- [End] Paging Area -->
                         <div class="btn-set-area">
-                            <a href="" class="btn-size btn-blue" type="button">바구니넣기</a>
-                            <a href="" class="btn-size btn-defult" type="button">바구니보기</a>
+                            <a href="" class="btn-out-size btn-blue" type="button">바구니넣기</a>
+                            <a href="" class="btn-out-size btn-defult" type="button">바구니보기</a>
                         </div>
                     </div>
                 </div>

@@ -1,17 +1,468 @@
-.bhk {
-    &:before, &:after {
-        position: absolute;
-        top: 1px;
+/* =======================================*/
+/* 공통 요소 스타일
+/* =======================================*/
+// 테이블 스타일
+.type-ta01.bhk {
+    width: 100%;
+    border-top: 2px solid #999999;
+    thead {
+        th {
+            background: #f7f7f7;
+            color: #333;
+            letter-spacing: -0.5pt;
+            padding: 13px 0;
+            text-align: center;
+            font-weight: 500;
+            border-bottom: 1px solid #dedede;
+            line-height: 1.6rem;
+        }
     }
-    &:before {
-        left: 0;
-        @include fa($icon: "\f105", $fz: 30px, $color: #495157);
+    tbody {
+        th {
+            text-align: left;
+            background: #f7f7f7;
+            padding: 21px 10px;
+            color: #333;
+            line-height: 1.6rem;
+            border-bottom: 1px solid #dedfe2;
+        }
+        th.c {
+            text-align: center;
+        }
+        td {
+            padding: 13px;
+            color: #464646;
+            border-bottom: 1px solid #dedfe2;
+        }
+        .pt10 {
+            padding-top: 10px;
+        }
+        span.orange {
+            color: #ff8134;
+            font-weight: 300;
+        }
+        span.gray {
+            color: #888;
+            font-weight: 300;
+        }
     }
-    &:after {
-        left: 9px;
-        @include fa($icon: "\f105", $fz: 30px, $color: #495157);
+    @media only screen and (max-width: $tablet) {
+        span {
+            clear: both;
+            display: block;
+            width: 100%;
+        }
+        tbody {
+            span {
+                .ml10 {
+                    margin-left: 0px;
+                }
+            }
+        }
     }
-    .input {
-        @include input-type ($w: 220px, $h: 35px, $p: 0 10px, $bd: #e6e9eb);
+}
+// 설명박스 스타일
+.explan {
+    color: #888;
+    border-top: 1px solid #e5e6e6;
+    border-bottom: 1px solid #e5e6e6;
+    background: url($bg-dashed01);
+    padding: 20px;
+}
+
+// 블릿 스타일
+.title-sub-list {
+    margin: 20px 0 5px;
+    padding-left: 16px;
+    background: url(../images/common/bullet-1.png) no-repeat 0 9px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #333;
+    line-height: 27px;
+}
+.list-square-black {
+    margin-top: 4px;
+    >li {
+        position: relative;
+        padding-left: 11px;
+        line-height: 24px;
+        &:before {
+            position: absolute;
+            top: 11px;
+            left: 0;
+            display: block;
+            width: 3px;
+            height: 3px;
+            background: #505050;
+            content: "";
+        }
+    }
+}
+.list-square_black {
+    >li {
+        >ul {
+            margin-top: 5px;
+        }
+    }
+    .txt-blue {
+        color: #3466a2;
+    }
+    .txt-orange {
+        color: #cf4b3a;
+        font-size: 13px;
+    }
+}
+.list-square_black.bold {
+    li {
+        font-weight: 700;
+    }
+}
+.list-minus-gray {
+    margin-top: 5px;
+    >li {
+        position: relative;
+        padding-left: 10px;
+        font-size: 1.3rem;
+        color: #888;
+        line-height: 19px;
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #464646;
+            content: '-';
+        }
+        >ul {
+            margin-top: 5px;
+        }
+    }
+}
+.list-minus-gray.last {
+    margin-bottom: 5px;
+}
+
+/* =======================================*/
+/* 기타 > 로그인
+/* html/login.html
+/* =======================================*/
+
+.login-m.bhk {
+    margin-top: 20px;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    .lo-wp {
+        overflow: hidden;
+        width: 60%;
+        margin: 50px auto;
+        form[name="login-frm"] {
+            float: left;
+            width: 77%;
+            .lg-wrap {
+                .id {
+                    .in-id {
+                        width: 18%;
+                        line-height: 35px;
+                        display: inline-block;
+                    }
+                }
+                .pw {
+                    .in-ps {
+                        width: 18%;
+                        line-height: 35px;
+                        display: inline-block;
+                    }
+                }
+                input {
+                    width: 73%;
+                    height: 35px;
+                    margin: 0 0 10px 10px;
+                    padding: 0 0 0 5px;
+                    background: #fff;
+                    border-top: 1px solid #c2c2c2;
+                    border-left: 1px solid #c2c2c2;
+                    border-right: 1px solid #ddd;
+                    border-bottom: 1px solid #ddd;
+                }
+            }
+        }
+        .login {
+            float: right;
+            .btn-login-size {
+                min-width: 80px;
+                width: 22%;
+                height: 80px;
+                text-align: center;
+                padding: 20px 0;
+            }
+        }
+    }
+    @media only screen and (max-width: $tablet) {
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+        .lo-wp {
+            overflow: hidden;
+            width: 290px;
+            padding: 0 15px 30px;
+            margin: 0 auto;
+            form[name="login-frm"] {
+                width: 100%;
+                .lg-wrap {
+                    .id {
+                        .in-id {
+                            width: 60px;
+                            line-height: 35px;
+                            display: inline-block;
+                        }
+                    }
+                    .pw {
+                        .in-ps {
+                            width: 60px;
+                            line-height: 35px;
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+            .login {
+                .btn-login-size {
+                    width: 100%;
+                    height: 40px;
+                    padding: 0px 0px;
+                }
+            }
+        }
+    }
+}
+.login-f.bhk {
+    border-bottom: 1px solid #b1b1b1;
+    padding-top: 30px;
+    text-align: center;
+    .f-wrap {
+        width: 62%;
+        padding: 10px 0 40px 0;
+        margin: 0 auto;
+        overflow: hidden;
+        .se {
+            text-align: left;
+            display: inline-block;
+            .search_id {
+                padding: 0 30px 12px 0;
+                color: #777;
+            }
+            .se_id {
+                padding: 8px 31px 10px 11px;
+                cursor: pointer;
+                color: #666;
+                border: 1px solid #d5d5d5;
+            }
+        }
+        .jo {
+            text-align: left;
+            display: inline-block;
+            .join {
+                padding: 0 0 12px 0;
+                color: #777;
+            }
+        }
+    }
+    @media only screen and (max-width: $tablet) {
+        .f-wrap {
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            .jo {
+                .join {
+                    display: none;
+                }
+            }
+            .se {
+                .search-id {
+                    display: none;
+                }
+            }
+        }
+        background-color: #f1f1f1;
+        border-bottom: none;
+    }
+}
+
+/* =======================================*/
+/* 기타 > 회원가입 > 신청 폼
+/* html/membership-application-form.html
+/* =======================================*/
+.agree-box.bhk {
+    border: 1px solid #ccc;
+    padding: 15px;
+    max-height: 234px;
+    overflow: auto;
+    color: #666;
+    font-weight: 300;
+    .big-title {
+        font-size: 1.7rem;
+        color: #ff8134;
+        width: 100%;
+        padding-top: 10px;
+    }
+    .first-title {
+        padding: 10px 0;
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #464646;
+        width: 100%;
+    }
+    > ul {
+        > li {
+            padding: 3px 0;
+        }
+    }
+    p {
+        padding: 8px 0;
+    }
+}
+.certification.bhk {
+    width: 100%;
+    overflow: hidden;
+    ul {
+        display: inline-block;
+        text-align: center;
+        li {
+            background: #f1f1f1;
+            width: 48%;
+            margin-left: 4%;
+            float: left;
+            min-height: 336px;
+            padding: 30px;
+            dl {
+                > dt {
+                    font-size: 2rem;
+                    font-weight: 500;
+                    padding: 20px 0;
+                }
+                > dd {
+                    color: #888;
+                    min-height: 110px;
+                    font-weight: 400;
+                }
+            }
+        }
+        li.phon {
+            &::before {
+                content: '';
+                display: block;
+                position: relative;
+                width: 100px;
+                height: 80px;
+                margin-left: -50px;
+                top: 0;
+                left: 50%;
+                background: #f1f1f1 url($icon-phon) center top no-repeat;
+            }
+        }
+        li.ipin {
+            &::before {
+                content: '';
+                display: block;
+                position: relative;
+                width: 100px;
+                height: 80px;
+                margin-left: -50px;
+                top: 0;
+                left: 50%;
+                background: #f1f1f1 url($icon-ipin) center top no-repeat;
+            }
+        }
+    }
+    li {
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+    @media only screen and (max-width: $tablet) {
+        ul {
+            li {
+                background: #f1f1f1;
+                width: 100%;
+                margin-bottom: 4%;
+                margin-left: 0;
+                min-height: 336px;
+                padding: 30px;
+            }
+        }
+    }
+}
+// 스탭박스 스타일
+.step-box {
+    width: 100%;
+    margin: 20px 0 40px 0;
+    text-align: center;
+    ol {
+        li {
+            display: inline-block;
+            width: 30.69%;
+            margin-right: 10px;
+            padding: 10px 0;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    dl {
+        padding: 10px 0;
+        border: 1px solid #5f7a8f;
+    }
+    dt {
+        color: #5f7a8f;
+        font-size: 3rem;
+        font-weight: 400;
+        text-align: center;
+    }
+    dd {
+        padding: 10px 0 0 0;
+        font-size: 2rem;
+        text-align: center;
+    }
+    li.on {
+        dt {
+            background: #5f7a8f;
+            color: #fff;
+            padding: 5px;
+        }
+        dd {
+            background: #5f7a8f;
+            color: #fff;
+            padding: 5px;
+        }
+        dl {
+            background: #5f7a8f;
+            color: #fff;
+            padding: 5px;
+        }
+    }
+}
+@media only screen and (max-width: $tablet) {
+    .step-box {
+        dl {
+            padding: 5px;
+        }
+        ol {
+            li {
+                display: inline-block;
+                width: 100%;
+                padding: 1px 0;
+            }
+        }
+        dt {
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: 400;
+            text-align: center;
+        }
+        dd {
+            display: inline-block;
+            padding: 5px 0 0 0;
+            font-size: 2rem;
+            text-align: center;
+        }
     }
 }

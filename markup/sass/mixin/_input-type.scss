@@ -1,11 +1,11 @@
-@mixin input-type ($w: 130px, $h: 35px, $p: 0 10px, $bd: #c4c4c4, $bg: #fff) {
+@mixin input-type ($w: 130px, $h: 35px, $p: 0 10px, $bd: 1px solid #c4c4c4, $bd-focus: 1px solid #3466a2,  $bg: #fff) {
     min-width: $w;
     input {
         width: $w;
         height: $h;
         line-height: $h;
         padding: $p;
-        border: 1px solid $bd;
+        border: $bd;
         background: $bg;
     }
     input {
@@ -26,7 +26,7 @@
             color: inherit;
         }
         &:focus {
-            border: 1px solid #002847;
+            border: $bd-focus;
         }
         &:focus::-webkit-input-placeholder {
           color:transparent;

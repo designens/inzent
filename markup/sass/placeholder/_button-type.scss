@@ -1,5 +1,11 @@
-%btn-size {
+%btn-in-size {
+    @include btn-size($h: 35px);
+}
+%btn-out-size {
     @include btn-size;
+}
+%btn-item-size {
+    @include btn-size($h: 30px);
 }
 %btn-defult {
     @include btn-defult-type ($color: #333, $bd: #585858, $bg: #fff, $bd-hover: #3466a2);
