@@ -33,6 +33,7 @@
             padding: 13px;
             color: #464646;
             border-bottom: 1px solid #dedfe2;
+            vertical-align: middle;
         }
         .pt10 {
             padding-top: 10px;
@@ -51,6 +52,7 @@
             clear: both;
             display: block;
             width: 100%;
+            line-height: 35px;
         }
         tbody {
             span {
@@ -74,7 +76,7 @@
 .title-sub-list {
     margin: 20px 0 5px;
     padding-left: 16px;
-    background: url(../images/common/bullet-1.png) no-repeat 0 9px;
+    background: url($bullet-1) 0 9px no-repeat;
     font-size: 1.8rem;
     font-weight: 500;
     color: #333;
@@ -82,7 +84,7 @@
 }
 .list-square-black {
     margin-top: 4px;
-    >li {
+    > li {
         position: relative;
         padding-left: 11px;
         line-height: 24px;
@@ -96,11 +98,7 @@
             background: #505050;
             content: "";
         }
-    }
-}
-.list-square_black {
-    >li {
-        >ul {
+        > ul {
             margin-top: 5px;
         }
     }
@@ -111,15 +109,15 @@
         color: #cf4b3a;
         font-size: 13px;
     }
-}
-.list-square_black.bold {
-    li {
-        font-weight: 700;
+    &.bold {
+        li {
+            font-weight: 700;
+        }
     }
 }
 .list-minus-gray {
     margin-top: 5px;
-    >li {
+    > li {
         position: relative;
         padding-left: 10px;
         font-size: 1.3rem;
@@ -132,20 +130,19 @@
             color: #464646;
             content: '-';
         }
-        >ul {
+        > ul {
             margin-top: 5px;
         }
     }
-}
-.list-minus-gray.last {
-    margin-bottom: 5px;
+    &.last {
+        margin-bottom: 5px;
+    }
 }
 
 /* =======================================*/
 /* 기타 > 로그인
 /* html/login.html
 /* =======================================*/
-
 .login-m.bhk {
     margin-top: 20px;
     overflow: hidden;
@@ -288,8 +285,86 @@
 }
 
 /* =======================================*/
-/* 기타 > 회원가입 > 신청 폼
-/* html/membership-application-form.html
+/* 기타 > 회원가입 > 신청 폼 > stap1
+/* 기타 > 회원가입 > 신청 폼 > stap2
+/* 기타 > 회원가입 > 신청 폼 > stap3
+/* =======================================*/
+.step-box.bhk {
+    width: 100%;
+    margin: 20px 0 40px 0;
+    text-align: center;
+    ol {
+        li {
+            display: inline-block;
+            width: 30.69%;
+            margin-right: 10px;
+            padding: 10px 0;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    dl {
+        padding: 10px 0;
+        border: 1px solid #5f7a8f;
+    }
+    dt {
+        color: #5f7a8f;
+        font-size: 3rem;
+        font-weight: 400;
+        text-align: center;
+    }
+    dd {
+        padding: 10px 0 0 0;
+        font-size: 2rem;
+        text-align: center;
+    }
+    li.on {
+        dt {
+            background: #5f7a8f;
+            color: #fff;
+            padding: 5px;
+        }
+        dd {
+            background: #5f7a8f;
+            color: #fff;
+            padding: 5px;
+        }
+        dl {
+            background: #5f7a8f;
+            color: #fff;
+            padding: 5px;
+        }
+    }
+    @media only screen and (max-width: $tablet) {
+        dl {
+            padding: 5px;
+        }
+        ol {
+            li {
+                display: inline-block;
+                width: 100%;
+                padding: 1px 0;
+            }
+        }
+        dt {
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: 400;
+            text-align: center;
+        }
+        dd {
+            display: inline-block;
+            padding: 5px 0 0 0;
+            font-size: 2rem;
+            text-align: center;
+        }
+    }
+}
+
+/* =======================================*/
+/* 기타 > 회원가입 > 신청 폼 > stap1
+/* (html/membership-application-form-stap1.html)
 /* =======================================*/
 .agree-box.bhk {
     border: 1px solid #ccc;
@@ -320,6 +395,11 @@
         padding: 8px 0;
     }
 }
+
+/* =======================================*/
+/* 기타 > 회원가입 > 신청 폼 > stap2
+/* (html/membership-application-form-stap2.html)
+/* =======================================*/
 .certification.bhk {
     width: 100%;
     overflow: hidden;
@@ -388,81 +468,6 @@
                 min-height: 336px;
                 padding: 30px;
             }
-        }
-    }
-}
-// 스탭박스 스타일
-.step-box {
-    width: 100%;
-    margin: 20px 0 40px 0;
-    text-align: center;
-    ol {
-        li {
-            display: inline-block;
-            width: 30.69%;
-            margin-right: 10px;
-            padding: 10px 0;
-            &:last-child {
-                margin-right: 0;
-            }
-        }
-    }
-    dl {
-        padding: 10px 0;
-        border: 1px solid #5f7a8f;
-    }
-    dt {
-        color: #5f7a8f;
-        font-size: 3rem;
-        font-weight: 400;
-        text-align: center;
-    }
-    dd {
-        padding: 10px 0 0 0;
-        font-size: 2rem;
-        text-align: center;
-    }
-    li.on {
-        dt {
-            background: #5f7a8f;
-            color: #fff;
-            padding: 5px;
-        }
-        dd {
-            background: #5f7a8f;
-            color: #fff;
-            padding: 5px;
-        }
-        dl {
-            background: #5f7a8f;
-            color: #fff;
-            padding: 5px;
-        }
-    }
-}
-@media only screen and (max-width: $tablet) {
-    .step-box {
-        dl {
-            padding: 5px;
-        }
-        ol {
-            li {
-                display: inline-block;
-                width: 100%;
-                padding: 1px 0;
-            }
-        }
-        dt {
-            display: inline-block;
-            font-size: 2rem;
-            font-weight: 400;
-            text-align: center;
-        }
-        dd {
-            display: inline-block;
-            padding: 5px 0 0 0;
-            font-size: 2rem;
-            text-align: center;
         }
     }
 }

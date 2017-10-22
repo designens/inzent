@@ -1662,15 +1662,15 @@ input[type="date"], input focus { box-shadow: none; -webkit-box-shadow: none; -m
 
 #gnb-menu:after, #gnb-all-menu:after, .header:after, .top-area:after, #container:after, .footer-link-banner .wrap .link-banner-area .owl-carousel:after, .btn-set-area:after, .paging:after, .input-type.tel:after, .tab-area .tab-menu:after, .ul-list-type li:after, .dl-list-type:after, .dl-list-type dt:after, .dl-list-type dd:after { clear: both; }
 
-.btn-in-size { position: relative; display: inline-block; min-width: 70px; height: 35px; line-height: 31px; font-size: 14px; text-align: center; padding: 0 20px; }
+.btn-in-size { position: relative; display: inline-block; min-width: 70px; height: 35px; line-height: 31px; font-size: 14px; text-align: center; vertical-align: middle; padding: 0 20px; }
 
 .btn-in-size input[type="button"] { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-.btn-out-size { position: relative; display: inline-block; min-width: 70px; height: 40px; line-height: 36px; font-size: 14px; text-align: center; padding: 0 20px; }
+.btn-out-size { position: relative; display: inline-block; min-width: 70px; height: 40px; line-height: 36px; font-size: 14px; text-align: center; vertical-align: middle; padding: 0 20px; }
 
 .btn-out-size input[type="button"] { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-.btn-item-size { position: relative; display: inline-block; min-width: 70px; height: 30px; line-height: 26px; font-size: 14px; text-align: center; padding: 0 20px; }
+.btn-item-size { position: relative; display: inline-block; min-width: 70px; height: 30px; line-height: 26px; font-size: 14px; text-align: center; vertical-align: middle; padding: 0 20px; }
 
 .btn-item-size input[type="button"] { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
@@ -2158,7 +2158,7 @@ head:hover ~ .wrap:before, head:hover ~ body .wrap:before { position: absolute; 
 
 .footer .site-link-area { display: none; padding-top: 45px; text-align: right; }
 
-.footer .site-link-area .select-box { position: relative; width: 150px; height: 28px; }
+.footer .site-link-area .select-box { position: relative; width: 150px; height: 28px; vertical-align: middle; }
 
 .footer .site-link-area .select-box label { position: absolute; width: 100%; height: 28px; color: transparent; z-index: -1; }
 
@@ -2302,9 +2302,9 @@ head:hover ~ .wrap:before, head:hover ~ body .wrap:before { position: absolute; 
 /* =======================================*/
 /* 인풋 스타일
 /* =======================================*/
-.input-type { display: inline-block; min-width: 130px; }
+.input-type { display: inline-block; min-width: 130px; height: 35px; }
 
-.input-type input { width: 130px; height: 35px; line-height: 35px; padding: 0 10px; border: 1px solid #c4c4c4; background: #fff; }
+.input-type input { width: 130px; height: 35px; line-height: 33px; padding: 0 10px; border: 1px solid #c4c4c4; background: #fff; vertical-align: -1px; }
 
 .input-type input::-webkit-input-placeholder { /* Chrome/Opera/Safari*/ color: inherit; }
 
@@ -2326,9 +2326,9 @@ head:hover ~ .wrap:before, head:hover ~ body .wrap:before { position: absolute; 
 
 .input-type label { line-height: 35px; }
 
-.input-type.tel { min-width: 71px; }
+.input-type.tel { min-width: 71px; height: 35px; }
 
-.input-type.tel input { width: 71px; height: 35px; line-height: 35px; padding: 0 10px; border: 1px solid #c4c4c4; background: #fff; }
+.input-type.tel input { width: 71px; height: 35px; line-height: 33px; padding: 0 10px; border: 1px solid #c4c4c4; background: #fff; vertical-align: -1px; }
 
 .input-type.tel input::-webkit-input-placeholder { /* Chrome/Opera/Safari*/ color: inherit; }
 
@@ -2358,9 +2358,9 @@ head:hover ~ .wrap:before, head:hover ~ body .wrap:before { position: absolute; 
 
 .input-type.tel .dialog:last-child:after { content: ""; }
 
-.input-type.e-mail { min-width: 140px; }
+.input-type.e-mail { min-width: 140px; height: 35px; }
 
-.input-type.e-mail input { width: 140px; height: 35px; line-height: 35px; padding: 0 10px; border: 1px solid #c4c4c4; background: #fff; }
+.input-type.e-mail input { width: 140px; height: 35px; line-height: 33px; padding: 0 10px; border: 1px solid #c4c4c4; background: #fff; vertical-align: -1px; }
 
 .input-type.e-mail input::-webkit-input-placeholder { /* Chrome/Opera/Safari*/ color: inherit; }
 
@@ -2394,9 +2394,9 @@ head:hover ~ .wrap:before, head:hover ~ body .wrap:before { position: absolute; 
 
 .input-type.date .icon-calender { position: absolute; top: 4px; right: 4px; width: 23px; height: 22px; vertical-align: -5px; pointer-events: none; }
 
-.input-type.full { min-width: 100%; }
+.input-type.full { min-width: 100%; height: 35px; }
 
-.input-type.full input { width: 100%; height: 35px; line-height: 35px; padding: 0 10px; border: 1px solid #c4c4c4; background: #fff; }
+.input-type.full input { width: 100%; height: 35px; line-height: 33px; padding: 0 10px; border: 1px solid #c4c4c4; background: #fff; vertical-align: -1px; }
 
 .input-type.full input::-webkit-input-placeholder { /* Chrome/Opera/Safari*/ color: inherit; }
 
@@ -2418,11 +2418,11 @@ head:hover ~ .wrap:before, head:hover ~ body .wrap:before { position: absolute; 
 
 .input-type.full label { line-height: 35px; }
 
-.input-type-search { display: inline-block; position: relative; min-width: 130px; }
+.input-type-search { display: inline-block; position: relative; min-width: 130px; height: 35px; }
 
 .input-type-search [class*="btn-"] { position: absolute; top: 0; right: 0; }
 
-.input-type-search input { width: 130px; height: 35px; line-height: 35px; padding: 0 45px 0 10px; border: 2px solid #3466a2; background: #fff; }
+.input-type-search input { width: 130px; height: 35px; line-height: 33px; padding: 0 45px 0 10px; border: 2px solid #3466a2; background: #fff; vertical-align: -1px; }
 
 .input-type-search input::-webkit-input-placeholder { /* Chrome/Opera/Safari*/ color: inherit; }
 
@@ -2444,9 +2444,9 @@ head:hover ~ .wrap:before, head:hover ~ body .wrap:before { position: absolute; 
 
 .input-type-search label { line-height: 35px; }
 
-.input-type-search.full { min-width: 100%; }
+.input-type-search.full { min-width: 100%; height: 35px; }
 
-.input-type-search.full input { width: 100%; height: 35px; line-height: 35px; padding: 0 45px 0 10px; border: 2px solid #3466a2; background: #fff; }
+.input-type-search.full input { width: 100%; height: 35px; line-height: 33px; padding: 0 45px 0 10px; border: 2px solid #3466a2; background: #fff; vertical-align: -1px; }
 
 .input-type-search.full input::-webkit-input-placeholder { /* Chrome/Opera/Safari*/ color: inherit; }
 
@@ -2471,7 +2471,7 @@ head:hover ~ .wrap:before, head:hover ~ body .wrap:before { position: absolute; 
 /* =======================================*/
 /* 셀렉트박스 스타일
 /* =======================================*/
-.select-box { display: inline-block; position: relative; width: 130px; height: 35px; }
+.select-box { display: inline-block; position: relative; width: 130px; height: 35px; vertical-align: middle; }
 
 .select-box label { position: absolute; width: 100%; height: 35px; color: transparent; z-index: -1; }
 
@@ -2481,7 +2481,7 @@ head:hover ~ .wrap:before, head:hover ~ body .wrap:before { position: absolute; 
 
 .select-box select::-ms-expand { display: none; }
 
-.select-box.e-mail { position: relative; width: 140px; height: 35px; }
+.select-box.e-mail { position: relative; width: 140px; height: 35px; vertical-align: middle; }
 
 .select-box.e-mail label { position: absolute; width: 100%; height: 35px; color: transparent; z-index: -1; }
 
@@ -2491,7 +2491,7 @@ head:hover ~ .wrap:before, head:hover ~ body .wrap:before { position: absolute; 
 
 .select-box.e-mail select::-ms-expand { display: none; }
 
-.select-box.full { position: relative; width: 100%; height: 35px; }
+.select-box.full { position: relative; width: 100%; height: 35px; vertical-align: middle; }
 
 .select-box.full label { position: absolute; width: 100%; height: 35px; color: transparent; z-index: -1; }
 

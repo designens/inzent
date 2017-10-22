@@ -1,12 +1,14 @@
 @mixin input-type ($w: 130px, $h: 35px, $p: 0 10px, $bd: 1px solid #c4c4c4, $bd-focus: 1px solid #3466a2,  $bg: #fff) {
     min-width: $w;
+    height: $h;
     input {
         width: $w;
         height: $h;
-        line-height: $h;
+        line-height: $h - 2;
         padding: $p;
         border: $bd;
         background: $bg;
+        vertical-align: -1px;
     }
     input {
         &::-webkit-input-placeholder {
