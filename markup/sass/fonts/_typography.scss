@@ -7,14 +7,14 @@ $h1-fz: 30px;
 $h2-fz: 26px;
 $h3-fz: 23px;
 $h4-fz: 20px;
-$h5-fz: 16px;
-$h6-fz: 14px;
+$h5-fz: 18px;
+$h6-fz: 16px;
 
 h1, h2, h3, h4 {
     font-weight: 500;
 }
 h5, h6 {
-	font-weight: 600;
+    font-weight: 400;
 }
 
 // 제목 폰트 사이즈, 행간 비율 (px, rem)

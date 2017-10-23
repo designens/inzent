@@ -1,4 +1,17 @@
 /* =======================================*/
+/* Content : 공통 요소 스타일
+/* =======================================*/
+.sub-list-title {
+    padding: 25px 0;
+    .search-word {
+        span {
+            color: #ff8134;
+        }
+    }
+}
+
+
+/* =======================================*/
 /* Content : 컨텐츠 영역
 /* =======================================*/
 .content-area {
@@ -251,5 +264,16 @@
                 }
             }
         }
+    }
+}
+.search-select-box-area {
+    background: #f1f1f1;
+    padding: 3px 15px;
+    line-height: 41px;
+    @extend %clearfix;
+    .icon-img-type {
+        color: #09c;
+        padding-left: 23px;
+        background: url($icon-img-type) left center no-repeat;
     }
 }
