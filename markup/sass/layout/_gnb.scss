@@ -49,7 +49,7 @@
 }
 #gnb-all-menu {
     .wrap {
-        min-width: initial;
+        min-width: auto;
         padding: 0;
         border-top: 1px solid $bdb-gnb;
         border-bottom: 1px solid $bdt-gnb;
@@ -169,8 +169,8 @@
         bottom: 0;
     }
     @include susy-breakpoint(em($tablet)) {
-        top: 116px;
-        bottom: initial;
+        top: 117px;
+        bottom: auto;
         z-index: 1000;
         .user-menu {
             display: none;
@@ -219,16 +219,16 @@
                     display: block !important;
                     > li {
                         font-weight: 300;
-                        color: initial;
+                        color: #464646;
                         padding: 10px 0;
                         margin-bottom: 0;
                         border-bottom: 1px solid #e6e6e6;
                         background: transparent;
                         &.toggle {
                             .toggle-label {
-                                height: inherit;
-                                line-height: inherit;
-                                color: inherit;
+                                height: auto;
+                                line-height: 1.5;
+                                color: #464646;
                             }
                             > ul {
                                 margin-bottom: 0;
@@ -294,12 +294,12 @@
                 .sub-menu {
                     > li {
                         padding: 8px 0;
-                        border-top: initial;
+                        border-top: 0;
                         a {
                             @include psd-fz(14px);
                             font-weight: 300;
-                            height: initial;
-                            line-height: initial;
+                            height: auto;
+                            line-height: 1.5;
                         }
                         &:hover, &:focus {
                             color: #0066b3;
@@ -308,13 +308,13 @@
                             .toggle-label {
                                 &:before {
                                     top: 9px;
-                                    left: initial;
+                                    left: auto;
                                     right: 10px;
                                     background: #0066b3;
                                 }
                                 &:after {
                                     top: 5px;
-                                    left: initial;
+                                    left: auto;
                                     right: 14px;
                                     background: #0066b3;
                                 }
@@ -385,14 +385,14 @@
                         > a {
                             @include psd-fz(14px);
                             font-weight: 300;
-                            color: inherit;
+                            color: #464646;
                             height: auto;
-                            line-height: inherit;
+                            line-height: 1.5;
                         }
                     }
                     .toggle {
                         &:hover, &:focus {
-                            color: inherit;
+                            color: #464646;
                             border-bottom: 1px solid #e6e6e6;
                         }
                         .toggle-label {
@@ -446,8 +446,8 @@
         left: 0;
     }
     @include susy-breakpoint(em($desktop)) {
-        top: initial;
-        left: initial;
+        top: auto;
+        left: auto;
         right: 21px;
         bottom: 0;
         width: 40px;
