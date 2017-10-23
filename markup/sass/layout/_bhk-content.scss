@@ -185,12 +185,15 @@
         }
         .login {
             float: right;
+            width: 100%;
             .btn-login-size {
-                min-width: 80px;
-                width: 22%;
-                height: 80px;
-                text-align: center;
-                padding: 20px 0;
+                @include btn-size ($w: 100%, $h: 40px);
+            }
+            @include susy-breakpoint(em($tablet)) {
+                width: auto;
+                .btn-login-size {
+                    @include btn-size ($w: 80px, $h: 80px);
+                }
             }
         }
     }
@@ -243,15 +246,9 @@
         .se {
             text-align: left;
             display: inline-block;
-            .search_id {
+            .search-id {
                 padding: 0 30px 12px 0;
                 color: #777;
-            }
-            .se_id {
-                padding: 8px 31px 10px 11px;
-                cursor: pointer;
-                color: #666;
-                border: 1px solid #d5d5d5;
             }
         }
         .jo {
