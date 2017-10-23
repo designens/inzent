@@ -337,19 +337,26 @@ JS 내용 작성</code></pre>
                     </div>
 <pre>
 <code id="source" class="language-html">&lt;div class=&quot;btn-set-area&quot;&gt;
-    &lt;form class=&quot;btn-out-size btn-blue&quot;&gt;
-        &lt;label class=&quot;btn-icon&quot;&gt;버튼&lt;/label&gt;
+    &lt;form class=&quot;btn-item-size btn-blue&quot;&gt;
+        &lt;!-- label 내부 아이콘 추가 시 폰트어썸 or 이미지 아이콘 사용 --&gt;
+        &lt;label&gt;&lt;span class=&quot;fa fa-search before&quot;&gt;&lt;/span&gt;버튼&lt;/label&gt;
         &lt;input type=&quot;button&quot; name=&quot;search-keyword&quot;&gt;
     &lt;/form&gt;
-    &lt;a href=&quot;&quot; class=&quot;btn-out-size btn-defult&quot; role=&quot;button&quot;&gt;버튼&lt;/a&gt;
-    &lt;button class=&quot;btn-out-size btn-blue&quot; type=&quot;button&quot;&gt;버튼&lt;/button&gt;
+    &lt;a href=&quot;&quot; class=&quot;btn-item-size btn-defult&quot; role=&quot;button&quot;&gt;기본 버튼&lt;/a&gt;
+    &lt;a href=&quot;&quot; class=&quot;btn-item-size btn-defult&quot; role=&quot;button&quot;&gt;기본 버튼&lt;/a&gt;
+    &lt;a href=&quot;&quot; class=&quot;btn-item-size btn-defult&quot; role=&quot;button&quot;&gt;기본 버튼&lt;/a&gt;
+    &lt;button class=&quot;btn-item-size btn-blue&quot; type=&quot;button&quot;&gt;활성화 버튼&lt;/button&gt;
+    &lt;button class=&quot;btn-item-size btn-blue&quot; type=&quot;button&quot;&gt;활성화 버튼&lt;/button&gt;
 &lt;/div&gt;</code>
 </pre>
-                    <div class="ui-kit-comment">두개의 이상의 버튼을 사용할 때는 "<strong class="red">btn-set-area</strong>" class 내부에 버튼을 추가 하고 각 버튼의 특성에 따라 엘리먼트에 설정하여 적용 하시면 됩니다.<br>
-                    버튼의 종류는 아래 세가지 사이즈를 제공 합니다. 상황에 맞게 적절히 사용하시면 됩니다.<br>
-                    테이블 내부 버튼 적용 시 "<strong class="red">btn-in-size</strong>" class를 적용<br>
-                    테이블 외부 버튼 적용 시 "<strong class="red">btn-out-size</strong>" class를 적용<br>
-                    아이템(리스트) 영역 버튼 적용 시 "<strong class="red">btn-item-size</strong>" class를 적용</div>
+                    <div class="ui-kit-comment">
+                        두개의 이상의 버튼을 사용할 때는 "<strong class="red">btn-set-area</strong>" class 내부에 버튼을 추가 하고 각 버튼의 특성에 따라 엘리먼트에 설정하여 적용 하시면 됩니다.<br>
+                        버튼의 종류는 아래 세가지 사이즈를 제공 합니다. 상황에 맞게 적절히 사용하시면 됩니다.<br>
+                        테이블 내부 버튼 적용 시 "<strong class="red">btn-in-size</strong>" class를 적용<br>
+                        테이블 외부 버튼 적용 시 "<strong class="red">btn-out-size</strong>" class를 적용<br>
+                        아이템(리스트) 영역 버튼 적용 시 "<strong class="red">btn-item-size</strong>" class를 적용<br>
+                        버튼 아이콘 추가 시 "<strong class="blue">&lt;lable&gt;</strong>" 자식요소로 추가 하고 앞쪽에 배치할 때 "<strong class="red">before</strong>" class를 뒤쪽에 배치할 때 "<strong class="red">after</strong>" class를 사용하면 아이콘 정렬이 됩니다.
+                    </div>
                     <h3><div class="fa fa-angle-double-right"></div>아이콘 버튼 스타일</h3>
                     <form class="btn-out-size btn-blue">
                         <label class="btn-icon">버튼</label>
