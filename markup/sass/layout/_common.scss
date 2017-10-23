@@ -589,6 +589,12 @@
                 margin-bottom: gutter();
             }
         }
+        &.col-2 {
+            form, button, a {
+                @include gallery(4 of 8);
+                margin-bottom: gutter();
+            }
+        }
         &.col-3 {
             @include layout(3 9px/224px);
             form, button, a {
