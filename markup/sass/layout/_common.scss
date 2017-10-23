@@ -565,6 +565,16 @@
         form, button, a {
             @include gallery(3 of 6);
             margin-bottom: gutter();
+            &.full {
+                @include span(full);
+            }
+        }
+    }
+    @include susy-breakpoint(em($tablet)) {
+        form, button, a {
+            &.full {
+                @include span(full);
+            }
         }
     }
     @include susy-breakpoint(em($tablet) em($desktop)) {
@@ -612,14 +622,6 @@
         }
     }
 }
-// 버튼 내부 아이콘
-.btn-icon {
-    position: relative;
-    &:before {
-        padding-right: 5px;
-        @include fa($icon: "\f002", $fz: 22px, $color: #fff);
-    }
-}
 // 테이블 내부 버튼 기본 사이즈
 .btn-in-size {
     @include extend(btn-in-size);
@@ -632,6 +634,10 @@
 .btn-item-size {
     @include extend(btn-item-size);
 }
+// 더보기 버튼 사이즈
+.btn-more-size {
+    @include extend(btn-more-size);
+}
 // 버튼 기본 스타일
 .btn-defult {
     @include extend(btn-defult);
@@ -639,6 +645,10 @@
 // 버튼 활성화 스타일
 .btn-blue {
     @include extend(btn-blue);
+}
+// 버튼 더보기 스타일
+.btn-gray {
+    @include extend(btn-gray);
 }
 
 /* =======================================*/

@@ -7,9 +7,15 @@
 %btn-item-size {
     @include btn-size($h: 30px);
 }
+%btn-more-size {
+    @include btn-size($w: 100%, $h: 40px, $fz: 18px);
+}
 %btn-defult {
     @include btn-defult-type ($color: #333, $bd: #585858, $bg: #fff, $bd-hover: #3466a2);
 }
 %btn-blue {
     @include btn-blue-type ($color: #fff, $bg: #3466a2, $bg-or-color-hover: #585858);
+}
+%btn-gray {
+    @include btn-blue-type ($color: #fff, $bg: #5f7a8f, $bg-or-color-hover: #4a6274);
 }

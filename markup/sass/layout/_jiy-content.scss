@@ -48,137 +48,145 @@
 /* 자료검색 > 소장자료 검색 > 초기화면
 /* (html/resources-search.html)
 /* =======================================*/
-.keyword-search-area {
+.sub-search-area {
     background: #f1f1f1;
     padding: 20px 10px;
-    .ul-list-type {
-        @include layout(5 10px/58px);
-        li {
-            .search-1st {
-                @include span(2);
-                margin-bottom: 5px;
-            }
-            .search-2nd {
-                @include span(3 firest);
-            }
-            .search-3rd {
-                @include span(2 last);
-            }
-            &:last-child {
-                margin-bottom: 10px;
-            }
-        }
-    }
-    .dl-list-type {
-        dd {
-            @include layout(2 26px/152px);
-            line-height: 2;
-            .select-box {
-                @include span(1);
-            }
-            .checkbox-type {
-                @include gallery(2 of 4);
-            }
-            .input-type {
-                position: relative;
-                width: 100%;
-                &:before {
-                    position: absolute;
-                    top: 3px;
-                    left: 50%;
-                    margin-left: -5px;
-                    content: "~";
-                }
-                input {
-                    @include span(1);
-                    &:last-child {
-                        @include last();
-                    }
-                }
-            }
-        }
-    }
     @include susy-breakpoint(em($tablet) em($desktop)) {
-        @include layout(7 10px/102px);
         padding: 20px 15px;
+    }
+    @include susy-breakpoint(em($desktop)) {
+        padding: 15px 31px;
+    }
+}
+.keyword-search-area {
+    .sub-search-area {
         .ul-list-type {
+            @include layout(5 10px/58px);
             li {
                 .search-1st {
-                    @include span(1);
-                    margin-bottom: 0;
+                    @include span(2);
+                    margin-bottom: 5px;
                 }
                 .search-2nd {
-                    @include span(5);
+                    @include span(3 firest);
                 }
                 .search-3rd {
-                    @include span(1 last);
+                    @include span(2 last);
+                }
+                &:last-child {
+                    margin-bottom: 10px;
                 }
             }
         }
         .dl-list-type {
             dd {
-                @include layout(4 26px/153px);
-                .checkbox-type {
-                    @include gallery(1 of 4);
-                }
+                @include layout(2 26px/152px);
+                line-height: 2;
                 .select-box {
-                    @include span(2);
+                    @include span(1);
+                }
+                .checkbox-type {
+                    @include gallery(2 of 4);
                 }
                 .input-type {
+                    position: relative;
+                    width: 100%;
+                    &:before {
+                        position: absolute;
+                        top: 3px;
+                        left: 50%;
+                        margin-left: -5px;
+                        content: "~";
+                    }
                     input {
-                        @include span(2);
+                        @include span(1);
                         &:last-child {
-                            @include last;
+                            @include last();
                         }
                     }
                 }
             }
         }
-    }
-    @include susy-breakpoint(em($desktop)) {
-        padding: 15px 31px;
-        .ul-list-type {
+        @include susy-breakpoint(em($tablet) em($desktop)) {
             @include layout(7 10px/102px);
-            li {
-                .search-1st {
-                    @include span(1);
-                    margin-bottom: 0;
+            .ul-list-type {
+                li {
+                    .search-1st {
+                        @include span(1);
+                        margin-bottom: 0;
+                    }
+                    .search-2nd {
+                        @include span(5);
+                    }
+                    .search-3rd {
+                        @include span(1 last);
+                    }
                 }
-                .search-2nd {
-                    @include span(5);
-                }
-                .search-3rd {
-                    @include span(1 last);
+            }
+            .dl-list-type {
+                dd {
+                    @include layout(4 26px/153px);
+                    .checkbox-type {
+                        @include gallery(1 of 4);
+                    }
+                    .select-box {
+                        @include span(2);
+                    }
+                    .input-type {
+                        input {
+                            @include span(2);
+                            &:last-child {
+                                @include last;
+                            }
+                        }
+                    }
                 }
             }
         }
-        .dl-list-type {
-            @include layout(7 10px/102px);
-            max-width: 836px;
-            dt {
-                @include span(1);
-            }
-            dd {
-                @include span(6 last);
-                .checkbox-type {
-                    width: auto;
-                    float: none;
-                    clear: none !important;
-                    margin-right: auto !important;
-                    margin-left: auto !important;
-                }
-                .select-box {
-                    @include select-box($w: 130px);
-                }
-                .input-type {
-                    @include input-type($w: 130px);
-                    &:before {
-                        left: 144px;
+        @include susy-breakpoint(em($desktop)) {
+            .ul-list-type {
+                @include layout(7 10px/102px);
+                li {
+                    .search-1st {
+                        @include span(1);
+                        margin-bottom: 0;
                     }
-                    input {
-                        margin-right: 26px;
-                        &:last-child {
-                            float: none;
+                    .search-2nd {
+                        @include span(5);
+                    }
+                    .search-3rd {
+                        @include span(1 last);
+                    }
+                }
+            }
+            .dl-list-type {
+                @include layout(7 10px/102px);
+                max-width: 836px;
+                dt {
+                    @include span(1);
+                }
+                dd {
+                    @include span(6 last);
+                    .checkbox-type {
+                        width: auto;
+                        float: none;
+                        clear: none !important;
+                        margin-right: auto !important;
+                        margin-left: auto !important;
+                    }
+                    .select-box {
+                        @include select-box($w: 130px);
+                    }
+                    .input-type {
+                        @include input-type($w: 130px);
+                        &:before {
+                            left: 144px;
+                        }
+                        input {
+                            margin-right: 26px;
+                            &:last-child {
+                                float: none;
+                            }
                         }
                     }
                 }
@@ -191,49 +199,53 @@
 /* 자료검색 > 소장자료 검색 > 상세
 /* (html/resources-search-view.html)
 /* =======================================*/
-.keyword-search-area {
-    &.view{
-        .ul-list-type {
-            @include layout(5 10px/58px);
-            li {
-                &:first-child {
-                    margin-top: -5px;
-                    margin-bottom: 0;
-                }
-                &:last-child {
-                    margin-bottom: 0;
-                    div {
-                        margin-bottom: 10px;
-                        &:last-child {
-                            margin-bottom: 0;
-                        }
+.keyword-search-area-view{
+    .ul-list-type {
+        @include layout(5 10px/58px);
+        li {
+            &:first-child {
+                margin-top: -5px;
+                margin-bottom: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+                div {
+                    margin-bottom: 10px;
+                    &:last-child {
+                        margin-bottom: 0;
                     }
-                }
-                .fr-align {
-                    display: block;
-                    float: inherit;
                 }
             }
+            .fr-align {
+                display: block;
+                float: inherit;
+            }
         }
-        @include susy-breakpoint(em($tablet)) {
-            .ul-list-type {
-                li {
-                    &:first-child {
-                        .fr-align {
-                            float: right;
-                            margin-right: -8px;
-                        }
+    }
+    .btn-more-size {
+        .icon.after {
+            padding-left: 20px;
+            vertical-align: inherit;
+        }
+    }
+    @include susy-breakpoint(em($tablet)) {
+        .ul-list-type {
+            li {
+                &:first-child {
+                    .fr-align {
+                        float: right;
+                        margin-right: -8px;
                     }
-                    &:last-child {
-                        @include layout(7 10px/102px);
-                        .select-box {
-                            @include span(1);
-                        }
-                        .input-type-search {
-                            @include span(6 last);
-                            &.full {
-                                min-width: auto;
-                            }
+                }
+                &:last-child {
+                    @include layout(7 10px/102px);
+                    .select-box {
+                        @include span(1);
+                    }
+                    .input-type-search {
+                        @include span(6 last);
+                        &.full {
+                            min-width: auto;
                         }
                     }
                 }
