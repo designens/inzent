@@ -1,6 +1,7 @@
 /* =======================================*/
 /* Content : 공통 요소 스타일
 /* =======================================*/
+// 검색 영역 타이틀
 .sub-list-title {
     padding: 25px 0;
     .search-word {
@@ -9,7 +10,22 @@
         }
     }
 }
-
+// Select & Button type 검색 영역
+.search-select-box-area {
+    background: #f1f1f1;
+    padding: 0 15px;
+    line-height: 41px;
+    @extend %clearfix;
+    .icon-img-type {
+        color: #09c;
+        padding-left: 23px;
+        background: url($icon-img-type) left center no-repeat;
+    }
+    .select-box {
+        width: 100px;
+        margin-left: 6px;
+    }
+}
 
 /* =======================================*/
 /* Content : 컨텐츠 영역
@@ -267,14 +283,13 @@
         }
     }
 }
-.search-select-box-area {
-    background: #f1f1f1;
-    padding: 3px 15px;
-    line-height: 41px;
-    @extend %clearfix;
-    .icon-img-type {
-        color: #09c;
-        padding-left: 23px;
-        background: url($icon-img-type) left center no-repeat;
+.search-select-content {
+    padding: 20px 30px;
+    border: 1px solid #dddddd;
+    margin-top: 10px;
+    ul {
+        li {
+            display: inline-block;
+        }
     }
 }
