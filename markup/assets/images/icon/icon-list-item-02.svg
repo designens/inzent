@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+  <defs>
+    <style>
+      .icon-list-item-02 {
+        fill: #464646;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="icon-list-item-02.svg" class="icon-list-item-02" d="M1371,793h12v14h-12V793Zm1,1h10v12h-10V794Zm1,1h8v4h-8v-4Zm1,1h6v2h-6v-2Zm-1,4h8v1h-8v-1Zm0,2h6v1h-6v-1Zm1-9v-2h12v16h-2v-1h1V792h-10v1h-1Zm2-2v-2h13v18h-2v-1h1V790h-11v1h-1Z" transform="translate(-1371 -789)"/>
+</svg>
