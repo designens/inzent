@@ -556,13 +556,13 @@
     margin-top: 20px;
     text-align: center;
     @extend %clearfix;
-    form, button, a {
+    div[class^="btn-"], button, a {
         @include span(full);
         margin-bottom: gutter();
         vertical-align: top;
     }
     @include susy-breakpoint(em($min-mobile) em($tablet)) {
-        form, button, a {
+        div[class^="btn-"], button, a {
             @include gallery(3 of 6);
             margin-bottom: gutter();
             &.full {
@@ -571,7 +571,7 @@
         }
     }
     @include susy-breakpoint(em($tablet)) {
-        form, button, a {
+        div[class^="btn-"], button, a {
             &.full {
                 @include span(full);
             }
@@ -579,45 +579,45 @@
     }
     @include susy-breakpoint(em($tablet) em($desktop)) {
         @include layout(8 8px/83px);
-        form, button, a {
+        div[class^="btn-"], button, a {
             @include gallery(4 of 8);
             margin-bottom: gutter();
         }
         &.col-1 {
-            form, button, a {
+            div[class^="btn-"], button, a {
                 @include gallery(8 of 8);
                 margin-bottom: gutter();
             }
         }
         &.col-2 {
-            form, button, a {
+            div[class^="btn-"], button, a {
                 @include gallery(4 of 8);
                 margin-bottom: gutter();
             }
         }
         &.col-3 {
             @include layout(3 9px/224px);
-            form, button, a {
+            div[class^="btn-"], button, a {
                 @include gallery(1 of 3);
                 margin-bottom: gutter();
             }
         }
         &.col-4 {
-            form, button, a {
+            div[class^="btn-"], button, a {
                 @include gallery(2 of 8);
                 margin-bottom: gutter();
             }
         }
         &.col-5 {
             @include layout(5 10px/130px);
-            form, button, a {
+            div[class^="btn-"], button, a {
                 @include gallery(1 of 5);
                 margin-bottom: gutter();
             }
         }
     }
     @include susy-breakpoint(em($desktop)) {
-        form, button, a {
+        div[class^="btn-"], button, a {
             width: auto;
             float: none;
             margin-right: 6px;
