@@ -165,7 +165,7 @@
     }
 }
 #gnb-all-menu {
-    @include susy-breakpoint(0 em($tablet)) {
+    @include susy-breakpoint(1em em($tablet)) {
         bottom: 0;
     }
     @include susy-breakpoint(em($tablet)) {

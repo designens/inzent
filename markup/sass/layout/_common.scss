@@ -529,13 +529,6 @@
             @include span(6);
             padding-bottom: 10px;
         }
-        // .site-link-area {
-        //     display: block;
-        //     @include span(6);
-        //     text-align: left;
-        //     padding-top: 0;
-        //     padding-bottom: 45px;
-        // }
     }
     @include susy-breakpoint(em($desktop)) {
         @include layout(6 22px/165px);
@@ -902,11 +895,14 @@
 .select-box {
     display: inline-block;
     @include select-box;
-    &.e-mail {
-        @include select-box(140px);
+    &.align {
+        width: 100px;
+    }
+    &.number {
+        width: 74px;
     }
     &.full {
-        @include select-box(100%);
+        width: 100%;
     }
 }
 

@@ -16,14 +16,41 @@
     padding: 0 15px;
     line-height: 41px;
     @extend %clearfix;
-    .icon-img-type {
-        color: #09c;
-        padding-left: 23px;
-        background: url($icon-img-type) left center no-repeat;
+    .fl-align {
+        @extend %clearfix;
+        .icon-img-type {
+            color: #09c;
+            padding-left: 23px;
+            background: url($icon-img-type) left center no-repeat;
+        }
     }
-    .select-box {
-        width: 100px;
-        margin-left: 6px;
+    .fr-align {
+        @extend %clearfix;
+        .select-box {
+            margin-top: 3px;
+            margin-right: 6px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        @include susy-breakpoint(1em em($max-mobile)) {
+            float: none;
+            clear: both;
+            .select-box {
+                @include layout(6 10px/57px);
+                margin-top: -2px;
+                margin-bottom: 10px;
+                &:nth-of-type(1) {
+                    @include span(full);
+                }
+                &:nth-of-type(2) {
+                    @include span(3);
+                }
+                &:nth-of-type(3) {
+                    @include span(3 last);
+                }
+            }
+        }
     }
 }
 
@@ -355,12 +382,13 @@
                     margin-top: 8px;
                     margin-bottom: 10px;
                     color: #333;
-                    span {
+                    &:before {
+                        display: inline-block;
+                        @include fa($icon: "\f002", $fz: 14px, $color: #fff);
                         width: 20px;
                         height: 20px;
                         line-height: 20px;
                         margin-right: 5px;
-                        color: #fff;
                         background: #ff8134;
                     }
                 }
