@@ -285,6 +285,56 @@
             vertical-align: inherit;
         }
     }
+    .sub-search-view-area {
+        border: 1px solid #e7e7e7;
+        .result-accordion {
+            li {
+                .result-link {
+                    font-weight: 500;
+                    color: #333;
+                    line-height: 35px;
+                    padding: 0 15px;
+                    border-top: 1px solid #e7e7e7;
+                    background: #f1f1f1;
+                    .fa {
+                        float: right;
+                        line-height: 35px;
+                    }
+                }
+                &.open {
+                    .result-link {
+                        color: #005bb3;
+                        .fa {
+                            color: #005bb3;
+                        }
+                    }
+                }
+                &:first-child {
+                    .result-link {
+                        border-top: 0;
+                    }
+                }
+                .sub-result {
+                    padding: 15px 15px 7px 15px;
+                    border-top: 1px solid #e7e7e7;
+                    height: 110px;
+                    overflow-y: auto;
+                    @extend %clearfix;
+                    .checkbox-type {
+                        display: block;
+                        margin-bottom: 8px;
+                        label {
+                            span {
+                                font-weight: 300;
+                                color: #888;
+                                margin-left: 4px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     @include susy-breakpoint(em($tablet)) {
         .ul-list-type {
             li {
@@ -304,6 +354,30 @@
                         &.full {
                             min-width: auto;
                         }
+                    }
+                }
+            }
+        }
+    }
+    @include susy-breakpoint(em($tablet) em($desktop)) {
+        .sub-search-view-area {
+            li {
+                .sub-result {
+                    .checkbox-type {
+                        @include gallery(2 of 6);
+                    }
+                }
+            }
+        }
+    }
+    @include susy-breakpoint(em($desktop)) {
+        .sub-search-view-area {
+            li {
+                .sub-result {
+                    height: auto !important;
+                    .checkbox-type {
+                        @include layout(8 20px/83px);
+                        @include gallery(2 of 8);
                     }
                 }
             }

@@ -815,6 +815,7 @@
 .input-type {
     display: inline-block;
     @include input-type;
+    vertical-align: top;
     &.tel {
         @include input-type(71px);
         @extend %clearfix;
