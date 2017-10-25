@@ -427,6 +427,9 @@
                     @include span(full);
                     table {
                         margin-top: 20px;
+                        .readable {
+                            color: #e57c00;
+                        }
                     }
                 }
             }

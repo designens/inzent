@@ -268,57 +268,6 @@
         }
     }
 }
-.table-type-01 {
-    thead {
-        th {
-            &:first-child {
-                width: 70px;
-            }
-            &:nth-child(2) {
-                width: 200px;
-            }
-            &:nth-child(4), &:nth-child(5) {
-                width: 140px;
-            }
-            &:last-child {
-                width: 140px;
-            }
-        }
-    }
-    tbody {
-        td {
-            &:first-child {
-                padding-left: 10px;
-                padding-right: 10px;
-            }
-            &:nth-child(3) {
-                text-align: left;
-            }
-        }
-    }
-}
-.table-type-02 {
-    colgroup {
-        col {
-            &:nth-child(1), &:nth-child(3) {
-                width: 140px;
-            }
-        }
-    }
-}
-.table-li {
-    .title {
-        width: 140px;
-    }
-}
-.table-dl {
-    dt {
-        width: 140px;
-    }
-}
-.content-form-area {
-    margin-top: 30px;
-}
 
 /* =======================================*/
 /* 육각형 스타일
