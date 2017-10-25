@@ -393,6 +393,9 @@
                     }
                 }
             }
+            &.item-table-area {
+                display: none;
+            }
         }
         @include susy-breakpoint(em($tablet)) {
             @include extend(clearfix);
