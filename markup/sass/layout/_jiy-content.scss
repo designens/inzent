@@ -256,7 +256,7 @@
 /* 자료검색 > 소장자료 검색 > 리스트
 /* (html/resources-search-list.html)
 /* =======================================*/
-.keyword-search-area-list {
+.resources-search-list {
     .ul-list-type {
         @include layout(5 10px/58px);
         li {
@@ -276,62 +276,6 @@
             .fr-align {
                 display: block;
                 float: inherit;
-            }
-        }
-    }
-    .btn-more-size {
-        .icon.after {
-            padding-left: 20px;
-            vertical-align: inherit;
-        }
-    }
-    .sub-search-view-area {
-        border: 1px solid #e7e7e7;
-        .result-accordion {
-            li {
-                .result-link {
-                    font-weight: 500;
-                    color: #333;
-                    line-height: 35px;
-                    padding: 0 15px;
-                    border-top: 1px solid #e7e7e7;
-                    background: #f1f1f1;
-                    .fa {
-                        float: right;
-                        line-height: 35px;
-                    }
-                }
-                &.open {
-                    .result-link {
-                        color: #005bb3;
-                        .fa {
-                            color: #005bb3;
-                        }
-                    }
-                }
-                &:first-child {
-                    .result-link {
-                        border-top: 0;
-                    }
-                }
-                .sub-result {
-                    padding: 15px 15px 7px 15px;
-                    border-top: 1px solid #e7e7e7;
-                    height: 110px;
-                    overflow-y: auto;
-                    @extend %clearfix;
-                    .checkbox-type {
-                        display: block;
-                        margin-bottom: 8px;
-                        label {
-                            span {
-                                font-weight: 300;
-                                color: #888;
-                                margin-left: 4px;
-                            }
-                        }
-                    }
-                }
             }
         }
     }
@@ -359,31 +303,117 @@
             }
         }
     }
-    @include susy-breakpoint(em($tablet) em($desktop)) {
-        .sub-search-view-area {
-            li {
-                .sub-result {
-                    .checkbox-type {
-                        @include gallery(2 of 6);
+}
+.btn-result-search {
+    .icon.after {
+        position: relative;
+        display: inline-block;
+        margin-left: 30px;
+        vertical-align: inherit;
+        &:before {
+            position: absolute;
+            top: -3px;
+            right: 0;
+            width: 13px;
+            height: 3px;
+            background: #fff;
+            content: "";
+        }
+        &:after {
+            position: absolute;
+            top: -8px;
+            right: 5px;
+            width: 3px;
+            height: 13px;
+            background: #fff;
+            content: "";
+            transform: rotate(0deg);
+            transition: transform 0.25s ease;
+        }
+    }
+    &.open {
+        .icon.after {
+            &:after {
+                background: $font-lnb-title-active;
+                transform: rotate(90deg);
+                transition: transform 0.25s ease;
+            }
+        }
+    }
+}
+
+.sub-search-view-area {
+    display: none;
+    border: 1px solid #e7e7e7;
+    .result-accordion {
+        li {
+            .result-link {
+                font-weight: 500;
+                color: #333;
+                line-height: 35px;
+                padding: 0 15px;
+                border-top: 1px solid #e7e7e7;
+                background: #f1f1f1;
+                .fa {
+                    float: right;
+                    line-height: 35px;
+                }
+            }
+            &.open {
+                .result-link {
+                    color: #005bb3;
+                    .fa {
+                        color: #005bb3;
                     }
+                }
+            }
+            &:first-child {
+                .result-link {
+                    border-top: 0;
+                }
+            }
+            .sub-result {
+                padding: 15px 15px 7px 15px;
+                border-top: 1px solid #e7e7e7;
+                height: 110px;
+                overflow-y: auto;
+                @extend %clearfix;
+                .checkbox-type {
+                    display: block;
+                    margin-bottom: 8px;
+                    label {
+                        span {
+                            font-weight: 300;
+                            color: #888;
+                            margin-left: 4px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include susy-breakpoint(em($tablet) em($desktop)) {
+        li {
+            .sub-result {
+                .checkbox-type {
+                    @include gallery(2 of 6);
                 }
             }
         }
     }
     @include susy-breakpoint(em($desktop)) {
-        .sub-search-view-area {
-            li {
-                .sub-result {
-                    height: auto !important;
-                    .checkbox-type {
-                        @include layout(8 20px/83px);
-                        @include gallery(2 of 8);
-                    }
+        li {
+            .sub-result {
+                height: auto !important;
+                .checkbox-type {
+                    @include layout(8 20px/83px);
+                    @include gallery(2 of 8);
                 }
             }
         }
     }
 }
+
 .search-select-content {
     .list-item {
         padding: 20px 31px;
@@ -509,4 +539,12 @@
             }
         }
     }
+}
+
+/* =======================================*/
+/* 자료검색 > 소장자료 검색 > 상세
+/* (html/resources-search-view.html)
+/* =======================================*/
+.resources-search-view {
+    @extend .resources-search-list;
 }
