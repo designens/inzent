@@ -1,5 +1,5 @@
 // 버튼 기본 디자인 설정
-@mixin btn-size ($w: 70px, $h: 40px, $fz: 14px, $bd-size: 2px) {
+@mixin btn-size ($w: 70px, $h: 40px, $p: 0 20px, $fz: 14px, $bd-size: 2px) {
     $bd: $bd-size * 2;
     position: relative;
     display: inline-block;
@@ -9,7 +9,7 @@
     font-size: $fz;
     text-align: center;
     vertical-align: middle;
-    padding: 0 20px;
+    padding: $p;
     label {
         line-height: $h;
         .fa {
@@ -46,7 +46,7 @@
         transition: all .3s ease;
     }
 }
-@mixin btn-blue-type ($color: #fff, $bg: #3466a2, $bg-or-color-hover: #585858) {
+@mixin btn-activation-type ($color: #fff, $bg: #3466a2, $bg-or-color-hover: #585858) {
     color: $color;
     background: $bg;
     .fa {

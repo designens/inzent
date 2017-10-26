@@ -18,6 +18,11 @@
         color: #333;
         background: #f1f5f7;
     }
+    td {
+        &.readable {
+            color: #e57c00;
+        }
+    }
     &.list-type {
         display: block;
         thead, tbody {
