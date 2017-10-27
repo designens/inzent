@@ -260,12 +260,11 @@
     .ul-list-type {
         @include layout(5 10px/58px);
         li {
-            &:first-child {
+            &.text-top-area {
                 margin-top: -5px;
                 margin-bottom: 0;
             }
             &:last-child {
-                margin-bottom: 0;
                 div {
                     margin-bottom: 10px;
                     &:last-child {
@@ -282,7 +281,7 @@
     @include susy-breakpoint(em($tablet)) {
         .ul-list-type {
             li {
-                &:first-child {
+                &.text-top-area {
                     .fr-align {
                         float: right;
                         margin-right: -8px;
@@ -290,6 +289,9 @@
                 }
                 &:last-child {
                     @include layout(7 10px/102px);
+                    div {
+                        margin-bottom: 0;
+                    }
                     .select-box {
                         @include span(1);
                     }
@@ -345,6 +347,13 @@
 
 .sub-search-view-area {
     border: 1px solid #e7e7e7;
+    .btn-result-search-view {
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        clear: both;
+    }
     .result-accordion {
         li {
             .result-link {
@@ -374,7 +383,8 @@
                 }
             }
             .sub-result {
-                padding: 15px 15px 7px 15px;
+                position: relative;
+                padding: 15px;
                 border-top: 1px solid #e7e7e7;
                 height: 80px;
                 overflow-y: auto;
@@ -585,8 +595,69 @@
             }
         }
     }
+    .table-view-type-01 {
+        td {
+            &:nth-of-type(1) {
+                &:before {
+                    content: "번호";
+                }
+            }
+            &:nth-of-type(2) {
+                &:before {
+                    content: "등록번호";
+                }
+            }
+            &:nth-of-type(3) {
+                &:before {
+                    content: "소장위치";
+                }
+            }
+            &:nth-of-type(4) {
+                &:before {
+                    content: "청구기호";
+                }
+            }
+            &:nth-of-type(5) {
+                &:before {
+                    content: "도서상태";
+                }
+            }
+            &:nth-of-type(6) {
+                &:before {
+                    content: "반납예정일";
+                }
+            }
+            &:nth-of-type(7) {
+                &:before {
+                    content: "서비스";
+                }
+            }
+        }
+    }
 }
 .marc-view-area {
+    display: none;
+    padding: 15px 58px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    @extend %clearfix;
+    dl {
+        @include layout(13 10px/46px);
+        @extend %clearfix;
+        dt {
+            @include span(1);
+        }
+        dd {
+            &:nth-of-type(1) {
+                @include span(1);
+            }
+            &:nth-of-type(2) {
+                @include span(11 last);
+            }
+        }
+    }
+}
+.list-view-area {
     padding: 15px;
     border: 1px solid #ccc;
     margin-top: 10px;

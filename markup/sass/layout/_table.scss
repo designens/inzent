@@ -3,39 +3,55 @@
 /* =======================================*/
 
 // 리스트 내부 유형 테이블
-.table-view-type {
+[class*="table-view-type"] {
     width: 100%;
     @extend %clearfix;
     th, td {
-        min-width: 40px;
-        line-height: 31px;
-        padding: 0 10px;
+        padding: 4px 10px;
         border: 1px solid #ccc;
-        @include ellipsis(1);
     }
     th {
         font-weight: 500;
         color: #333;
         background: #f1f5f7;
+        border-bottom: 0;
     }
     td {
         &.readable {
             color: #e57c00;
         }
+        img {
+            margin: 6px 0;
+        }
     }
-    &.list-type {
-        display: block;
+    .col-hidden {
+        display: none;
+    }
+    @include susy-breakpoint(em(860px)) {
+        col {
+            &.col-hidden {
+                display: table-column;
+            }
+        }
+        tr {
+            &.col-hidden {
+                display: table-row;
+            }
+        }
+        td, th {
+            &.col-hidden {
+                display: table-cell;
+            }
+        }
+    }
+    &[class*="list-type"] {
         thead, tbody {
-            width: 50%;
-            float: left;
-            display: inline-block;
             border-top: 1px solid #ccc;
             border-bottom: 1px solid #ccc;
         }
         th, td {
-            display: inline-block;
+            display: block;
             width: 100%;
-            height: 31px;
             border-top: 0;
             border-bottom: 1px solid #ccc;
             border-left: 0;
@@ -44,21 +60,43 @@
                 border-bottom: 0;
             }
         }
+        td {
+            position: relative;
+            padding: 4px 10px 4px 53%;
+            &:before {
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50%;
+                height: 100%;
+                font-weight: 500;
+                color: #333;
+                padding: 4px 10px;
+                background: #f1f5f7;
+                content: "";
+            }
+            &:last-child {
+                &:before {
+                    border-bottom: 0;
+                }
+            }
+        }
     }
     @include susy-breakpoint(em($max-mobile) em(860px)) {
-        &.list-type {
-            thead {
-                width: 30%;
-            }
+        &[class*="list-type"] {
             tbody {
-                width: 70%;
+                td {
+                    padding: 4px 10px 4px 32%;
+                    &:before {
+                        width: 30%;
+                        content: "";
+                    }
+                }
             }
         }
     }
     @include susy-breakpoint(em(860px)) {
-        thead {
-            border-bottom: 0;
-        }
         tbody {
             border-bottom: 1px solid #ccc;
         }
@@ -66,19 +104,19 @@
             border: 1px solid #ccc;
             border-bottom: 0;
         }
-        &.list-type {
+        td {
+            &:before {
+                content: "";
+            }
+        }
+        &[class*="list-type"] {
             display: table;
             width: 100%;
-            thead, tbody {
-                float: none;
-                border-top: 0;
-            }
             thead {
-                display: table-header-group;
                 border-bottom: 0;
             }
             tbody {
-                display: table-row-group;
+                border-bottom: 1px solid #ccc;
             }
             th, td {
                 display: table-cell;
@@ -87,12 +125,18 @@
                 border: 1px solid #ccc;
                 border-bottom: 0;
             }
+            td {
+                padding: 4px 10px;
+                &:before {
+                    display: none;
+                }
+            }
         }
     }
 }
 
 // 게시판 유형 테이블
-.table-board-type {
+[class*="table-board-type"] {
     width: 100%;
     thead {
         border-top: 2px solid #45494d;

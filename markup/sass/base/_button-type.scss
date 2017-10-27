@@ -1,5 +1,7 @@
 /* =======================================*/
-/* 버튼 스타일
+/* 버튼 반응형 적용 레이아웃 구성 설정
+/* 클래스 col-1 ~ col-5 적용하여 버튼 정렬
+/* ex) col-3 적용 시 1/3 사이즈의 크기로 변화
 /* =======================================*/
 .btn-set-area {
     margin-top: 30px;
@@ -77,6 +79,10 @@
         }
     }
 }
+
+/* =======================================*/
+/* 버튼 사이즈 설정
+/* =======================================*/
 // 테이블 내부 버튼 기본 사이즈
 .btn-in-size {
     @include btn-size($h: 35px);
@@ -99,8 +105,12 @@
 }
 // table-board-type 버튼 기본 사이즈
 .btn-table-board-size {
-    @include btn-size($h: 38px);
+    @include btn-size($w: 56px, $h: 30px, $p: 0 10px);
 }
+
+/* =======================================*/
+/* 버튼 색상 설정
+/* =======================================*/
 // 버튼 기본 스타일
 .btn-defult {
     @include btn-defult-type ($color: #333, $bd: #585858, $bg: #fff, $bd-hover: #3466a2);
@@ -116,4 +126,8 @@
 // table-view-type 버튼 스타일
 .btn-orange {
     @include btn-activation-type ($bg: #ff8134, $bg-or-color-hover: #ff8134);
+}
+// table-board-type 버튼 스타일
+.btn-green {
+    @include btn-activation-type ($bg: #1c8278, $bg-or-color-hover: #1c8278);
 }
