@@ -95,13 +95,17 @@
 .btn-item-size {
     @include btn-size($h: 30px);
 }
+// 컨텐츠 버튼 기본 사이즈
+.btn-content-size {
+    @include btn-size($h: 27px);
+}
 // 더보기 버튼 사이즈
 .btn-more-size {
     @include btn-size($w: 100%, $h: 40px, $fz: 18px);
 }
 // table-view-type 버튼 기본 사이즈
 .btn-table-view-size {
-    @include btn-size($h: 23px, $p: 0 10px);
+    @include btn-size($w: 45px, $h: 23px, $p: 0 10px);
 }
 // table-board-type 버튼 기본 사이즈
 .btn-table-board-size {
@@ -125,9 +129,9 @@
 }
 // table-view-type 버튼 스타일
 .btn-orange {
-    @include btn-activation-type ($bg: #ff8134, $bg-or-color-hover: #ff8134);
+    @include btn-activation-type ($bg: #ff8134, $bg-or-color-hover: #585858);
 }
 // table-board-type 버튼 스타일
 .btn-green {
-    @include btn-activation-type ($bg: #1c8278, $bg-or-color-hover: #1c8278);
+    @include btn-activation-type ($bg: #1c8278, $bg-or-color-hover: #585858);
 }
