@@ -731,11 +731,22 @@
             margin-bottom: 13px;
         }
         .content-text {
-            padding: 20px 31px;
+            padding: 15px;
             border: 1px solid #ccc;
         }
         pre {
             font-family: $font-family-ko;
+            height: 150px;
+            overflow-y: auto;
+        }
+        @include susy-breakpoint(em($tablet)) {
+            .content-text {
+                padding: 20px 31px;
+            }
+            pre {
+                height: auto;
+                overflow-y: inherit;
+            }
         }
     }
 }
