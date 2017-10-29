@@ -1,42 +1,40 @@
 // 버튼 기본 디자인 설정
-@mixin btn-size ($w: 70px, $h: 40px, $p: 0 20px, $fz: 14px, $bd-size: 2px) {
-    $bd: $bd-size * 2;
+@mixin btn-size ($w: 70px, $h: 40px, $p: 0 20px, $bd-width: 2px, $fz: 14px) {
+    $bdw: $bd-width * 2;
     position: relative;
     display: inline-block;
     min-width: $w;
     height: $h;
-    line-height: $h - $bd;
+    line-height: $h - $bdw;
     font-size: $fz;
     text-align: center;
-    vertical-align: middle;
     padding: $p;
-    label {
-        line-height: $h;
-        .fa {
-            font-size: ceil(($h - $fz) / 2 * 1.5);
-            &.before {
-                padding-right: 4px;
-            }
-            &.after {
-                padding-left: 4px;
-            }
-            
+    border-width: $bd-width;
+    .fa {
+        font-size: ceil(($h - $fz) / 2 * 1.5);
+        &.before {
+            padding-right: 4px;
         }
-        .icon, img {
-            vertical-align: middle;
-            &.before {
-                padding-right: 4px;
-            }
-            &.after {
-                padding-left: 4px;
-            }
+        &.after {
+            padding-left: 4px;
+        }
+        
+    }
+    .icon, img {
+        vertical-align: middle;
+        &.before {
+            padding-right: 4px;
+        }
+        &.after {
+            padding-left: 4px;
         }
     }
 }
 @mixin btn-defult-type ($color: #333, $bd: #585858, $bg: #fff, $bd-hover: #3466a2) {
     font-weight: 500;
     color: $color;
-    border: 2px solid $bd;
+    border-color: $bd;
+    border-style: solid;
     background: $bg;
     .fa {
         color: $color;

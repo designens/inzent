@@ -359,7 +359,7 @@
             padding: 24px 37px;
             .owl-carousel {
                 @extend %clearfix;
-                li {
+                .owl-item {
                     border-radius: 10px;
                     border: 1px solid #ccc;
                     background: #fff;

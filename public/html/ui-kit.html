@@ -15,7 +15,7 @@
     <!-- MSIE 호환성 보기 (최신 브라우저) -->
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <!-- MOBILE : 모바일 최적화 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Style : Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     <!-- Style : Guide Style -->
@@ -44,13 +44,13 @@
         <div class="top-menu">
             <div class="wrap">
                 <div class="menu">
-                    <a href="#">홈</a>
+                    <a href="/">홈</a>
                     <a href="login.html">로그인</a>
                     <a href="user-join.html">회원가입</a>
                     <a href="support-application-status-list.html">사이트맵</a>
                 </div>
                 <div class="link">
-                    <a href="#">My Library</a>
+                    <a href="/">My Library</a>
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@
         <div class="top-area">
         <div class="wrap">
             <!-- [Start] 로고 -->
-            <h1 class="logo"><a href="#">대북지원정보시스템 메인이동</a></h1>
+            <h1 class="logo"><a href="/">대북지원정보시스템 메인이동</a></h1>
             <!-- [End] 로고 -->
             <!-- [Start] GNB : 대분류 -->
             <nav class="gnb">
@@ -75,7 +75,7 @@
             </nav>
             <!-- [End] GNB : 대분류 -->
             <div class="btn-agency">
-                <a href="#" target="_blank">정보교류협력기관</a>
+                <a href="/" target="_blank">정보교류협력기관</a>
             </div>
         </div>
     </div>
@@ -353,40 +353,60 @@ JS 내용 작성</code></pre>
                 <div class="btn-type-sample">
                     <h3><div class="fa fa-angle-double-right"></div>여러개 버튼 구성 시 (아이템 영역)</h3>
                     <div class="btn-set-area">
+                        <div class="btn-content-size btn-blue">
+                            <label>아이콘 버튼</label>
+                            <input type="submit" role="button" value>
+                        </div>
+                        <a href="#" class="btn-content-size btn-defult" role="button">기본 버튼</a>
+                        <a href="#" class="btn-content-size btn-gray" role="button">더보기 버튼</a>
+                        <a href="#" class="btn-content-size btn-orange" role="button">테이블 버튼</a>
+                        <button class="btn-content-size btn-green" type="button">테이블 버튼</button>
+                        <button class="btn-content-size btn-blue" type="button">활성화 버튼</button>
+                    </div>
+                    <h3><div class="fa fa-angle-double-right"></div>여러개 버튼 구성 시 (아이템 영역)</h3>
+                    <div class="btn-set-area">
                         <div class="btn-item-size btn-blue">
-                            <label><span class="fa fa-search before" aria-hidden="true"></span>버튼</label>
+                            <label>아이콘 버튼</label>
                             <input type="submit" role="button" value>
                         </div>
                         <a href="#" class="btn-item-size btn-defult" role="button">기본 버튼</a>
-                        <a href="#" class="btn-item-size btn-defult" role="button">기본 버튼</a>
-                        <a href="#" class="btn-item-size btn-defult" role="button">기본 버튼</a>
-                        <button class="btn-item-size btn-blue" type="button">활성화 버튼</button>
+                        <a href="#" class="btn-item-size btn-gray" role="button">더보기 버튼</a>
+                        <a href="#" class="btn-item-size btn-orange" role="button">테이블 버튼</a>
+                        <button class="btn-item-size btn-green" type="button">테이블 버튼</button>
                         <button class="btn-item-size btn-blue" type="button">활성화 버튼</button>
                     </div>
                     <h3><div class="fa fa-angle-double-right"></div>여러개 버튼 구성 시 (테이블 내부)</h3>
                     <div class="btn-set-area col-3">
                         <div class="btn-in-size btn-blue">
-                            <label><span class="fa fa-search before" aria-hidden="true"></span>버튼</label>
+                            <label><span class="fa fa-search before" aria-hidden="true"></span>아이콘 버튼</label>
                             <input type="submit" role="button" value>
                         </div>
                         <a href="#" class="btn-in-size btn-defult" role="button">기본 버튼</a>
-                        <a href="#" class="btn-in-size btn-defult" role="button">기본 버튼</a>
-                        <a href="#" class="btn-in-size btn-defult" role="button">기본 버튼</a>
-                        <button class="btn-in-size btn-blue" type="button">활성화 버튼</button>
-                        <button class="btn-in-size btn-blue" type="button">활성화 버튼</button>
+                        <a href="#" class="btn-in-size btn-gray" role="button">더보기 버튼</a>
+                        <a href="#" class="btn-in-size btn-orange" role="button">테이블 버튼</a>
+                        <button class="btn-in-size btn-green" type="button">테이블 버튼</button>
+                        <button class="btn-in-size btn-blue" type="button">
+                            활성화 버튼<span class="fa fa-search after" aria-hidden="true"></span>
+                        </button>
                     </div>
                     <h3><div class="fa fa-angle-double-right"></div>여러개 버튼 구성 시 (테이블 외부)</h3>
                     <div class="btn-set-area col-4">
                         <div class="btn-out-size btn-blue">
-                            <label><span class="fa fa-search before" aria-hidden="true"></span>버튼</label>
+                            <label><span class="fa fa-search before" aria-hidden="true"></span>아이콘 버튼</label>
                             <input type="submit" role="button" value>
                         </div>
                         <a href="#" class="btn-out-size btn-defult" role="button">기본 버튼</a>
-                        <a href="#" class="btn-out-size btn-defult" role="button">기본 버튼</a>
-                        <a href="#" class="btn-out-size btn-defult" role="button">기본 버튼</a>
-                        <button class="btn-out-size btn-blue" type="button">활성화 버튼</button>
-                        <button class="btn-out-size btn-blue" type="button">활성화 버튼</button>
+                        <a href="#" class="btn-out-size btn-gray" role="button">더보기 버튼</a>
+                        <a href="#" class="btn-out-size btn-orange" role="button">테이블 버튼</a>
+                        <button class="btn-out-size btn-green" type="button">테이블 버튼</button>
+                        <button class="btn-out-size btn-blue" type="button">
+                            활성화 버튼<span class="fa fa-search after" aria-hidden="true"></span>
+                        </button>
                     </div>
+                    <h3><div class="fa fa-angle-double-right"></div>더보기 버튼 (Width Full 사용)</h3>
+                    <button class="btn-more-size btn-gray">
+                        더보기 버튼<span class="fa fa-search after" aria-hidden="true"></span>
+                    </button>
 <pre>
 <code id="source" class="language-html">&lt;div class=&quot;btn-set-area&quot;&gt;
     &lt;div class=&quot;btn-item-size btn-blue&quot;&gt;
@@ -626,10 +646,10 @@ $('.btn-popup-name').on('click', function(e) {
         <div class="wrap">
             <div class="site-area">
                 <div class="site-info">
-                    <a href="#"><span>관련사이트</span></a>
-                    <a href="#"><span>찾아오시는길</span></a>
-                    <a href="#"><span>개인정보처리방침</span></a>
-                    <a href="#"><span>이메일무단수집거부</span></a>
+                    <a href="/"><span>관련사이트</span></a>
+                    <a href="/"><span>찾아오시는길</span></a>
+                    <a href="/"><span>개인정보처리방침</span></a>
+                    <a href="/"><span>이메일무단수집거부</span></a>
                 </div>
                 <p class="site-copyright">
                     137-702 서울특별시 서초구 반포대로 201<span>(반포동) 국립중앙도서관 본관 5층 통일부 북한자료센터</span>
