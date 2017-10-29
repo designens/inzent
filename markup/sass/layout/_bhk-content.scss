@@ -186,12 +186,12 @@
                 float: right;
                 width: 100%;
                 .btn-login-size {
-                    @include btn-size ($w: 100%, $h: 40px);
+                    // @include btn-size ($w: 100%, $h: 40px);
                 }
                 @include susy-breakpoint(em($tablet)) {
                     width: auto;
                     .btn-login-size {
-                        @include btn-size ($w: 80px, $h: 80px);
+                        // @include btn-size ($w: 80px, $h: 80px);
                     }
                 }
             }

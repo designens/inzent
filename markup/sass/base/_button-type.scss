@@ -7,22 +7,21 @@
     margin-top: 30px;
     text-align: center;
     @extend %clearfix;
-    div[class^="btn-"], button, a {
+    [class^="btn-"] {
         @include span(full);
-        margin-bottom: gutter();
-        vertical-align: top;
+        margin-bottom: gutter(10px);
     }
     @include susy-breakpoint(em($min-mobile) em($tablet)) {
-        div[class^="btn-"], button, a {
-            @include gallery(3 of 6);
-            margin-bottom: gutter();
+        @include layout(4 10px/155px);
+        [class^="btn-"] {
+            @include gallery(2 of 4);
             &.full {
                 @include span(full);
             }
         }
     }
     @include susy-breakpoint(em($tablet)) {
-        div[class^="btn-"], button, a {
+        [class^="btn-"] {
             &.full {
                 @include span(full);
             }
@@ -30,45 +29,29 @@
     }
     @include susy-breakpoint(em($tablet) em($desktop)) {
         @include layout(8 8px/83px);
-        div[class^="btn-"], button, a {
+        [class^="btn-"] {
             @include gallery(4 of 8);
-            margin-bottom: gutter();
-        }
-        &.col-1 {
-            div[class^="btn-"], button, a {
-                @include gallery(8 of 8);
-                margin-bottom: gutter();
-            }
-        }
-        &.col-2 {
-            div[class^="btn-"], button, a {
-                @include gallery(4 of 8);
-                margin-bottom: gutter();
-            }
         }
         &.col-3 {
             @include layout(3 9px/224px);
-            div[class^="btn-"], button, a {
+            [class^="btn-"] {
                 @include gallery(1 of 3);
-                margin-bottom: gutter();
             }
         }
         &.col-4 {
-            div[class^="btn-"], button, a {
+            [class^="btn-"] {
                 @include gallery(2 of 8);
-                margin-bottom: gutter();
             }
         }
         &.col-5 {
             @include layout(5 10px/130px);
-            div[class^="btn-"], button, a {
+            [class^="btn-"] {
                 @include gallery(1 of 5);
-                margin-bottom: gutter();
             }
         }
     }
     @include susy-breakpoint(em($desktop)) {
-        div[class^="btn-"], button, a {
+        [class^="btn-"] {
             width: auto;
             float: none;
             margin-right: 6px;
@@ -83,6 +66,14 @@
 /* =======================================*/
 /* 버튼 사이즈 설정
 /* =======================================*/
+// 컨텐츠 버튼 기본 사이즈
+.btn-content-size {
+    @include btn-size($h: 27px);
+}
+// 아이템 버튼 기본 사이즈
+.btn-item-size {
+    @include btn-size($h: 30px);
+}
 // 테이블 내부 버튼 기본 사이즈
 .btn-in-size {
     @include btn-size($h: 35px);
@@ -91,25 +82,17 @@
 .btn-out-size {
     @include btn-size($h: 40px);
 }
-// 아이템 버튼 기본 사이즈
-.btn-item-size {
-    @include btn-size($h: 30px);
+// 테이블 상세 버튼(table-view-type) 기본 사이즈
+.btn-table-view-size {
+    @include btn-size($w: 45px, $h: 23px, $p: 0 10px);
 }
-// 컨텐츠 버튼 기본 사이즈
-.btn-content-size {
-    @include btn-size($h: 27px);
+// 테이블 게시판(table-board-type) 기본 사이즈
+.btn-table-board-size {
+    @include btn-size($w: 56px, $h: 30px, $p: 0 10px);
 }
 // 더보기 버튼 사이즈
 .btn-more-size {
     @include btn-size($w: 100%, $h: 40px, $fz: 18px);
-}
-// table-view-type 버튼 기본 사이즈
-.btn-table-view-size {
-    @include btn-size($w: 45px, $h: 23px, $p: 0 10px);
-}
-// table-board-type 버튼 기본 사이즈
-.btn-table-board-size {
-    @include btn-size($w: 56px, $h: 30px, $p: 0 10px);
 }
 
 /* =======================================*/
@@ -129,9 +112,9 @@
 }
 // table-view-type 버튼 스타일
 .btn-orange {
-    @include btn-activation-type ($bg: #ff8134, $bg-or-color-hover: #585858);
+    @include btn-activation-type ($bg: #ff8134, $bg-or-color-hover: #ff8134);
 }
 // table-board-type 버튼 스타일
 .btn-green {
-    @include btn-activation-type ($bg: #1c8278, $bg-or-color-hover: #585858);
+    @include btn-activation-type ($bg: #1c8278, $bg-or-color-hover: #1c8278);
 }
