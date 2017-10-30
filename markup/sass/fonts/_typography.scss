@@ -42,3 +42,8 @@ h6 {
     @include psd-fz($h6-fz);
     @include psd-lh($h6-fz);
 }
+
+pre, code {
+    font-family: $font-family-ko;
+    line-height: $base-line;
+}

@@ -65,7 +65,99 @@
                 
                 <!-- [Start] Content 상세  -->
                 <div class="content">
-                    이 곳에 컨텐츠 내용을 작성하시면 됩니다.
+                    <div class="sub-search-area">
+                        <ul class="ul-list-type">
+                             <li>
+                                <div class="select-box full">
+                                    <label for="select-01">제목</label>
+                                    <select id="select-01">
+                                        <option selected="selected">제목</option>
+                                        <option>저자</option>
+                                    </select>
+                                </div>
+                                <div class="input-type-search full">
+                                    <input type="text" placeholder="검색 키워드를 입력하세요" />
+                                    <button type="button" class="btn-in-size btn-blue">검색</button>
+                                </div>
+                             </li>
+                        </ul>
+                    </div>
+                    <div class="all-table-views">전체 <span>50</span>건[1/5]</div>
+                    <table class="table-board-type">
+                        <caption>공지사항의 타이틀은 가로정렬로 되어있습니다.</caption>
+                        <!-- class="col-hidden" 사용하여 중단점에 따라 컬럼 감추기  -->
+                        <col class="col-hidden" width="60">
+                        <col width="auto">
+                        <col width="70">
+                        <col class="col-hidden" width="100">
+                        <col class="col-hidden" width="80">
+                        <thead>
+                            <tr>
+                                <th class="col-hidden" scope="col">번호</th>
+                                <th scope="col">제목</th>
+                                <th scope="col">첨부</th>
+                                <th class="col-hidden" scope="col">등록일</th>
+                                <th class="col-hidden" scope="col">조회수</th>
+                            </tr>
+                        </thead>
+                        <tbody class="align-left col-2">
+                            <tr>
+                                <td class="col-hidden">5</td>
+                                <td>2017년 통일부 신진연구자 정책연구 과제 공모 안내</td>
+                                <td><a href="/"><img src="../assets/images/icon/icon-attachments.png" alt="첨부파일명.hwp"></a></td>
+                                <td class="col-hidden">2017-09-27</td>
+                                <td class="col-hidden">174</td>
+                            </tr>
+                            <tr>
+                                <td class="col-hidden">4</td>
+                                <td>북한자료센터 서비스 일정 안내</td>
+                                <td></td>
+                                <td class="col-hidden">2017-09-27</td>
+                                <td class="col-hidden">174</td>
+                            </tr>
+                            <tr>
+                                <td class="col-hidden">3</td>
+                                <td> 북한자료센터 이사기간 휴관 안내</td>
+                                <td></td>
+                                <td class="col-hidden">2017-09-27</td>
+                                <td class="col-hidden">174</td>
+                            </tr>
+                            <tr>
+                                <td class="col-hidden">2</td>
+                                <td>북한자료센터 홈페이지 일시 중단 안내</td>
+                                <td></td>
+                                <td class="col-hidden">2017-09-27</td>
+                                <td class="col-hidden">174</td>
+                            </tr>
+                            <tr>
+                                <td class="col-hidden">1</td>
+                                <td>북한자료센터 홈페이지 일시 중단 안내</td>
+                                <td></td>
+                                <td class="col-hidden">2017-09-27</td>
+                                <td class="col-hidden">174</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- [Start] Paging Area -->
+                    <div class="paging">
+                        <button type="button" class="first-prev" aria-label="처음으로 이동"></button>
+                        <button type="button" class="prev" aria-label="이전 페이지"></button>
+                        <div class="mobile-page">
+                            <input class="now-page" type="number" name="now-page" aria-label="현재 페이지">
+                            <span class="all-page" aria-label="총 페이지">19</span>
+                        </div>
+                        <div class="pc-page">
+                            <a href role="button">1</a>
+                            <a href role="button">2</a>
+                            <!-- 선택된 버튼 class="selected"로 제어 -->
+                            <a href role="button" class="selected">3</a>
+                            <a href role="button">4</a>
+                            <a href role="button">5</a>
+                        </div>
+                        <button type="button" class="next"" aria-label="다음 페이지"></button>
+                        <button type="button" class="last-next" aria-label="끝으로 이동"></button>
+                    </div>
+                    <!-- [End] Paging Area -->
                 </div>
                 <!-- [End] Content 상세  -->
 

@@ -53,6 +53,77 @@
         }
     }
 }
+// 서브 상단 검색 영역
+.sub-search-area {
+    background: #f1f1f1;
+    padding: 20px 10px;
+    .ul-list-type {
+        @include layout(5 10px/58px);
+        li {
+            &.text-top-area {
+                margin-top: -5px;
+                margin-bottom: 0;
+            }
+            &:last-child {
+                div {
+                    margin-bottom: 10px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            .fr-align {
+                display: block;
+                float: inherit;
+            }
+        }
+    }
+    @include susy-breakpoint(em($tablet)) {
+        .ul-list-type {
+            li {
+                &.text-top-area {
+                    .fr-align {
+                        float: right;
+                        margin-right: -8px;
+                    }
+                }
+                &:last-child {
+                    @include layout(7 10px/102px);
+                    div {
+                        margin-bottom: 0;
+                    }
+                    .select-box {
+                        @include span(1);
+                    }
+                    .input-type-search {
+                        @include span(6 last);
+                        &.full {
+                            min-width: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include susy-breakpoint(em($tablet) em($desktop)) {
+        padding: 20px 15px;
+    }
+    @include susy-breakpoint(em($desktop)) {
+        padding: 15px 31px;
+    }
+}
+.all-table-views {
+    padding: 7px 15px;
+    span {
+        color: #ff8134;
+    }
+    @include susy-breakpoint(em($tablet) em($desktop)) {
+        padding: 16px 15px 7px;
+    }
+    @include susy-breakpoint(em($desktop)) {
+        padding: 26px 15px 7px;
+    }
+}
 
 /* =======================================*/
 /* Content : 컨텐츠 영역
@@ -105,16 +176,6 @@
 /* 자료검색 > 소장자료 검색 > 초기화면
 /* (html/resources-search.html)
 /* =======================================*/
-.sub-search-area {
-    background: #f1f1f1;
-    padding: 20px 10px;
-    @include susy-breakpoint(em($tablet) em($desktop)) {
-        padding: 20px 15px;
-    }
-    @include susy-breakpoint(em($desktop)) {
-        padding: 15px 31px;
-    }
-}
 .keyword-search-area {
     .sub-search-area {
         .ul-list-type {
@@ -256,57 +317,6 @@
 /* 자료검색 > 소장자료 검색 > 리스트
 /* (html/resources-search-list.html)
 /* =======================================*/
-.resources-search-list {
-    .ul-list-type {
-        @include layout(5 10px/58px);
-        li {
-            &.text-top-area {
-                margin-top: -5px;
-                margin-bottom: 0;
-            }
-            &:last-child {
-                div {
-                    margin-bottom: 10px;
-                    &:last-child {
-                        margin-bottom: 0;
-                    }
-                }
-            }
-            .fr-align {
-                display: block;
-                float: inherit;
-            }
-        }
-    }
-    @include susy-breakpoint(em($tablet)) {
-        .ul-list-type {
-            li {
-                &.text-top-area {
-                    .fr-align {
-                        float: right;
-                        margin-right: -8px;
-                    }
-                }
-                &:last-child {
-                    @include layout(7 10px/102px);
-                    div {
-                        margin-bottom: 0;
-                    }
-                    .select-box {
-                        @include span(1);
-                    }
-                    .input-type-search {
-                        @include span(6 last);
-                        &.full {
-                            min-width: auto;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
 .sub-search-view-area {
     border: 1px solid #e7e7e7;
     .btn-result-search-view {

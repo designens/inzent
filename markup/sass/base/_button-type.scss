@@ -15,12 +15,28 @@
         @include layout(4 10px/155px);
         [class^="btn-"] {
             @include gallery(2 of 4);
+        }
+        &.col-1 {
+            [class^="btn-"] {
+                float: none;
+                width: auto;
+                margin: auto;
+            }
+        }
+        [class^="btn-"] {
             &.full {
                 @include span(full);
             }
         }
     }
     @include susy-breakpoint(em($tablet)) {
+        &.col-1 {
+            [class^="btn-"] {
+                float: none;
+                width: auto;
+                margin: auto;
+            }
+        }
         [class^="btn-"] {
             &.full {
                 @include span(full);
@@ -31,6 +47,13 @@
         @include layout(8 8px/83px);
         [class^="btn-"] {
             @include gallery(4 of 8);
+        }
+        &.col-1 {
+            [class^="btn-"] {
+                float: none;
+                width: auto;
+                margin: auto;
+            }
         }
         &.col-3 {
             @include layout(3 9px/224px);
