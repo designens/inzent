@@ -7,6 +7,7 @@
     width: 100%;
     @extend %clearfix;
     th, td {
+        text-align: center;
         padding: 4px 10px;
         border: 1px solid #ccc;
         
@@ -25,10 +26,27 @@
             margin: 6px 0;
         }
     }
+    .align-left {
+        @for $i from 1 through 10 {
+            &.col-#{$i} {
+                tr {
+                    th:nth-of-type(#{$i}),
+                    td:nth-of-type(#{$i}) {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
     .col-hidden {
         display: none;
     }
     @include susy-breakpoint(em(860px)) {
+        colgroup {
+            &.col-hidden {
+                display: table-column-group;
+            }
+        }
         col {
             &.col-hidden {
                 display: table-column;
@@ -46,6 +64,9 @@
         }
     }
     &[class*="list-type"] {
+        colgroup, col, thead {
+            display: none;
+        }
         thead, tbody {
             border-top: 1px solid #ccc;
             border-bottom: 1px solid #ccc;
@@ -114,7 +135,14 @@
         &[class*="list-type"] {
             display: table;
             width: 100%;
+            colgroup {
+                display: table-column-group;
+            }
+            col {
+                display: table-column;
+            }
             thead {
+                display: table-header-group;
                 border-bottom: 0;
             }
             tbody {

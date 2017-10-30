@@ -93,6 +93,41 @@
 // 더보기 버튼 사이즈
 .btn-more-size {
     @include btn-size($w: 100%, $h: 40px, $fz: 18px);
+    .icon.after {
+        position: relative;
+        display: inline-block;
+        margin-left: 30px;
+        vertical-align: inherit;
+        &:before {
+            position: absolute;
+            top: -3px;
+            right: 0;
+            width: 13px;
+            height: 3px;
+            background: #fff;
+            content: "";
+        }
+        &:after {
+            position: absolute;
+            top: -8px;
+            right: 5px;
+            width: 3px;
+            height: 13px;
+            background: #fff;
+            content: "";
+            transform: rotate(0deg);
+            transition: transform 0.25s ease;
+        }
+    }
+    &.open {
+        .icon.after {
+            &:after {
+                background: $font-lnb-title-active;
+                transform: rotate(90deg);
+                transition: transform 0.25s ease;
+            }
+        }
+    }
 }
 
 /* =======================================*/
