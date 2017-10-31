@@ -10,6 +10,14 @@
         }
     }
 }
+// 설명박스 스타일
+.explan {
+    color: #888;
+    border-top: 1px solid #e5e6e6;
+    border-bottom: 1px solid #e5e6e6;
+    background: url($bg-dashed01);
+    padding: 20px;
+}
 // Select & Button type 검색 영역
 .search-select-box-area {
     background: #f1f1f1;
