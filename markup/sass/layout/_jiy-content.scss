@@ -1019,3 +1019,19 @@
     }
     
 }
+
+/* =======================================*/
+/* 자료검색 > 인기 자료 검색 > 인기 키워드 자료
+/* html/popular-keywords-resources.html
+/* =======================================*/
+.keyword-cloud-area {
+    height: 232px;
+    padding: 30px 10px;
+    #keyword_cloud {
+        min-width: 320px;
+        a {
+            font-family: $font-family-ko;
+            transition: transform .35s;
+        }
+    }
+}
