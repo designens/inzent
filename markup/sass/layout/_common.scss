@@ -30,16 +30,10 @@
 /* =======================================*/
 .fl-align {
     float: left;
-    &:after {
-        clear: both;
-    }
 }
 
 .fr-align {
     float: right;
-    &:after {
-        clear: both;
-    }
 }
 
 /* =======================================*/
@@ -810,7 +804,7 @@
     background: #fff;
     overflow-y: scroll;
     &:focus {
-        border: 1px solid #002847;
+        border: 1px solid #3466a2;
     }
 }
 

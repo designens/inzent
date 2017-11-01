@@ -183,6 +183,15 @@ table {
             padding: 0 10px;
         }
     }
+    &.from {
+        tr {
+            th, td {
+                height: auto;
+                line-height: 1.5;
+                padding: 10px;
+            }
+        }
+    }
     thead {
         th {
             border-bottom: 1px solid #dedede;
@@ -238,5 +247,12 @@ table {
                 }
             }
         }
+    }
+}
+.table-textarea-area {
+    border-bottom: 1px solid #dedfe2;
+    margin: 20px 10px;
+    .textarea {
+        height: 150px;
     }
 }

@@ -1,0 +1,83 @@
+<!-- 팝업 창 data-id 설정 -->
+<div class="popup" data-id="popup-write-review">
+    <!-- [Start] 팝업 헤드라인 -->
+    <header class="popup-headline">
+        <h4>서평쓰기</h4>
+        <button type="button" class="popup-close">창 닫기</button>
+    </header>
+    <!-- [End] 팝업 헤드라인 -->
+    <!-- [Start] 팝업 콘텐츠 -->
+    <div class="popup-content">
+        <table class="table-board-type from">
+            <caption>(표 제목)의 타이틀은 (가로 or 세로)정렬로 되어있습니다.</caption>
+            <col class="col-hidden" width="140">
+            <col width="auto">
+            <tbody class="align-left col-1">
+                <tr>
+                    <th class="col-hidden">제목</th>
+                    <td>
+                        <div class="input-type full">
+                            <input type="text" placeholder="제목을 입력하세요." aria-label="제목입력 폼" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="col-hidden">별점선택</th>
+                    <td>
+                        <div class="review-star">
+                            <div class="radio-type">
+                                <input type="radio" id="radio-id-01" name="test-name">
+                                <label for="radio-id-01">
+                                    <span class="fa fa-star on"></span><span class="fa fa-star on"></span><span class="fa fa-star on"></span><span class="fa fa-star on"></span><span class="fa fa-star"></span><span class="star-number" aria-label="5점 만점에 1점">1</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="review-star">
+                            <div class="radio-type">
+                                <input type="radio" id="radio-id-02" name="test-name">
+                                <label for="radio-id-02">
+                                    <span class="fa fa-star on"></span><span class="fa fa-star on"></span><span class="fa fa-star on"></span><span class="fa fa-star on"></span><span class="fa fa-star"></span><span class="star-number" aria-label="5점 만점에 2점">2</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="review-star">
+                            <div class="radio-type">
+                                <input type="radio" id="radio-id-03" name="test-name">
+                                <label for="radio-id-03">
+                                    <span class="fa fa-star on"></span><span class="fa fa-star on"></span><span class="fa fa-star on"></span><span class="fa fa-star on"></span><span class="fa fa-star"></span><span class="star-number" aria-label="5점 만점에 3점">3</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="review-star">
+                            <div class="radio-type">
+                                <input type="radio" id="radio-id-04" name="test-name">
+                                <label for="radio-id-04">
+                                    <span class="fa fa-star on"></span><span class="fa fa-star on"></span><span class="fa fa-star on"></span><span class="fa fa-star on"></span><span class="fa fa-star"></span><span class="star-number" aria-label="5점 만점에 4점">4</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="review-star">
+                            <div class="radio-type">
+                                <input type="radio" id="radio-id-05" name="test-name">
+                                <label for="radio-id-05">
+                                    <span class="fa fa-star on"></span><span class="fa fa-star on"></span><span class="fa fa-star on"></span><span class="fa fa-star on"></span><span class="fa fa-star"></span><span class="star-number" aria-label="5점 만점">5</span>
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="table-textarea-area">
+            <textarea class="textarea full" placeholder="서평 내용을 작성해 주세요." aria-label="서평쓰기 폼"></textarea>
+        </div>
+        <!-- [Start] 팝업 버튼 -->
+        <div class="btn-set-area">
+            <button class="btn-out-size btn-blue">저장</button>
+            <!-- 닫기 or 취소 버튼 필수 (접근성) -->
+            <button class="btn-out-size btn-defult popup-close">취소</button>
+        </div>
+        <!-- [End] 팝업 버튼 -->
+    </div>
+    <!-- [End] 팝업 콘텐츠 -->
+</div>

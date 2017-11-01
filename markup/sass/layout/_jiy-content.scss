@@ -132,6 +132,22 @@
         padding: 26px 15px 7px;
     }
 }
+.review-star {
+    .fa {
+        @include psd-fz(16px);
+        color: #d5d5d5;
+        margin-right: 2px;
+        &.on {
+            color: #54b477;
+        }
+    }
+    .star-number {
+        @include psd-fz(16px);
+        font-weight: 500;
+        color: #333;
+        margin-left: 6px;
+    }
+}
 
 /* =======================================*/
 /* Content : 컨텐츠 영역
@@ -837,20 +853,6 @@
                     }
                 }
             }
-            .fa {
-                @include psd-fz(16px);
-                color: #d5d5d5;
-                margin-right: 2px;
-                &.on {
-                    color: #54b477;
-                }
-            }
-            .star-number {
-                @include psd-fz(16px);
-                font-weight: 500;
-                color: #333;
-                margin-left: 6px;
-            }
         }
         .book-review-text {
             color: #858585;
@@ -868,4 +870,152 @@
             }
         }
     }
+}
+
+/* =======================================*/
+/* 참여서비스 > 북한영화 신청 > 캘린더
+/* html/north-korea-movie-application-calendar.html
+/* =======================================*/
+.year-month-select-area {
+    margin-top: 30px;
+    @extend %clearfix;
+    .year-month-text {
+        @include psd-fz(30px);
+        color: #333;
+        padding: 0 20px;
+        span {
+            color: #3466a2;
+        }
+    }
+    [class*="btn-month"] {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #e6e6e6;
+        &:before {
+            vertical-align: 2px;
+        }
+    }
+    .btn-month-prev {
+        &:before {
+            @include fa($icon: "\f104", $fz: 24px, $color: #1c1c1c);
+        }
+    }
+    .btn-month-next {
+        &:before {
+            @include fa($icon: "\f105", $fz: 24px, $color: #1c1c1c);
+        }
+    }
+    .select-box {
+        margin-right: 7px;
+    }
+    .select-box.year {
+        @include select-box ($w: 84px);
+    }
+    .select-box.month {
+        @include select-box ($w: 74px);
+    }
+    .fl-align {
+        float: none;
+        text-align: center;
+    }
+    .fr-align {
+        display: none;
+    }
+    @include susy-breakpoint(em($tablet)) {
+        .fl-align {
+            float: left;
+            text-align: left;
+        }
+        .fr-align {
+            display: block;
+        }
+
+    }
+}
+.calendar-table {
+    width: 100%;
+    thead {
+        th {
+            height: 33px;
+            line-height: 33px;
+            color: #fff;
+            background: #3a71b3;
+            border-right: 1px solid #2e5d99;
+            &:first-child {
+                border-left: 1px solid #2e5d99;
+            }
+        }
+    }
+    tbody {
+        td {
+            height: 50px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                padding: 10px 6px;
+            }
+        }
+        tr {
+            td:first-child, .can-not-apply {
+                color: #e35000;
+            }
+            .can-not-apply {
+                p {
+                    background: #edba9d;
+                }
+            }
+            .day {
+                &:hover, &:focus {
+                    border: 2px solid #333;
+                }
+                &.inactive, &.can-not-apply {
+                    &:hover, &:focus {
+                        border: 1px solid #ddd;
+                        a {
+                            cursor: no-drop;
+                        }
+                    }
+                }
+            }
+            .inactive {
+                color: #ccc;
+            }
+        }
+        tr:first-child {
+            td {
+                border-top: 1px solid #2e5d99;
+                &.day {
+                    &.inactive, &.can-not-apply {
+                        &:hover, &:focus {
+                            border-top: 1px solid #2e5d99;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include susy-breakpoint(em($desktop)) {
+        tbody {
+            td {
+                height: 100px;
+            }
+        }
+    }
+}
+.can-not-apply-message {
+    margin: 6px 0 7px 0;
+    &:before {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 8px;
+        vertical-align: -2px;
+        background: #edba9d;
+        content: "";
+    }
+    
 }
