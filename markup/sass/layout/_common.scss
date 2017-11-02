@@ -742,20 +742,14 @@
         }
     }
     &.date {
-        position: relative;
-        // @include input-type(157px);
-        input {
-            padding-right: 0;
-        }
-        .icon-calender {
-            position: absolute;
-            top: 4px;
-            right: 4px;
-            width: 23px;
-            height: 22px;
-            vertical-align: -5px;
-            // background: url($icon-calender) no-repeat;
-            pointer-events: none;
+        .start-date, .end-date {
+            display: inline-block;
+            button {
+                line-height: 30px;
+                img {
+                    vertical-align: middle;
+                }
+            }
         }
     }
     &.full {

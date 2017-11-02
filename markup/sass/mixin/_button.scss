@@ -19,7 +19,7 @@
         width: 100%;
         height: 100%;
     }
-    span, img, .icon {
+    img, .fa, .icon {
         font-size: ceil(($h - $fz) / 2 * 1.5);
         vertical-align: middle;
         &.before {

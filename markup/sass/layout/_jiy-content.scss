@@ -86,6 +86,44 @@
             }
         }
     }
+    .date-type {
+        * {
+            margin-bottom: 10px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        .select-box {
+            width: 100%;
+        }
+        .input-type.date {
+            width: 100%;
+            .start-date, .end-date {
+                float: left;
+                width: -webkit-calc( 100% / 2 - 15px );
+                width: -moz-calc( 100% / 2 - 15px );
+                width: calc( 100% / 2 - 15px );
+                input {
+                    float: left;
+                    width: -webkit-calc( 100% - 26px );
+                    width: -moz-calc( 100% - 26px );
+                    width: calc( 100% - 26px );
+                }
+                button {
+                    float: left;
+                    width: 26px;
+                    text-align: right;
+                }
+            }
+            .and {
+                float: left;
+                display: inline-block;
+                width: 30px;
+                line-height: 35px;
+                text-align: center;
+            }
+        }
+    }
     @include susy-breakpoint(em($tablet)) {
         .ul-list-type {
             li {
@@ -100,9 +138,6 @@
                     div {
                         margin-bottom: 0;
                     }
-                    .select-box {
-                        @include span(1);
-                    }
                     .input-type-search {
                         @include span(6 last);
                         &.full {
@@ -110,6 +145,11 @@
                         }
                     }
                 }
+            }
+        }
+        .date-type {
+            > button {
+                margin-left: 10px;
             }
         }
     }
@@ -132,7 +172,11 @@
         padding: 26px 15px 7px;
     }
 }
+
+// 별점 선택
 .review-star {
+    height: 30px;
+    line-height: 30px;
     .fa {
         @include psd-fz(16px);
         color: #d5d5d5;
@@ -250,9 +294,9 @@
             }
         }
         @include susy-breakpoint(em($tablet) em($desktop)) {
-            @include layout(7 10px/102px);
             .ul-list-type {
                 li {
+                    @include layout(7 10px/102px);
                     .search-1st {
                         @include span(1);
                         margin-bottom: 0;
@@ -287,8 +331,8 @@
         }
         @include susy-breakpoint(em($desktop)) {
             .ul-list-type {
-                @include layout(7 10px/102px);
                 li {
+                    @include layout(7 10px/102px);
                     .search-1st {
                         @include span(1);
                         margin-bottom: 0;
@@ -1025,13 +1069,27 @@
 /* html/popular-keywords-resources.html
 /* =======================================*/
 .keyword-cloud-area {
+    text-align: center;
     height: 232px;
     padding: 30px 10px;
+    border: 1px solid #ccc;
     #keyword_cloud {
-        min-width: 320px;
+        @include wh-center ($position: relative, $h-percent: 50%, $w-percent: 50%);
+        min-width: 240px;
+        max-width: 370px;
+        height: 170px;
         a {
             font-family: $font-family-ko;
-            transition: transform .35s;
         }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+.popular-keywords-resources {
+    .sub-search-area {
+        text-align: center;
+        margin-top: 20px;
     }
 }
