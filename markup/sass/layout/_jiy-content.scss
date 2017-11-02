@@ -96,32 +96,8 @@
         .select-box {
             width: 100%;
         }
-        .input-type.date {
+        button {
             width: 100%;
-            .start-date, .end-date {
-                float: left;
-                width: -webkit-calc( 100% / 2 - 15px );
-                width: -moz-calc( 100% / 2 - 15px );
-                width: calc( 100% / 2 - 15px );
-                input {
-                    float: left;
-                    width: -webkit-calc( 100% - 26px );
-                    width: -moz-calc( 100% - 26px );
-                    width: calc( 100% - 26px );
-                }
-                button {
-                    float: left;
-                    width: 26px;
-                    text-align: right;
-                }
-            }
-            .and {
-                float: left;
-                display: inline-block;
-                width: 30px;
-                line-height: 35px;
-                text-align: center;
-            }
         }
     }
     @include susy-breakpoint(em($tablet)) {
@@ -148,7 +124,15 @@
             }
         }
         .date-type {
+            * {
+                margin-bottom: 0;
+            }
+            .select-box {
+                width: 130px;
+                margin-right: 8px;
+            }
             > button {
+                width: auto;
                 margin-left: 10px;
             }
         }

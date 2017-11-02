@@ -584,7 +584,7 @@
             display: inline-block;
         }
     }
-    button {
+    button, a[role="button"] {
         position: relative;
         display: inline-block;
         min-width: 32px;
@@ -593,7 +593,7 @@
         border: 1px solid #d3d4d8;
         &:before, &:after {
             position: absolute;
-            top: 3px;
+            top: -1px;
         }
         &.first-prev {
             margin-right: 2px;
@@ -742,14 +742,38 @@
         }
     }
     &.date {
+        width: 100%;
         .start-date, .end-date {
+            float: left;
             display: inline-block;
+            width: -webkit-calc( 100% / 2 - 15px );
+            width: -moz-calc( 100% / 2 - 15px );
+            width: calc( 100% / 2 - 15px );
+            input {
+                float: left;
+                width: -webkit-calc( 100% - 26px );
+                width: -moz-calc( 100% - 26px );
+                width: calc( 100% - 26px );
+            }
             button {
+                float: left;
+                width: 26px;
                 line-height: 30px;
+                text-align: right;
                 img {
                     vertical-align: middle;
                 }
             }
+        }
+        .and {
+            float: left;
+            display: inline-block;
+            width: 30px;
+            line-height: 35px;
+            text-align: center;
+        }
+        @include susy-breakpoint(em($tablet)) {
+            width: 340px;
         }
     }
     &.full {

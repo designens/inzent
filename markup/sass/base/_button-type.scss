@@ -12,8 +12,8 @@
         margin-bottom: gutter(10px);
     }
     @include susy-breakpoint(em($min-mobile) em($tablet)) {
-        @include layout(4 10px/155px);
         [class^="btn-"] {
+            @include layout(4 10px/82px);
             @include gallery(2 of 4);
             &.full {
                 @include span(full);
@@ -35,26 +35,27 @@
             margin-bottom: 6px;
         }
         &.col-2 {
-            @include layout(8 8px/83px);
+            @include layout(8 10px/95px);
             [class^="btn-"] {
                 @include gallery(4 of 8);
             }
         }
         &.col-3 {
-            @include layout(3 9px/224px);
+            @include layout(9 10px/84px);
             [class^="btn-"] {
-                @include gallery(1 of 3);
+                @include gallery(3 of 9);
             }
         }
         &.col-4 {
             [class^="btn-"] {
+                @include layout(8 10px/95px);
                 @include gallery(2 of 8);
             }
         }
         &.col-5 {
-            @include layout(5 10px/130px);
+            @include layout(10 10px/74px);
             [class^="btn-"] {
-                @include gallery(1 of 5);
+                @include gallery(2 of 10);
             }
         }
     }
