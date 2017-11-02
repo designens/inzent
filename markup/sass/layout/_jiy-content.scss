@@ -110,15 +110,12 @@
                     }
                 }
                 &:last-child {
-                    @include layout(7 10px/102px);
-                    div {
-                        margin-bottom: 0;
-                    }
-                    .input-type-search {
-                        @include span(6 last);
-                        &.full {
-                            min-width: auto;
-                        }
+                    margin-bottom: 0;
+                }
+                .input-type-search {
+                    @include span(full);
+                    &.full {
+                        min-width: auto;
                     }
                 }
             }
