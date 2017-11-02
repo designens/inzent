@@ -1158,10 +1158,14 @@
 /* html/popular-loans-resources.html
 /* =======================================*/
 .best-ranking-area {
+    background: #f1f1f1;
+    padding-bottom: 20px;
+    @extend %clearfix;
     li {
         @include layout(4 15px/78px);
         @include gallery(2 of 4);
         text-align: center;
+        margin-top: 28px;
         .ranking-img {
             position: relative;
             width: 78px;
@@ -1178,14 +1182,125 @@
                 text-align: center;
                 background: #ff8134;
             }
+            img {
+                border: 1px solid #ddd;
+            }
         }
-        @include susy-breakpoint(em($tablet) em($desktop)) {
+        p {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding: 0 10px;
+        }
+        .book-title {
+            color: #333;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        .book-author {
+            color: #888;
+            font-weight: 300;
+        }
+        @include susy-breakpoint(em($tablet) em(860px)) {
             @include layout(9 15px/82px);
             @include gallery(3 of 9);
+        }
+        @include susy-breakpoint(em(860px) em($desktop)) {
+            @include layout(4 15px/203px);
+            @include gallery(1 of 4);
         }
         @include susy-breakpoint(em($desktop)) {
             @include layout(10 15px/70px);
             @include gallery(2 of 10);
+        }
+    }
+}
+.popular-loans-resources {
+    .table-board-type {
+        margin-top: 20px;
+        .title {
+            @include psd-fz(16px);
+            font-weight: 500;
+            color: #1397c1;
+            text-align: left;
+        }
+        td {
+            width: 50%;
+            padding: 0;
+            > div {
+                &:first-child {
+                    .ranking-img {
+                        position: relative;
+                        width: 78px;
+                        height: 140px;
+                        line-height: 138px;
+                        margin: 0 auto;
+                        .ranking-num {
+                            position: absolute;
+                            top: 15px;
+                            left: -3px;
+                            width: 29px;
+                            height: 29px;
+                            line-height: 29px;
+                            text-align: center;
+                            border: 1px solid #dedede;
+                            background: #fff9e9;
+                        }
+                        img {
+                            vertical-align: middle;
+                        }
+                    }
+                }
+                &:last-child {
+                    p {
+                        line-height: 1.5;
+                        text-align: center;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        padding: 0 10px;
+                    }
+                    .book-title {
+                        font-weight: 500;
+                        @include psd-fz(15px);
+                        margin-bottom: 12px;
+                    }
+                    .book-author, .book-publisher {
+                        display: none;
+                        color: #333;
+                        span {
+                            color: #888;
+                        }
+                    }
+                }
+                @include susy-breakpoint(em($tablet)) {
+                    &:first-child {
+                        width: 120px;
+                        float: left;
+                        .ranking-img {
+                            height: 150px;
+                            line-height: 148px;
+                            .ranking-num {
+                                top: 20px;
+                                left: -3px;
+                            }
+                        }
+                    }
+                    &:last-child {
+                        width: -webkit-calc( 100% - 120px );
+                        width: -moz-calc( 100% - 120px );
+                        width: calc( 100% - 120px );
+                        float: left;
+                        padding-top: 20px;
+                        p {
+                            text-align: left;
+                        }
+                        .book-author, .book-publisher {
+                            display: block;
+                        }
+                    }
+                }
+            }
         }
     }
 }
