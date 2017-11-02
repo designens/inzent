@@ -214,11 +214,9 @@
 // =======================================
 // 화살표 스타일
 // =======================================
-.arrow-box {
-    [class^="arrow-"] {
-        display: inline-block;
-        margin-right: 10px;
-    }
+.fa-hand-o-left {
+    margin-left: 10px;
+    margin-right: 5px;
 }
 
 // =======================================

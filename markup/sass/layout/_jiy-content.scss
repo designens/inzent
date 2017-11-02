@@ -80,6 +80,12 @@
                     }
                 }
             }
+            .select-box {
+                @include span(full);
+            }
+            .input-type-search {
+                @include span(full);
+            }
             .fr-align {
                 display: block;
                 float: inherit;
@@ -110,10 +116,16 @@
                     }
                 }
                 &:last-child {
-                    margin-bottom: 0;
+                    div {
+                        margin-bottom: 0;
+                    }
+                }
+                @include layout(7 10px/102px);
+                .select-box {
+                    @include span(1);
                 }
                 .input-type-search {
-                    @include span(full);
+                    @include span(6 last);
                     &.full {
                         min-width: auto;
                     }
@@ -228,10 +240,10 @@
 .keyword-search-area {
     .sub-search-area {
         .ul-list-type {
-            @include layout(5 10px/58px);
             li {
+                @include layout(5 10px/58px);
                 .search-1st {
-                    @include span(2);
+                    @include span(3);
                     margin-bottom: 5px;
                 }
                 .search-2nd {
@@ -239,9 +251,6 @@
                 }
                 .search-3rd {
                     @include span(2 last);
-                }
-                &:last-child {
-                    margin-bottom: 10px;
                 }
             }
         }
@@ -268,7 +277,18 @@
                     input {
                         @include span(1);
                         &:last-child {
-                            @include last();
+                            @include last;
+                        }
+                    }
+                }
+            }
+        }
+        @include susy-breakpoint(em($tablet)) {
+            .ul-list-type {
+                li {
+                    .search-1st, .search-3rd {
+                        .select-box {
+                            @include span(full);
                         }
                     }
                 }
@@ -366,6 +386,17 @@
 /* 자료검색 > 소장자료 검색 > 리스트
 /* (html/resources-search-list.html)
 /* =======================================*/
+.resources-search-list {
+    @include susy-breakpoint(em($tablet)) {
+        .ul-list-type {
+            li {
+                &:last-child div {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
 .sub-search-view-area {
     border: 1px solid #e7e7e7;
     .btn-result-search-view {
@@ -1118,6 +1149,42 @@
                 top: 9px;
                 right: 6px;
             }
+        }
+    }
+}
+
+/* =======================================*/
+/* 자료검색 > 인기 자료 검색 > 인기 대출 자료
+/* html/popular-loans-resources.html
+/* =======================================*/
+.best-ranking-area {
+    li {
+        @include layout(4 15px/78px);
+        @include gallery(2 of 4);
+        text-align: center;
+        .ranking-img {
+            position: relative;
+            width: 78px;
+            height: 106px;
+            .ranking-num {
+                position: absolute;
+                top: -4px;
+                left: -4px;
+                width: 29px;
+                height: 29px;
+                line-height: 29px;
+                color: #fff;
+                text-align: center;
+                background: #ff8134;
+            }
+        }
+        @include susy-breakpoint(em($tablet) em($desktop)) {
+            @include layout(9 15px/82px);
+            @include gallery(3 of 9);
+        }
+        @include susy-breakpoint(em($desktop)) {
+            @include layout(10 15px/70px);
+            @include gallery(2 of 10);
         }
     }
 }
