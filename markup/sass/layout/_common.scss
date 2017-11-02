@@ -4,7 +4,7 @@
 .wrap {
     @include layout(6 0px/60px);
     @include container(100%);
-    min-width: $min-mobile;
+    min-width: 320px;
     padding: 0 20px;
     // Mobile만 적용
     @include susy-breakpoint(em($max-mobile)) {
