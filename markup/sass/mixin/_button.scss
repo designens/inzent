@@ -28,7 +28,9 @@
         &.after {
             padding-left: 5px;
         }
-        
+    }
+    .fa-search {
+        vertical-align: text-top;
     }
 }
 @mixin btn-defult-type ($color: #333, $bd: #585858, $bg: #fff, $bd-hover: #3466a2) {
