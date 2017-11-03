@@ -869,10 +869,52 @@
             line-height: 38px;
             padding: 0 40px;
             color: $font-tab-menu-default;
-            border: 1px solid $bd-tab-menu-ber;
+            border-top: 1px solid $bd-tab-menu-ber;
+            border-right: 1px solid $bd-tab-menu-ber;
+            &:first-child {
+                border-left: 1px solid $bd-tab-menu-ber;
+            }
             &.active {
                 color: $font-tab-menu-active;
                 background: $bg-tab-menu-active;
+            }
+        }
+        &.col-2, &.col-3, &.col-4, &.col-5 {
+            height: auto;
+            a[role="button"] {
+                width: 100%;
+                text-align: center;
+                border-left: 1px solid $bd-tab-menu-ber;
+            }
+        }
+        @include susy-breakpoint(em($tablet)) {
+            &.col-2, &.col-3, &.col-4, &.col-5 {
+                a[role="button"] {
+                    border-left: 0;
+                    &:first-child {
+                        border-left: 1px solid $bd-tab-menu-ber;
+                    }
+                }
+            }
+            &.col-2 {
+                a[role="button"] {
+                    width: percent(2);
+                }
+            }
+            &.col-3 {
+                a[role="button"] {
+                    width: percent(3);
+                }
+            }
+            &.col-4 {
+                a[role="button"] {
+                    width: percent(4);
+                }
+            }
+            &.col-5 {
+                a[role="button"] {
+                    width: percent(5);
+                }
             }
         }
     }

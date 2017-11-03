@@ -47,8 +47,8 @@
             }
         }
         &.col-4 {
+            @include layout(8 10px/95px);
             [class^="btn-"] {
-                @include layout(8 10px/95px);
                 @include gallery(2 of 8);
             }
         }

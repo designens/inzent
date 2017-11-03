@@ -906,6 +906,66 @@ JS 내용 작성</code></pre>
                 </div>
             </article>
             <!-- [End] 페이징 스타일 공통 -->
+                
+            <!-- [Start] 탭 메뉴 스타일 공통 -->
+            <article>
+                    <h2>Tab Menu Area</h2>
+                    <div class="teb-menu-area">
+                        <h3><div class="fa fa-angle-double-right"></div>탭 메뉴 기본 스타일</h3>
+                        <div class="tab-area">
+                            <div class="tab-menu">
+                                <a class="active" href="#" role="button">탭 메뉴 1</a>
+                                <a href="#" role="button">탭 메뉴 2</a>
+                            </div>
+                            <div class="tab-panel">
+                                탭 패널 영역 입니다.
+                            </div>
+                        </div>
+                        <pre><code class="language-html">&lt;div class=&quot;tab-area&quot;&gt;
+    &lt;div class=&quot;tab-menu&quot;&gt;
+        &lt;a class=&quot;active&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;탭 메뉴 1&lt;/a&gt;
+        &lt;a href=&quot;#&quot; role=&quot;button&quot;&gt;탭 메뉴 2&lt;/a&gt;
+        &lt;a href=&quot;#&quot; role=&quot;button&quot;&gt;탭 메뉴 3&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;tab-panel&quot;&gt;
+        탭 패널 영역 입니다.
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        <h3><div class="fa fa-angle-double-right"></div>탭 메뉴 2~5개 반응형 스타일</h3>
+                        <div class="tab-area">
+                            <div class="tab-menu col-5">
+                                <a class="active" href="#" role="button">탭 메뉴 1</a>
+                                <a href="#" role="button">탭 메뉴 2</a>
+                                <a href="#" role="button">탭 메뉴 3</a>
+                                <a href="#" role="button">탭 메뉴 4</a>
+                                <a href="#" role="button">탭 메뉴 5</a>
+                            </div>
+                            <div class="tab-panel">
+                                탭 패널 영역 입니다.
+                            </div>
+                        </div>
+                        <pre><code class="language-html">&lt;div class=&quot;tab-area&quot;&gt;
+    &lt;div class=&quot;tab-menu col-5&quot;&gt;
+        &lt;a class=&quot;active&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;탭 메뉴 1&lt;/a&gt;
+        &lt;a href=&quot;#&quot; role=&quot;button&quot;&gt;탭 메뉴 2&lt;/a&gt;
+        &lt;a href=&quot;#&quot; role=&quot;button&quot;&gt;탭 메뉴 3&lt;/a&gt;
+        &lt;a href=&quot;#&quot; role=&quot;button&quot;&gt;탭 메뉴 4&lt;/a&gt;
+        &lt;a href=&quot;#&quot; role=&quot;button&quot;&gt;탭 메뉴 5&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;tab-panel&quot;&gt;
+        탭 패널 영역 입니다.
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    <div class="ui-kit-comment">
+                        탭 메뉴 2개 일때 반응형 대응 "<strong>tab-menu <span class="red">col-2</span></strong>" class를 추가 합니다.<br>
+                        탭 메뉴 3개 일때 반응형 대응 "<strong>tab-menu <span class="red">col-3</span></strong>" class를 추가 합니다.<br>
+                        탭 메뉴 4개 일때 반응형 대응 "<strong>tab-menu <span class="red">col-4</span></strong>" class를 추가 합니다.<br>
+                        탭 메뉴 5개 일때 반응형 대응 "<strong>tab-menu <span class="red">col-5</span></strong>" class를 추가 합니다.<br>
+                        <strong>col-<span class="red">num</span></strong>을 설정 안할 경우 <strong>Tablet(760px) 이하 디바이스는 1column</strong>으로 반응형 처리되어 디자인 됩니다.
+                    </div>
+                    </div>
+            </article>
+            <!-- [End] 탭 메뉴 스타일 공통 -->
             
             <!-- [Start] 검색영역 스타일 공통 -->
             <article>
