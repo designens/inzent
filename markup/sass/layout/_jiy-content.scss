@@ -61,98 +61,6 @@
         }
     }
 }
-// 서브 상단 검색 영역
-.sub-search-area {
-    background: #f1f1f1;
-    padding: 20px 10px;
-    .ul-list-type {
-        @include layout(5 10px/58px);
-        li {
-            &.text-top-area {
-                margin-top: -5px;
-                margin-bottom: 0;
-            }
-            &:last-child {
-                div {
-                    margin-bottom: 10px;
-                    &:last-child {
-                        margin-bottom: 0;
-                    }
-                }
-            }
-            .select-box {
-                @include span(full);
-            }
-            .input-type-search {
-                @include span(full);
-            }
-            .fr-align {
-                display: block;
-                float: inherit;
-            }
-        }
-    }
-    .date-type {
-        * {
-            margin-bottom: 10px;
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-        .select-box {
-            width: 100%;
-        }
-        button {
-            width: 100%;
-        }
-    }
-    @include susy-breakpoint(em($tablet)) {
-        .ul-list-type {
-            li {
-                &.text-top-area {
-                    .fr-align {
-                        float: right;
-                        margin-right: -8px;
-                    }
-                }
-                &:last-child {
-                    div {
-                        margin-bottom: 0;
-                    }
-                }
-                @include layout(7 10px/102px);
-                .select-box {
-                    @include span(1);
-                }
-                .input-type-search {
-                    @include span(6 last);
-                    &.full {
-                        min-width: auto;
-                    }
-                }
-            }
-        }
-        .date-type {
-            * {
-                margin-bottom: 0;
-            }
-            .select-box {
-                width: 130px;
-                margin-right: 8px;
-            }
-            > button {
-                width: auto;
-                margin-left: 10px;
-            }
-        }
-    }
-    @include susy-breakpoint(em($tablet) em($desktop)) {
-        padding: 20px 15px;
-    }
-    @include susy-breakpoint(em($desktop)) {
-        padding: 15px 31px;
-    }
-}
 .all-table-views {
     padding: 7px 15px;
     span {
@@ -163,26 +71,6 @@
     }
     @include susy-breakpoint(em($desktop)) {
         padding: 26px 15px 7px;
-    }
-}
-
-// 별점 선택
-.review-star {
-    height: 30px;
-    line-height: 30px;
-    .fa {
-        @include psd-fz(16px);
-        color: #d5d5d5;
-        margin-right: 2px;
-        &.on {
-            color: #54b477;
-        }
-    }
-    .star-number {
-        @include psd-fz(16px);
-        font-weight: 500;
-        color: #333;
-        margin-left: 6px;
     }
 }
 
@@ -1085,6 +973,7 @@
     height: 232px;
     padding: 30px 10px;
     border: 1px solid #ccc;
+    margin-bottom: 20px;
     #keyword_cloud {
         @include wh-center ($position: relative, $h-percent: 50%, $w-percent: 50%);
         min-width: 240px;
@@ -1097,12 +986,6 @@
             width: 100%;
             height: 100%;
         }
-    }
-}
-.popular-keywords-resources {
-    .sub-search-area {
-        text-align: center;
-        margin-top: 20px;
     }
 }
 .ranking-keyword-area {

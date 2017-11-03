@@ -67,7 +67,7 @@ table {
     }
     &[class*="list-type"] {
         colgroup, col, thead {
-            display: none;
+            @extend %box-invisible;
         }
         thead, tbody {
             border-top: 1px solid #ccc;
@@ -137,14 +137,10 @@ table {
         &[class*="list-type"] {
             display: table;
             width: 100%;
-            colgroup {
-                display: table-column-group;
-            }
-            col {
-                display: table-column;
+            colgroup, col, thead {
+                @include extend(box-visible);
             }
             thead {
-                display: table-header-group;
                 border-bottom: 0;
             }
             tbody {

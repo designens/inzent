@@ -1,5 +1,14 @@
-// 접근성 영역 감추기
+
+// 영역 접근성 감추기
+%box-invisible {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    visibility: hidden;
+}
+
+// 영역 보이기
 %box-visible {
-	display: block;
+    position: static;
+    clip: auto;
     visibility: visible;
 }
