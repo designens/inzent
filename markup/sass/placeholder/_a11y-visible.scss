@@ -1,0 +1,15 @@
+// 영역 보이기
+@mixin a11y-visible($extend: true) {
+    // 미디어쿼리 내부 사용 시 $extend: false 사용
+    @if $extend {
+        @extend %a11y-visible;
+    }
+    @else {
+        position: static;
+        clip: auto;
+        visibility: visible;
+    }
+}
+%a11y-visible {
+  @include a11y-visible($extend: false);
+}

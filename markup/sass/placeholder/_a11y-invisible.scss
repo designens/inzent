@@ -1,0 +1,15 @@
+// 영역 접근성 감추기
+@mixin a11y-invisible($extend: true) {
+    // 미디어쿼리 내부 사용 시 $extend: false 사용
+    @if $extend {
+        @extend %a11y-invisible;
+    }
+    @else {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        visibility: hidden;
+    }
+}
+%a11y-invisible {
+  @include a11y-invisible($extend: false);
+}
