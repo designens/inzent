@@ -34,14 +34,12 @@
     }
     .fr-align {
         @extend %clearfix;
-        .select-box {
+        .select-box, button {
             margin-top: 3px;
-            margin-right: 6px;
-            &:last-child {
-                margin-right: 0;
-            }
+            margin-left: 6px;
+            vertical-align: top;
         }
-        @include susy-breakpoint(1em em($max-mobile)) {
+        @include susy-breakpoint(1em em(720px)) {
             float: none;
             clear: both;
             .select-box {
@@ -52,11 +50,18 @@
                     @include span(full);
                 }
                 &:nth-of-type(2) {
-                    @include span(3);
+                    @include span(3 firest);
+                    margin-left: 0;
                 }
                 &:nth-of-type(3) {
                     @include span(3 last);
+                    margin-left: 0;
                 }
+            }
+            button {
+                @include span(full);
+                margin-top: -2px;
+                margin-bottom: 10px;
             }
         }
     }
