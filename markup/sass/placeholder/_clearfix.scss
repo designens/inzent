@@ -1,10 +1,20 @@
+// 영역 채우기
+@mixin clearfix($extend: true) {
+    // 미디어쿼리 내부 사용 시 $extend: false 사용
+    @if $extend {
+        @extend %clearfix;
+    }
+    @else {
+        *zoom: 1;
+        &:before, &:after {
+            content: "";
+            display: block;
+        }
+        &:after {
+            clear: both;
+        }
+    }
+}
 %clearfix {
-    *zoom: 1;
-    &:before, &:after {
-        content: "";
-        display: block;
-    }
-    &:after {
-        clear: both;
-    }
+  @include clearfix($extend: false);
 }

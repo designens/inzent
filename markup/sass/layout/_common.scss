@@ -1004,6 +1004,17 @@
             &.text-top-area {
                 margin-top: -5px;
                 margin-bottom: 0;
+                .fl-align {
+                    float: none;
+                }
+                .fr-align {
+                    float: none;
+                    margin-bottom: 10px;
+                    .select-box {
+                        width: auto;
+                        margin-right: 10px;
+                    }
+                }
             }
             &:last-child {
                 div {
@@ -1057,9 +1068,16 @@
         .ul-list-type {
             li {
                 &.text-top-area {
+                    .fl-align {
+                        float: left;
+                    }
                     .fr-align {
                         float: right;
+                        text-align: right;
                         margin-right: -8px;
+                        .select-box {
+                            width: auto;
+                        }
                     }
                 }
                 &:last-child {
