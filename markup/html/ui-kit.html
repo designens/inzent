@@ -529,7 +529,6 @@ JS 내용 작성</code></pre>
                     <h3><span class="fa fa-table"></span>반응형 테이블 (List 내부 타입)</h3>
                     <table class="table-view-type-num list-type">
                         <caption>(표 제목)의 타이틀은 (가로 or 세로)정렬로 되어있습니다.</caption>
-                        <!-- class="col-hidden" 사용하여 중단점에 따라 컬럼 감추기  -->
                         <col width="60">
                         <col width="auto">
                         <col width="120">
@@ -563,13 +562,13 @@ JS 내용 작성</code></pre>
                     </table>
                     <pre><code class="language-html">&lt;table class=&quot;table-view-type-num list-type&quot;&gt;
     &lt;caption&gt;(표 제목)의 타이틀은 (가로 or 세로)정렬로 되어있습니다.&lt;/caption&gt;
-    &lt;col class=&quot;col-hidden&quot; width=&quot;100&quot;&gt;
-    &lt;col class=&quot;col-hidden&quot; width=&quot;auto&quot;&gt;
-    &lt;col class=&quot;col-hidden&quot; width=&quot;100&quot;&gt;
-    &lt;col class=&quot;col-hidden&quot; width=&quot;100&quot;&gt;
-    &lt;col class=&quot;col-hidden&quot; width=&quot;100&quot;&gt;
+    &lt;col width=&quot;100&quot;&gt;
+    &lt;col width=&quot;auto&quot;&gt;
+    &lt;col width=&quot;100&quot;&gt;
+    &lt;col width=&quot;100&quot;&gt;
+    &lt;col width=&quot;100&quot;&gt;
     &lt;thead&gt;
-        &lt;tr class=&quot;col-hidden&quot;&gt;
+        &lt;tr&gt;
             &lt;th scope=&quot;col&quot;&gt;제목&lt;/th&gt;
             &lt;th scope=&quot;col&quot;&gt;제목&lt;/th&gt;
             &lt;th scope=&quot;col&quot;&gt;제목&lt;/th&gt;
@@ -626,6 +625,7 @@ JS 내용 작성</code></pre>
                         <caption>(표 제목)의 타이틀은 (가로 or 세로)정렬로 되어있습니다.</caption>
                         <col width="98">
                         <col width="auto">
+                        <!-- class="col-hidden" 사용하여 중단점에 따라 컬럼 감추기  -->
                         <col class="col-hidden" width="200">
                         <col class="col-hidden" width="132">
                         <col class="col-hidden" width="76">
@@ -633,6 +633,7 @@ JS 내용 작성</code></pre>
                             <tr>
                                 <th scope="col">이미지</th>
                                 <th scope="col">자료명</th>
+                        <!-- class="col-hidden" 사용하여 중단점에 따라 컬럼 감추기  -->
                                 <th class="col-hidden" scope="col">저자</th>
                                 <th class="col-hidden" scope="col">출판사</th>
                                 <th class="col-hidden" scope="col">출판년</th>
@@ -641,6 +642,7 @@ JS 내용 작성</code></pre>
                             <tr>
                                 <td><img aria-labelledby="bookName1" src="../assets/images/sub/book-sample1.png" alt></td>
                                 <td id="bookName1">정밀 메커니즘 설계 : 자동화·메카트로닉스 시스템정밀</td>
+                        <!-- class="col-hidden" 사용하여 중단점에 따라 컬럼 감추기  -->
                                 <td class="col-hidden">이진갑 저</td>
                                 <td class="col-hidden">문운당</td>
                                 <td class="col-hidden">2015</td>
@@ -885,7 +887,7 @@ JS 내용 작성</code></pre>
     &lt;a class=&quot;first-prev&quot; aria-label=&quot;처음으로 이동&quot; href role=&quot;button&quot;&gt;&lt;/a&gt;
     &lt;a class=&quot;prev&quot; aria-label=&quot;이전 페이지&quot; href role=&quot;button&quot;&gt;&lt;/a&gt;
     &lt;div class=&quot;mobile-page&quot;&gt;
-        &lt;input class=&quot;now-page&quot; type=&quot;number&quot; name=&quot;now-page&quot; aria-label=&quot;현재 페이지&quot;&gt;
+        &lt;span class=&quot;now-page&quot; aria-label=&quot;현재 페이지&quot;&gt;1&lt;/span&gt;
         &lt;span class=&quot;all-page&quot; aria-label=&quot;총 페이지&quot;&gt;19&lt;/span&gt;
     &lt;/div&gt;
     &lt;div class=&quot;pc-page&quot;&gt;
@@ -1213,32 +1215,34 @@ JS 내용 작성</code></pre>
                              </li>
                         </ul>
                     </div>
-                    <pre><code class="language-html">&lt;ul class=&quot;ul-list-type&quot;&gt;
-    &lt;li&gt;
-        &lt;div class=&quot;select-box full&quot;&gt;
-            &lt;label for=&quot;select-01&quot;&gt;전체&lt;/label&gt;
-            &lt;select id=&quot;select-01&quot;&gt;
-                &lt;option selected=&quot;selected&quot;&gt;전체&lt;/option&gt;
-                &lt;option&gt;옵션 01&lt;/option&gt;
-                &lt;option&gt;옵션 02&lt;/option&gt;
-                &lt;option&gt;옵션 03&lt;/option&gt;
-            &lt;/select&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;select-box full&quot;&gt;
-            &lt;label for=&quot;select-01&quot;&gt;전체&lt;/label&gt;
-            &lt;select id=&quot;select-01&quot;&gt;
-                &lt;option selected=&quot;selected&quot;&gt;전체&lt;/option&gt;
-                &lt;option&gt;옵션 01&lt;/option&gt;
-                &lt;option&gt;옵션 02&lt;/option&gt;
-                &lt;option&gt;옵션 03&lt;/option&gt;
-            &lt;/select&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;input-type-search full&quot;&gt;
-            &lt;input type=&quot;text&quot; placeholder=&quot;검색 키워드를 입력하세요&quot;&gt;
-            &lt;button type=&quot;button&quot; class=&quot;btn-in-size btn-blue&quot;&gt;검색&lt;/button&gt;
-        &lt;/div&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+                    <pre><code class="language-html">&lt;div class=&quot;sub-search-area item-two&quot;&gt;
+    &lt;ul class=&quot;ul-list-type&quot;&gt;
+        &lt;li&gt;
+            &lt;div class=&quot;select-box full&quot;&gt;
+                &lt;label for=&quot;select-01&quot;&gt;전체&lt;/label&gt;
+                &lt;select id=&quot;select-01&quot;&gt;
+                    &lt;option selected=&quot;selected&quot;&gt;전체&lt;/option&gt;
+                    &lt;option&gt;옵션 01&lt;/option&gt;
+                    &lt;option&gt;옵션 02&lt;/option&gt;
+                    &lt;option&gt;옵션 03&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;select-box full&quot;&gt;
+                &lt;label for=&quot;select-01&quot;&gt;전체&lt;/label&gt;
+                &lt;select id=&quot;select-01&quot;&gt;
+                    &lt;option selected=&quot;selected&quot;&gt;전체&lt;/option&gt;
+                    &lt;option&gt;옵션 01&lt;/option&gt;
+                    &lt;option&gt;옵션 02&lt;/option&gt;
+                    &lt;option&gt;옵션 03&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;input-type-search full&quot;&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;검색 키워드를 입력하세요&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn-in-size btn-blue&quot;&gt;검색&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
                      <h3><div class="fa fa-angle-double-right"></div>가운데 정렬로 구성된 검색영역 스타일</h3>
                      <div class="sub-search-area item-canter">
                         <div class="date-type">

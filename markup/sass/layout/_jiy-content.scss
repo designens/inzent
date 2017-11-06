@@ -26,10 +26,30 @@
     @extend %clearfix;
     .fl-align {
         @extend %clearfix;
-        .icon-img-type {
-            color: #09c;
-            padding-left: 23px;
-            background: url($icon-img-type) left center no-repeat;
+        button[class^="icon-"] {
+            color: #333;
+            margin-right: 10px;
+            img, svg {
+                vertical-align: -3px;
+                margin-right: 6px;
+                [class^="icon-"][class$="type-1"] {
+                    fill: #737475;;
+                }
+                [class^="icon-"][class$="type-2"] {
+                    fill: #f6f7f8;
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            &:hover, &:focus, &:active, &.active {
+                color: #09c;
+                svg {
+                    [class^="icon-"][class$="type-1"] {
+                        fill: #09c;
+                    }
+                }
+            }
         }
     }
     .fr-align {
@@ -291,6 +311,7 @@
     }
 }
 .sub-search-view-area {
+    display: none;
     border: 1px solid #e7e7e7;
     .btn-result-search-view {
         display: block;
@@ -380,8 +401,9 @@
     }
 }
 .search-select-content {
-    .list-item {
-        padding: 20px 31px;
+    .list-item-img {
+        position: relative;
+        padding: 20px 15px 10px;
         border: 1px solid #ddd;
         margin-top: 10px;
         li {
@@ -394,6 +416,7 @@
             }
             &.item-img {
                 text-align: center;
+                margin-bottom: 10px;
                 img {
                     width: 75px;
                     height: 103px;
@@ -402,6 +425,9 @@
             }
             &.item-text {
                 .icon-list-item {
+                    position: absolute;
+                    top: 18px;
+                    right: 15px;
                     height: 24px;
                     line-height: 24px;
                     font-weight: 500;
@@ -464,6 +490,7 @@
             }
             &.item-table-area {
                 display: none;
+                margin-bottom: 10px;
                 .table-view-type-01 {
                     td {
                         &:nth-of-type(1) {
@@ -506,7 +533,15 @@
             }
         }
         @include susy-breakpoint(em($tablet)) {
+            padding: 20px 31px 10px;
             @include extend(clearfix);
+            li {
+                &.item-text {
+                    .icon-list-item {
+                        right: 31px;
+                    }
+                }
+            }
         }
         @include susy-breakpoint(em($desktop)) {
             @include layout(9 9px/78px);
@@ -516,29 +551,45 @@
                 }
                 &.item-img {
                     @include span(1);
+                    margin-bottom: 0;
                 }
                 &.item-text {
                     @include span(7 last);
-                    position: relative;
                     padding-left: 10px;
-                    .icon-list-item {
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                    }
-                    .btn-item-table {
-                        margin-bottom: 0;
-                    }
                 }
                 &.item-table-area {
                     clear: both;
                     @include span(full);
-                    table {
-                        margin-top: 20px;
-                    }
                 }
             }
         }
+    }
+    .list-item-list {
+        @extend .list-item-img;
+        li {
+            &.item-text {
+                margin-top: 4px;
+            }
+            &.item-img {
+                display: none;
+            }
+        }
+        @include susy-breakpoint(em($tablet)) {
+            @include layout(9 9px/78px);
+            li {
+                &.item-number {
+                    @include span(1);
+                }
+                &.item-text {
+                    @include span(8 last);
+                    padding-left: 10px;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+    .list-item-table {
+        @extend .list-item-img;
     }
 }
 
@@ -1071,6 +1122,8 @@
                 background: #ff8134;
             }
             img {
+                width: 75px;
+                height: 103px;
                 border: 1px solid #ddd;
             }
         }
@@ -1135,7 +1188,10 @@
                             background: #fff9e9;
                         }
                         img {
+                            width: 75px;
+                            height: 103px;
                             vertical-align: middle;
+                            border: 1px solid #ddd;
                         }
                     }
                 }

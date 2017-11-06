@@ -70,8 +70,13 @@ table {
             @extend %a11y-invisible;
         }
         thead, tbody {
-            border-top: 1px solid #ccc;
             border-bottom: 1px solid #ccc;
+        }
+        tr {
+            border-top: 1px solid #999;
+            &:first-child {
+                border-top: 1px solid #ccc;
+            }
         }
         th, td {
             display: block;
@@ -210,6 +215,32 @@ table {
             pre {
                 padding: 20px 10px;
                 font-weight: 300;
+            }
+        }
+    }
+    &[class*="list-type"] {
+        colgroup, col, thead {
+            @extend %a11y-invisible;
+        }
+    }
+    @include susy-breakpoint(em($max-mobile) em(860px)) {
+        &[class*="list-type"] {
+            tbody {
+                td {
+                    padding: 4px 10px 4px 32%;
+                    &:before {
+                        width: 30%;
+                        content: "";
+                    }
+                }
+            }
+        }
+    }
+    @include susy-breakpoint(em(860px)) {
+        &[class*="list-type"] {
+            width: 100%;
+            colgroup, col, thead {
+                @include a11y-visible(false);
             }
         }
     }
