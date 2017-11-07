@@ -153,6 +153,7 @@
 .keyword-search-area {
     .sub-search-area {
         .ul-list-type {
+            margin-bottom: 15px;
             li {
                 @include layout(5 10px/58px);
                 .search-1st {
@@ -296,8 +297,8 @@
 }
 
 /* =======================================*/
-/* 자료검색 > 소장자료 검색 > 리스트
-/* (html/resources-search-list.html)
+/* 자료검색 > 소장자료 검색 > 리스트 (images)
+/* (html/resources-search-list-img.html)
 /* =======================================*/
 .resources-search-list {
     @include susy-breakpoint(em($tablet)) {
@@ -401,6 +402,49 @@
     }
 }
 .search-select-content {
+    .item-info {
+        color: #888;
+        margin-top: 2px;
+        span {
+            position: relative;
+            padding-right: 20px;
+            &:before {
+                position: absolute;
+                top: 6px;
+                right: 0;
+                width: 1px;
+                height: 11px;
+                margin-right: 9px;
+                background: #ccc;
+                content: "";
+            }
+            &:last-child {
+                &:before {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+    .item-keyword {
+        color: #405a89;
+        span {
+            background: #dbebff;
+            &:last-child {
+                margin-right: 0 !important;
+            }
+        }
+    }
+    [class^="btn-item-table"] {
+        &:before {
+            display: inline-block;
+            @include fa($icon: "\f002", $fz: 14px, $color: #fff);
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            margin-right: 5px;
+            background: #ff8134;
+        }
+    }
     .list-item-img {
         position: relative;
         padding: 20px 15px 10px;
@@ -441,55 +485,20 @@
                         font-weight: 300;
                     }
                 }
-                .item-info {
-                    color: #888;
-                    margin-top: 2px;
-                    span {
-                        position: relative;
-                        padding-right: 20px;
-                        &:before {
-                            position: absolute;
-                            top: 6px;
-                            right: 0;
-                            width: 1px;
-                            height: 11px;
-                            margin-right: 9px;
-                            background: #ccc;
-                            content: "";
-                        }
-                        &:last-child {
-                            &:before {
-                                background-color: transparent;
-                            }
-                        }
-                    }
-                }
                 .item-keyword {
-                    color: #405a89;
                     margin-top: 6px;
                     span {
                         padding: 0 10px;
                         margin-right: 5px;
-                        background: #dbebff;
                     }
                 }
                 .btn-item-table {
                     margin-top: 8px;
                     margin-bottom: 10px;
                     color: #333;
-                    &:before {
-                        display: inline-block;
-                        @include fa($icon: "\f002", $fz: 14px, $color: #fff);
-                        width: 20px;
-                        height: 20px;
-                        line-height: 20px;
-                        margin-right: 5px;
-                        background: #ff8134;
-                    }
                 }
             }
             &.item-table-area {
-                display: none;
                 margin-bottom: 10px;
                 .table-view-type-01 {
                     td {
@@ -564,6 +573,13 @@
             }
         }
     }
+}
+
+/* =======================================*/
+/* 자료검색 > 소장자료 검색 > 리스트 (list)
+/* (html/resources-search-list-item.html)
+/* =======================================*/
+.search-select-content {
     .list-item-list {
         @extend .list-item-img;
         li {
@@ -588,8 +604,171 @@
             }
         }
     }
+}
+
+/* =======================================*/
+/* 자료검색 > 소장자료 검색 > 리스트 (table)
+/* (html/resources-search-list-table.html)
+/* =======================================*/
+.search-select-content {
     .list-item-table {
-        @extend .list-item-img;
+        margin-top: 10px;
+        .item-keyword {
+            span {
+                @include psd-fz(12px);
+                padding: 0 4px;
+                margin-right: 3px;
+            }
+        }
+        tbody {
+            td {
+                height: auto;
+                line-height: 1.5;
+                padding: 10px 10px 10px 43%;
+                &:nth-of-type(3) {
+                    text-align: left;
+                }
+            }
+        }
+        td {
+            h6, p {
+                white-space: pre-wrap;
+            }
+            &:before {
+                width: 40%;
+                line-height: 34px;
+                text-align: center;
+            }
+            &:nth-of-type(1) {
+                text-overflow: clip;
+                .checkbox-type {
+                    label {
+                        padding-left: 33px;
+                    }
+                }
+                &:before {
+                    content: "번호";
+                }
+            }
+            &:nth-of-type(2) {
+                &:before {
+                    overflow: hidden;
+                    white-space: pre-wrap;
+                    line-height: 1.5;
+                    padding-top: 10px;
+                    content: "서명 / 저자 / \A출판사 / 출판년";
+                }
+            }
+            &:nth-of-type(3) {
+                &:before {
+                    content: "유형";
+                }
+            }
+            &:nth-of-type(4) {
+                &:before {
+                    content: "부가서비스";
+                }
+            }
+        }
+        .item-table-area {
+            position: relative;
+            display: block;
+            td[colspan="4"] {
+                padding: 0;
+                background: #fff;
+                border-top: 0;
+                margin-top: -10px;
+                &:before {
+                    content: "";
+                    background: transparent;
+                }
+                .item-area-wrap {
+                    position: relative;
+                    border-top: 1px solid #ccc;
+                    margin: 10px 0 7px 0;
+                    &:first-child {
+                        &:after {
+                            @include w-center ($position: absolute, $w-percent: 50%);
+                            top: -6px;
+                            width: 10px;
+                            height: 10px;
+                            border: 1px solid #ccc;
+                            border-bottom: 0;
+                            border-right: 0;
+                            background: #f1f5f7;
+                            transform: rotate(45deg);
+                            content: "";
+                        }
+                    }
+                    h6 {
+                        @include psd-fz(15px);
+                        line-height: 2;
+                        background: #f1f5f7;
+                        span {
+                            display: inline-block;
+                            width: 100px;
+                            text-align: center;
+                        }
+                    }
+                    .item-area {
+                        padding: 0 15px;
+                        margin-top: 7px;
+                        @extend %clearfix;
+                        dl {
+                            line-height: 2;
+                            dt, dd {
+                                float: left;
+                                @extend %clearfix;
+                            }
+                            dt {
+                                width: 30%;
+                            }
+                            dd {
+                                width: 70%;
+                                font-weight: 300;
+                                white-space: pre-wrap;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @include susy-breakpoint(em($max-mobile) em(860px)) {
+            tbody {
+                td {
+                    padding: 10px 10px 10px 32%;
+                    &:before {
+                        width: 30%;
+                        content: "";
+                    }
+                }
+            }
+        }
+        @include susy-breakpoint(em(860px)) {
+            tbody {
+                td {
+                    padding: 6px 10px;
+                    &:nth-of-type(3) {
+                        text-align: center;
+                    }
+                }
+            }
+            .item-table-area {
+                position: relative;
+                display: table-row;
+                td[colspan="4"] {
+                    padding: 0 10px;
+                }
+                .item-area-wrap {
+                    .item-area {
+                        padding-left: 100px;
+                        dl {
+                            @include gallery(1 of 2);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
