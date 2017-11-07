@@ -171,6 +171,11 @@ table {
 [class*="table-board-type"] {
     width: 100%;
     border-top: 2px solid #999;
+    .checkbox-type {
+        label {
+            @extend %a11y-invisible;
+        }
+    }
     tr {
         th {
             color: #333;
