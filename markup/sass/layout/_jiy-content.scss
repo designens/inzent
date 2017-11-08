@@ -1448,6 +1448,7 @@
         text-align: center;
         margin-bottom: 10px;
         .item-box {
+            position: relative;
             padding: 10px;
             border: 1px solid #ccc;
             h6 {
@@ -1455,6 +1456,11 @@
                 span {
                     color: #2373c8;
                 }
+            }
+            .item-views {
+                color: #888;
+                text-align: right;
+                margin-bottom: 8px;
             }
             .item-img {
                 @extend %a11y-invisible;
@@ -1469,10 +1475,11 @@
         .download-item-box {
             .item-box {
                 width: 194px;
-                height: 290px;
+                height: 320px;
                 padding: 20px;
                 margin: 0 auto;
                 h6 {
+                    display: block;
                     margin: 0;
                 }
                 .item-img {
