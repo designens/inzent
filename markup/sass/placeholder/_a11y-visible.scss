@@ -6,6 +6,7 @@
     }
     @else {
         position: static;
+        top: 0;
         clip: auto;
         visibility: visible;
     }

@@ -170,14 +170,13 @@ table {
 // 게시판 유형 테이블
 [class*="table-board-type"] {
     width: 100%;
+    border-top: 2px solid #999;
     tr {
         th {
             color: #333;
             background: #f7f7f7;
         }
         th, td {
-            display: block;
-            width: 100%;
             height: 40px;
             line-height: 40px;
             text-align: center;
@@ -223,6 +222,17 @@ table {
         colgroup, col, thead {
             @extend %a11y-invisible;
         }
+        tr {
+            th, td {
+                display: block;
+                width: 100%;
+            }
+            &:first-child {
+                td {
+                    border-top: 0;
+                }
+            }
+        }
         td {
             position: relative;
             min-height: 28px;
@@ -265,14 +275,9 @@ table {
         }
     }
     @include susy-breakpoint(em(860px)) {
-        border-top: 2px solid #999;
         tr {
             th {
                 background: #f7f7f7;
-            }
-            th, td {
-                height: 40px;
-                line-height: 40px;
             }
         }
         &[class*="list-type"] {
@@ -280,8 +285,10 @@ table {
             colgroup, col, thead {
                 @include a11y-visible(false);
             }
-            th, td {
-                display: table-cell;
+            tr {
+                th, td {
+                    display: table-cell;
+                }
             }
             td {
                 padding: 4px 10px;

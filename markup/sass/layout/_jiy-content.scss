@@ -633,6 +633,12 @@
         td {
             h6, p {
                 white-space: pre-wrap;
+                .btn-item-table-icon {
+                    margin-left: 6px;
+                    span {
+                        @extend %a11y-invisible;
+                    }
+                }
             }
             &:before {
                 width: 40%;
@@ -727,6 +733,9 @@
                                 width: 70%;
                                 font-weight: 300;
                                 white-space: pre-wrap;
+                                &.readable {
+                                    color: #ff8134;
+                                }
                             }
                         }
                     }
