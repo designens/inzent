@@ -4,8 +4,9 @@
 /* ex) col-3 적용 시 1/3 사이즈의 크기로 변화
 /* =======================================*/
 .btn-set-area {
-    margin-top: 30px;
     text-align: center;
+    margin-top: 30px;
+    margin-bottom: -6px;
     @extend %clearfix;
     [class^="btn-"] {
         @include span(full);

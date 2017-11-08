@@ -39,7 +39,7 @@
             padding-top: 10px;
         }
         span.orange {
-            color: #ff8134;
+            color: $font-point;
             font-weight: 300;
         }
         span.gray {
@@ -365,7 +365,7 @@
     font-weight: 300;
     .big-title {
         font-size: 1.7rem;
-        color: #ff8134;
+        color: $font-point;
         width: 100%;
         padding-top: 10px;
     }

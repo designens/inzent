@@ -6,7 +6,7 @@
     padding: 25px 0;
     .search-word {
         span {
-            color: #ff8134;
+            color: $font-point;
         }
     }
 }
@@ -89,7 +89,7 @@
 .all-table-views {
     padding: 7px 15px;
     span {
-        color: #ff8134;
+        color: $font-point;
     }
     @include susy-breakpoint(em($tablet) em($desktop)) {
         padding: 16px 15px 7px;
@@ -442,7 +442,7 @@
             height: 20px;
             line-height: 20px;
             margin-right: 5px;
-            background: #ff8134;
+            background: $font-point;
         }
     }
     .list-item-img {
@@ -635,9 +635,6 @@
                 white-space: pre-wrap;
                 .btn-item-table-icon {
                     margin-left: 6px;
-                    span {
-                        @extend %a11y-invisible;
-                    }
                 }
             }
             &:before {
@@ -733,7 +730,7 @@
                                 font-weight: 300;
                                 white-space: pre-wrap;
                                 &.readable {
-                                    color: #ff8134;
+                                    color: $font-point;
                                 }
                             }
                         }
@@ -1306,7 +1303,7 @@
                 line-height: 29px;
                 color: #fff;
                 text-align: center;
-                background: #ff8134;
+                background: $font-point;
             }
             img {
                 width: 75px;
@@ -1432,6 +1429,80 @@
                     }
                 }
             }
+        }
+    }
+}
+
+/* =====================================================*/
+/* 원문서비스 > 통일부 발간물 > 통일백서 > 리스트
+/* (html/publications-unification-white-paper-list.html)
+/* =====================================================*/
+.download-paper-list {
+    padding-top: 20px;
+    border-top: 2px solid #09c;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    @extend %clearfix;
+    .download-item-box {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+        .item-box {
+            padding: 10px;
+            border: 1px solid #ccc;
+            h6 {
+                margin: 5px 0 15px 0;
+                span {
+                    color: #2373c8;
+                }
+            }
+            .item-img {
+                @extend %a11y-invisible;
+            }
+            .item-btn {
+                padding-top: 10px;
+                border-top: 1px solid #dcdcdc;
+            }
+        }
+    }
+    @include susy-breakpoint(em($max-mobile)) {
+        .download-item-box {
+            .item-box {
+                width: 194px;
+                height: 290px;
+                padding: 20px;
+                margin: 0 auto;
+                h6 {
+                    margin: 0;
+                }
+                .item-img {
+                    @include a11y-visible(false);
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    img {
+                        width: 152px;
+                        height: 172px;
+                    }
+                }
+            }
+        }
+    }
+    @include susy-breakpoint(em($max-mobile) em($tablet)) {
+        .download-item-box {
+            @include layout(4 20px/194px);
+            @include gallery(2 of 4);
+        }
+    }
+    @include susy-breakpoint(em($tablet) em(900px)) {
+        .download-item-box {
+            @include layout(3 20px/226px);
+            @include gallery(1 of 3);
+        }
+    }
+    @include susy-breakpoint(em(900px)) {
+        .download-item-box {
+            @include layout(4 20px/194px);
+            @include gallery(1 of 4);
         }
     }
 }
