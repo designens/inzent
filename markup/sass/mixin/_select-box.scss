@@ -1,4 +1,4 @@
-@mixin select-box ($w: 130px, $h: 35px) {
+@mixin select-box ($w: 130px, $h: 35px, $bg: #fff, $bd: #c4c4c4, $bdf: #3466a2) {
     $lh: $h - 2;
     position: relative;
     width: $w;
@@ -18,15 +18,18 @@
         color: inherit;
         line-height: $lh;
         padding: 0 30px 0 10px;
-        border: 1px solid #c4c4c4;
-        background: #fff url($icon-select-box-down) right 10px center no-repeat;
+        border: 1px solid $bd;
+        background: $bg url($icon-select-box-down) right 10px center no-repeat;
         -webkit-appearance: none;
         -ms-appearance: none;
         -moz-appearance: none;
         appearance: none;
         box-sizing: border-box;
+        option {
+            background: #fff;
+        }
         &:focus {
-            border: 1px solid #002847;
+            border: 1px solid $bdf;
         }
         &::-ms-expand {
             display: none;

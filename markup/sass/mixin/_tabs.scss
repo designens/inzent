@@ -1,18 +1,21 @@
 // 탭 제작 (탭 갯수)
-@mixin tabs($num-of-tabs) {
-    width: 100%;
-    @extend %clearfix;
+@mixin tabs($num-of-tabs, $gutter) {
+    @include clearfix(false);
     @for $i from 1 through $num-of-tabs {
-        &.t#{$i} {
-            [role="tab"] {
-                float: left;
-                width: percent($i);
-                padding: 0 2px;
-                &:nth-child(#{$i}) {
-                    margin-bottom: 4px;
-                    &:last-child {
-                        margin-bottom: 0;
-                    }
+        [role="tab"] {
+            float: left;
+            width: percent($i);
+            padding: 0 $gutter;
+            margin-bottom: -($gutter * 2);
+            &:first-child {
+                padding-left: 0;
+            }
+            &:nth-child(#{$num-of-tabs}#{"n"}) {
+                position: relative;
+                padding-right: 0;
+                margin-bottom: ($gutter * 2);
+                + [role="tab"] {
+                    padding-left: 0;
                 }
             }
         }

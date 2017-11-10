@@ -568,7 +568,6 @@
     @extend %clearfix;
     .mobile-page {
         display: inline-block;
-        margin: 0 18px;
         span {
             display: inline-block;
             min-width: 60px;
@@ -583,18 +582,21 @@
             position: relative;
             &:before {
                 position: absolute;
-                left: -4px;
-                content: "/ ";
+                left: -6px;
+                content: "/";
             }
             
         }
     }
     .pc-page {
-            display: none;
-        }
+        display: none;
+    }
     @include susy-breakpoint(em($tablet)) {
         .mobile-page {
             display: none;
+        }
+        .pc-page {
+            margin: 0 18px;
         }
     }
     @include susy-breakpoint(em($tablet) em($desktop)) {
@@ -677,12 +679,6 @@
         padding: 0 10px;
         margin: 0 2px;
         border: 1px solid #d3d4d8;
-        &:first-child {
-            margin-left: 18px;
-        }
-        &:last-child {
-            margin-right: 18px;
-        }
         &:hover {
             color: #3466a2;
             border: 1px solid #3466a2;
@@ -880,69 +876,180 @@
 /* 탭 스타일
 /* =======================================*/
 .tab-area {
+    position: relative;
     .tab-menu {
         height: 40px;
+        border-left: 1px solid $bd-tab-menu-ber;
         border-bottom: 1px solid $bd-tab-menu-ber;
         margin-bottom: 20px;
         @extend %clearfix;
         a[role="tab"] {
-            float: left;
             display: inline-block;
+            float: left;
+            width: percent(2);
             height: 40px;
             line-height: 38px;
-            padding: 0 40px;
+            text-align: center;
             color: $font-tab-menu-default;
             border-top: 1px solid $bd-tab-menu-ber;
             border-right: 1px solid $bd-tab-menu-ber;
-            &:first-child {
-                border-left: 1px solid $bd-tab-menu-ber;
-            }
-            &.active {
+            &:focus, &:active, &.active {
                 color: $font-tab-menu-active;
                 background: $bg-tab-menu-active;
             }
         }
-        &.col-2, &.col-3, &.col-4, &.col-5 {
-            height: auto;
-            a[role="tab"] {
-                width: 100%;
-                text-align: center;
-                border-left: 1px solid $bd-tab-menu-ber;
+        @for $i from 2 through 5 {
+            &.col-#{$i} {
+                height: auto;
+                a[role="tab"] {
+                    width: 100%;
+                }
             }
         }
         @include susy-breakpoint(em($tablet)) {
-            &.col-2, &.col-3, &.col-4, &.col-5 {
-                a[role="tab"] {
-                    border-left: 0;
-                    &:first-child {
-                        border-left: 1px solid $bd-tab-menu-ber;
+            a[role="tab"] {
+                width: auto;
+                padding: 0 40px;
+            }
+        }
+        @include susy-breakpoint(em($tablet) em($desktop)) {
+            @for $i from 2 through 5 {
+                &.col-#{$i} {
+                    a[role="tab"] {
+                        width: percent($i - 1);
+                        border-bottom: 1px solid $bd-tab-menu-ber;
+                        margin-bottom: -1px;
                     }
                 }
             }
-            &.col-2 {
-                a[role="tab"] {
-                    width: percent(2);
-                }
-            }
-            &.col-3 {
-                a[role="tab"] {
-                    width: percent(3);
-                }
-            }
-            &.col-4 {
-                a[role="tab"] {
-                    width: percent(4);
-                }
-            }
-            &.col-5 {
-                a[role="tab"] {
-                    width: percent(5);
+        }
+        @include susy-breakpoint(em($desktop)) {
+            @for $i from 2 through 5 {
+                &.col-#{$i} {
+                    a[role="tab"] {
+                        width: percent($i);
+                        margin-bottom: -1px;
+                    }
                 }
             }
         }
     }
+    .tab-menu-select {
+        @include a11y-visible(false);
+        display: block;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        @include psd-fz(15px);
+        font-weight: 400;
+        text-align: left;
+        padding-left: 10px;
+        margin-bottom: 20px;
+        background: #ffce5d;
+        position: relative;
+        &:before {
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            width: 13px;
+            height: 3px;
+            background: #333;
+            content: "";
+        }
+        &:after {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            width: 3px;
+            height: 13px;
+            background: #333;
+            content: "";
+            transform: rotate(0deg);
+            transition: transform 0.25s ease;
+        }
+        &.open {
+            margin-bottom: 0;
+            &:after {
+                transform: rotate(90deg);
+                transition: transform 0.25s ease;
+            }
+            + .tab-menu-toggle {
+                @include a11y-visible(false);
+            }
+        }
+        @include susy-breakpoint(em($max-mobile)) {
+            @include a11y-invisible(false);
+        }
+    }
     .tab-menu-toggle {
-        @include tabs(4);
+        width: 100%;
+        margin-bottom: 20px;
+        @extend %clearfix;
+        @include a11y-invisible(false);
+        a[role="tab"] {
+            div {
+                color: #333;
+                font-weight: 300;
+                height: 40px;
+                line-height: 40px;
+                text-align: left;
+                padding: 0 10px;
+                border: 1px solid #ccc;
+                border-bottom: 0;
+            }
+            &:first-child {
+                @include a11y-invisible(false);
+            }
+            &:last-child {
+                div {
+                    border-bottom: 1px solid #ccc;
+                }
+            }
+            &:focus, &:active, &.active {
+                div {
+                    font-weight: 400;
+                    color: #305ed6;
+                    background: #f1f1f1;
+                    border: 1px solid #ccc;
+                    border-bottom: 0;
+                }
+                &:last-child {
+                    div {
+                        border-bottom: 1px solid #ccc;
+                    }
+                }
+            }
+        }
+        @include susy-breakpoint(em($max-mobile)) {
+            @include a11y-visible(false);
+            a[role="tab"] {
+                div {
+                    padding: 0;
+                    text-align: center;
+                    border-bottom: 1px solid #ccc;
+                }
+                &:first-child {
+                    @include a11y-visible(false);
+                }
+                &:focus, &:active, &.active {
+                    div {
+                        font-weight: 400;
+                        color: #333;
+                        background: #ffce5d;
+                        border: 1px solid #ffce5d;
+                    }
+                }
+            }
+        }
+        @include susy-breakpoint(em($max-mobile) em($tablet)) {
+            @include tabs(2, 2px);
+        }
+        @include susy-breakpoint(em($tablet) em($desktop)) {
+            @include tabs(3, 2px);
+        }
+        @include susy-breakpoint(em($desktop)) {
+            @include tabs(4, 2px);
+        }
     }
 }
 

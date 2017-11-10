@@ -548,9 +548,7 @@
                 float: left;
                 @include span(4);
                 height: 33px;
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow:ellipsis;
+                @include word-short(false);
                 padding-left: 13px;
                 padding-right: 10px;
             }
