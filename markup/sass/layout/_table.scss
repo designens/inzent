@@ -310,11 +310,11 @@ table {
     border-top: 1px solid #dedede;
     margin-top: 30px;
     dl {
-        display: table;
         width: 100%;
         border-bottom: 1px solid #dedede;
+        @extend %clearfix;
         dt, dd {
-            display: table-cell;
+            float: left;
             height: 40px;
             line-height: 40px;
             padding: 0 10px;
@@ -333,6 +333,12 @@ table {
                     vertical-align: 2px;
                 }
             }
+        }
+        dd {
+            width: -webkit-calc( 100% - 100px );
+            width: -moz-calc( 100% - 100px );
+            width: calc( 100% - 100px );
+            @extend %word-short;
         }
     }
 }
