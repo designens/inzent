@@ -917,7 +917,7 @@
                 margin-top: 10px;
             }
             dt {
-                 min-width: 72px;
+                 min-width: 100px;
                  font-weight: 500;
                  text-align: right;
                  padding-right: 20px;
@@ -926,8 +926,9 @@
                 display: table-cell;
                 line-height: 1.5;
             }
-            .author {
+            .author, a {
                 color: #305ed6;
+                text-decoration: underline;
             }
         }
     }
@@ -1706,71 +1707,44 @@
 /* =======================================*/
 .cartoon-list-area {
     @extend %clearfix;
-    .download-item-box {
+    .cartoon-box {
         width: 100%;
         text-align: center;
         margin-bottom: 10px;
         .item-box {
             position: relative;
+            display: block;
+            width: 156px;
+            height: 235px;
             padding: 10px;
+            margin: 0 auto;
             border: 1px solid #ccc;
-            h6 {
-                margin: 5px 0 15px 0;
-                span {
-                    color: #2373c8;
+            .item-img {
+                img {
+                    width: 134px;
+                    height: 172px;
                 }
             }
-            .item-views {
-                color: #888;
-                text-align: right;
-                margin-bottom: 8px;
-            }
-            .item-img {
-                @extend %a11y-invisible;
-            }
-            .item-btn {
+            .item-title {
                 padding-top: 10px;
                 border-top: 1px solid #dcdcdc;
             }
         }
     }
-    @include susy-breakpoint(em($max-mobile)) {
-        .download-item-box {
-            .item-box {
-                width: 194px;
-                height: 320px;
-                padding: 20px;
-                margin: 0 auto;
-                h6 {
-                    display: block;
-                    margin: 0;
-                }
-                .item-img {
-                    @include a11y-visible(false);
-                    margin-top: 10px;
-                    margin-bottom: 10px;
-                    img {
-                        width: 152px;
-                        height: 172px;
-                    }
-                }
-            }
-        }
-    }
     @include susy-breakpoint(em($max-mobile) em($tablet)) {
-        .download-item-box {
+        .cartoon-box {
             @include layout(4 20px/194px);
             @include gallery(2 of 4);
         }
     }
     @include susy-breakpoint(em($tablet) em(900px)) {
-        .download-item-box {
+        .cartoon-box {
             @include layout(3 20px/226px);
             @include gallery(1 of 3);
         }
     }
     @include susy-breakpoint(em(900px)) {
-        .download-item-box {
+        .cartoon-box {
             @include layout(4 20px/194px);
             @include gallery(1 of 4);
         }
