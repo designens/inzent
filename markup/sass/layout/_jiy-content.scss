@@ -12,6 +12,7 @@
     &.bottom-line {
         padding-bottom: 7px;
         border-bottom: 2px solid #0099cc;
+        margin-top: -10px;
     }
 }
 // 설명박스 스타일
@@ -30,7 +31,7 @@
     @extend %clearfix;
     .fl-align {
         @extend %clearfix;
-        button[class^="icon-"] {
+        [class^="icon-"] {
             color: #333;
             margin-right: 10px;
             img, svg {
@@ -1526,7 +1527,6 @@
 /* ============================================================*/
 .item-gallery-area {
     @extend %clearfix;
-    margin-top: -10px;
     li {
         margin-top: 30px;
         &:after {
@@ -1696,6 +1696,83 @@
                 right: 20px;
                 padding-top: 0;
             }
+        }
+    }
+}
+
+/* =======================================*/
+/* 통일북한자료실 > 북한어린이도서 > 만화 > 리스트
+/* (html/north-korean-cartoon-list.html)
+/* =======================================*/
+.cartoon-list-area {
+    @extend %clearfix;
+    .download-item-box {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+        .item-box {
+            position: relative;
+            padding: 10px;
+            border: 1px solid #ccc;
+            h6 {
+                margin: 5px 0 15px 0;
+                span {
+                    color: #2373c8;
+                }
+            }
+            .item-views {
+                color: #888;
+                text-align: right;
+                margin-bottom: 8px;
+            }
+            .item-img {
+                @extend %a11y-invisible;
+            }
+            .item-btn {
+                padding-top: 10px;
+                border-top: 1px solid #dcdcdc;
+            }
+        }
+    }
+    @include susy-breakpoint(em($max-mobile)) {
+        .download-item-box {
+            .item-box {
+                width: 194px;
+                height: 320px;
+                padding: 20px;
+                margin: 0 auto;
+                h6 {
+                    display: block;
+                    margin: 0;
+                }
+                .item-img {
+                    @include a11y-visible(false);
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    img {
+                        width: 152px;
+                        height: 172px;
+                    }
+                }
+            }
+        }
+    }
+    @include susy-breakpoint(em($max-mobile) em($tablet)) {
+        .download-item-box {
+            @include layout(4 20px/194px);
+            @include gallery(2 of 4);
+        }
+    }
+    @include susy-breakpoint(em($tablet) em(900px)) {
+        .download-item-box {
+            @include layout(3 20px/226px);
+            @include gallery(1 of 3);
+        }
+    }
+    @include susy-breakpoint(em(900px)) {
+        .download-item-box {
+            @include layout(4 20px/194px);
+            @include gallery(1 of 4);
         }
     }
 }
