@@ -133,7 +133,42 @@
     // -------------------------------------------------------------
     // 메인 연속간행물 케로셀 배너
     // -------------------------------------------------------------
-    $('.serial-carousel-wrap .owl-carousel').owlCarousel({
+    $('.serial-carousel-wrap .serial-carousel .owl-carousel').owlCarousel({
+        loop: true,
+        margin: 55,
+        nav: true,
+        responsiveClass: true,
+        navText: ['', ''],
+        responsive: {
+            0: {
+                dots: false,
+                items: 1,
+                slideBy: 1
+            },
+            480: {
+                dots: false,
+                items: 2,
+                slideBy: 2
+            },
+            720: {
+                items: 3,
+                slideBy: 3
+            },
+            900: {
+                items: 4,
+                slideBy: 4
+            },
+            1100: {
+                items: 5,
+                slideBy: 5
+            }
+        }
+    })
+
+    // -------------------------------------------------------------
+    // 서브 국내 연속간행물 케로셀 배너
+    // -------------------------------------------------------------
+    $('.domestic-serials-list .serial-carousel .owl-carousel').owlCarousel({
         loop: true,
         margin: 55,
         nav: true,

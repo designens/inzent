@@ -303,7 +303,6 @@
 .search-select-content {
     .item-info {
         color: #888;
-        margin-top: 2px;
         span {
             position: relative;
             padding-right: 20px;
@@ -333,15 +332,27 @@
             }
         }
     }
-    [class^="btn-item-table"] {
+    .btn-item-table, .btn-item-url {
+        margin-right: 10px;
         &:before {
             display: inline-block;
-            @include fa($icon: "\f002", $fz: 14px, $color: #fff);
             width: 20px;
             height: 20px;
+            text-align: center;
             line-height: 20px;
             margin-right: 5px;
             background: $font-point;
+        }
+    }
+    .btn-item-table {
+        &:before {
+            @include fa($icon: "\f002", $fz: 14px, $color: #fff);
+        }
+    }
+    .btn-item-url {
+        display: inline-block;
+        &:before {
+            @include fa($icon: "\f0c1", $fz: 14px, $color: #fff);
         }
     }
     .list-item-img {
@@ -391,13 +402,13 @@
                         margin-right: 5px;
                     }
                 }
-                .btn-item-table {
-                    margin-top: 8px;
-                    margin-bottom: 10px;
+                [class^="btn-item-"] {
+                    margin-top: 7px;
                     color: #333;
                 }
             }
             &.item-table-area {
+                margin-top: 10px;
                 margin-bottom: 10px;
                 .table-view-type-01 {
                     td {
@@ -1640,6 +1651,130 @@
         .cartoon-box {
             @include layout(5 14px/156px);
             @include gallery(1 of 5);
+        }
+    }
+}
+/* =======================================*/
+/* 자료검색 > 연속간행물 검색 > 국내연속간행물 > 리스트
+/* (html/domestic-serials-list.html)
+/* =======================================*/
+.domestic-serials-list {
+    .serial-carousel {
+        height: 253px;
+        margin-top: 20px;
+        background: $bg-content-book url($bg-shelf) center bottom 4px no-repeat;
+        .owl-carousel {
+            position: relative;
+            padding: 74px 30px 0 30px;
+            .owl-stage-outer {
+                .owl-stage {
+                    .owl-item {
+                        text-align: center;
+                    }
+                }
+            }
+            a {
+                position: relative;
+                display: inline-block;
+                width: 108px;
+                height: 141px;
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: url($bg-book-cover) center no-repeat;
+                    content: "";
+                    z-index: 999;
+                }
+                > img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 104px;
+                    height: 141px;
+                }
+            }
+            .owl-nav {
+                .owl-prev {
+                    position: absolute;
+                    top: 50%;
+                    left: 21px;
+                    width: 22px;
+                    height: 35px;
+                    &:before {
+                        @include fa($icon: "\f104", $fz: 60px, $color: #bbc7cf);
+                    }
+                    &:hover, &:focus {
+                        transform: scale(1.2);
+                    }
+                }
+                .owl-next {
+                    position: absolute;
+                    top: 50%;
+                    right: 21px;
+                    width: 22px;
+                    height: 35px;
+                    &:before {
+                        @include fa($icon: "\f105", $fz: 60px, $color: #bbc7cf);
+                    }
+                    &:hover, &:focus {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+            .owl-dots {
+                @include w-center ($position: absolute, $w-percent: 50%);
+                bottom: -50px;
+                .owl-dot {
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+                    margin-left: 8px;
+                    margin-right: 8px;
+                    border-radius: 50%;
+                    background: #a3b4b9;
+                    border: 1px solid #fff;
+                    transition: all 0.2s cubic-bezier(0.01, 0.35, 0, 1.01);
+                    &:hover, &:focus {
+                        background: #a3b4b9;
+                        transform: scale(1.2);
+                    }
+                    &.active {
+                        background: #3466a2;
+                        &:hover {
+                            cursor: default;
+                        }
+                        &:focus {
+                            background: #3466a2;
+                        }
+                    }
+                }
+            }
+        }
+        @include susy-breakpoint(em($max-mobile)) {
+            .owl-carousel {
+                padding: 74px 90px 0 90px;
+                .owl-nav {
+                    .owl-prev {
+                        left: 0;
+                    }
+                    .owl-next {
+                        right: 0;
+                    }
+                }
+            }
+        }
+        @include susy-breakpoint(em($tablet) em($desktop)) {
+            .owl-carousel {
+                padding: 74px 120px 0 120px;
+            }
+        }
+        @include susy-breakpoint(em($desktop)) {
+            .owl-carousel {
+                padding: 74px 50px 0 50px;
+            }
         }
     }
 }

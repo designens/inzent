@@ -1999,7 +1999,7 @@ pre, code { font-family: "Noto Sans Korean", sans-serif, serif; line-height: 22.
   .sub-search-view-area li .sub-result .checkbox-type:nth-child(4n + 3), .sub-search-view-area li .sub-result .radio-type:nth-child(4n + 3) { margin-left: 51.24378%; margin-right: -100%; clear: none; }
   .sub-search-view-area li .sub-result .checkbox-type:nth-child(4n + 4), .sub-search-view-area li .sub-result .radio-type:nth-child(4n + 4) { margin-left: 76.86567%; margin-right: -100%; clear: none; } }
 
-.search-select-content .item-info { color: #888; margin-top: 2px; }
+.search-select-content .item-info { color: #888; }
 
 .search-select-content .item-info span { position: relative; padding-right: 20px; }
 
@@ -2013,7 +2013,15 @@ pre, code { font-family: "Noto Sans Korean", sans-serif, serif; line-height: 22.
 
 .search-select-content .item-keyword span:last-child { margin-right: 0 !important; }
 
-.search-select-content [class^="btn-item-table"]:before { display: inline-block; font-family: 'FontAwesome'; content: ""; font-size: 14px; font-size: 1.4rem; color: #fff; width: 20px; height: 20px; line-height: 20px; margin-right: 5px; background: #ff8134; }
+.search-select-content .btn-item-table, .search-select-content .btn-item-url { margin-right: 10px; }
+
+.search-select-content .btn-item-table:before, .search-select-content .btn-item-url:before { display: inline-block; width: 20px; height: 20px; text-align: center; line-height: 20px; margin-right: 5px; background: #ff8134; }
+
+.search-select-content .btn-item-table:before { font-family: 'FontAwesome'; content: ""; font-size: 14px; font-size: 1.4rem; color: #fff; }
+
+.search-select-content .btn-item-url { display: inline-block; }
+
+.search-select-content .btn-item-url:before { font-family: 'FontAwesome'; content: ""; font-size: 14px; font-size: 1.4rem; color: #fff; }
 
 .search-select-content .list-item-img, .search-select-content .list-item-list { position: relative; padding: 20px 15px 10px; border: 1px solid #ddd; margin-top: 10px; }
 
@@ -2033,9 +2041,9 @@ pre, code { font-family: "Noto Sans Korean", sans-serif, serif; line-height: 22.
 
 .search-select-content .list-item-img li.item-text .item-keyword span, .search-select-content .list-item-list li.item-text .item-keyword span { padding: 0 10px; margin-right: 5px; }
 
-.search-select-content .list-item-img li.item-text .btn-item-table, .search-select-content .list-item-list li.item-text .btn-item-table { margin-top: 8px; margin-bottom: 10px; color: #333; }
+.search-select-content .list-item-img li.item-text [class^="btn-item-"], .search-select-content .list-item-list li.item-text [class^="btn-item-"] { margin-top: 7px; color: #333; }
 
-.search-select-content .list-item-img li.item-table-area, .search-select-content .list-item-list li.item-table-area { margin-bottom: 10px; }
+.search-select-content .list-item-img li.item-table-area, .search-select-content .list-item-list li.item-table-area { margin-top: 10px; margin-bottom: 10px; }
 
 .search-select-content .list-item-img li.item-table-area .table-view-type-01 td:nth-of-type(1):before, .search-select-content .list-item-list li.item-table-area .table-view-type-01 td:nth-of-type(1):before { content: "번호"; }
 
@@ -2576,6 +2584,54 @@ pre, code { font-family: "Noto Sans Korean", sans-serif, serif; line-height: 22.
   .cartoon-list-area .cartoon-box:nth-child(5n + 3) { margin-left: 40.66986%; margin-right: -100%; clear: none; }
   .cartoon-list-area .cartoon-box:nth-child(5n + 4) { margin-left: 61.00478%; margin-right: -100%; clear: none; }
   .cartoon-list-area .cartoon-box:nth-child(5n + 5) { margin-left: 81.33971%; margin-right: -100%; clear: none; } }
+
+/* =======================================*/
+/* 자료검색 > 연속간행물 검색 > 국내연속간행물 > 리스트
+/* (html/domestic-serials-list.html)
+/* =======================================*/
+.domestic-serials-list .serial-carousel { height: 253px; margin-top: 20px; background: #d2eafa url("../../assets/images/main/bg-shelf.png") center bottom 4px no-repeat; }
+
+.domestic-serials-list .serial-carousel .owl-carousel { position: relative; padding: 74px 30px 0 30px; }
+
+.domestic-serials-list .serial-carousel .owl-carousel .owl-stage-outer .owl-stage .owl-item { text-align: center; }
+
+.domestic-serials-list .serial-carousel .owl-carousel a { position: relative; display: inline-block; width: 108px; height: 141px; }
+
+.domestic-serials-list .serial-carousel .owl-carousel a:before { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url("../../assets/images/main/bg-book-cover.png") center no-repeat; content: ""; z-index: 999; }
+
+.domestic-serials-list .serial-carousel .owl-carousel a > img { position: absolute; top: 0; left: 0; width: 104px; height: 141px; }
+
+.domestic-serials-list .serial-carousel .owl-carousel .owl-nav .owl-prev { position: absolute; top: 50%; left: 21px; width: 22px; height: 35px; }
+
+.domestic-serials-list .serial-carousel .owl-carousel .owl-nav .owl-prev:before { font-family: 'FontAwesome'; content: ""; font-size: 60px; font-size: 6rem; color: #bbc7cf; }
+
+.domestic-serials-list .serial-carousel .owl-carousel .owl-nav .owl-prev:hover, .domestic-serials-list .serial-carousel .owl-carousel .owl-nav .owl-prev:focus { transform: scale(1.2); }
+
+.domestic-serials-list .serial-carousel .owl-carousel .owl-nav .owl-next { position: absolute; top: 50%; right: 21px; width: 22px; height: 35px; }
+
+.domestic-serials-list .serial-carousel .owl-carousel .owl-nav .owl-next:before { font-family: 'FontAwesome'; content: ""; font-size: 60px; font-size: 6rem; color: #bbc7cf; }
+
+.domestic-serials-list .serial-carousel .owl-carousel .owl-nav .owl-next:hover, .domestic-serials-list .serial-carousel .owl-carousel .owl-nav .owl-next:focus { transform: scale(1.2); }
+
+.domestic-serials-list .serial-carousel .owl-carousel .owl-dots { position: absolute; left: 50%; -ms-transform: translateX(-50%); -webkit-transform: translateX(-50%); transform: translateX(-50%); bottom: -50px; }
+
+.domestic-serials-list .serial-carousel .owl-carousel .owl-dots .owl-dot { display: inline-block; width: 16px; height: 16px; margin-left: 8px; margin-right: 8px; border-radius: 50%; background: #a3b4b9; border: 1px solid #fff; transition: all 0.2s cubic-bezier(0.01, 0.35, 0, 1.01); }
+
+.domestic-serials-list .serial-carousel .owl-carousel .owl-dots .owl-dot:hover, .domestic-serials-list .serial-carousel .owl-carousel .owl-dots .owl-dot:focus { background: #a3b4b9; transform: scale(1.2); }
+
+.domestic-serials-list .serial-carousel .owl-carousel .owl-dots .owl-dot.active { background: #3466a2; }
+
+.domestic-serials-list .serial-carousel .owl-carousel .owl-dots .owl-dot.active:hover { cursor: default; }
+
+.domestic-serials-list .serial-carousel .owl-carousel .owl-dots .owl-dot.active:focus { background: #3466a2; }
+
+@media (min-width: 30em) { .domestic-serials-list .serial-carousel .owl-carousel { padding: 74px 90px 0 90px; }
+  .domestic-serials-list .serial-carousel .owl-carousel .owl-nav .owl-prev { left: 0; }
+  .domestic-serials-list .serial-carousel .owl-carousel .owl-nav .owl-next { right: 0; } }
+
+@media (min-width: 47.5em) and (max-width: 71.25em) { .domestic-serials-list .serial-carousel .owl-carousel { padding: 74px 120px 0 120px; } }
+
+@media (min-width: 71.25em) { .domestic-serials-list .serial-carousel .owl-carousel { padding: 74px 50px 0 50px; } }
 
 /* =======================================*/
 /* Content : 공통 요소 스타일
