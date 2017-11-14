@@ -865,8 +865,11 @@
             margin-top: 28px;
             margin-bottom: 13px;
             font-weight: 500;
-            + button {
+            + button, + .select-box {
                 margin: 10px 0;
+            }
+            + .select-box {
+                @include select-box($w: 77px, $h: 27px);
             }
             &.full-color {
                 display: block;
@@ -889,9 +892,9 @@
             height: 150px;
             overflow-y: auto;
         }
-        @include susy-breakpoint(em($tablet)) {
+        @include susy-breakpoint(em(860px)) {
             h5 {
-                + button {
+                + button, + .select-box {
                     margin-top: 31px;
                 }
                 &.full-color {
@@ -1662,10 +1665,16 @@
     .serial-carousel {
         height: 253px;
         margin-top: 20px;
-        background: $bg-content-book url($bg-shelf) center bottom 4px no-repeat;
+        background: $bg-content-book url($bg-shelf) center bottom no-repeat;
+        h5 {
+            padding-top: 16px;
+            color: #17324a;
+        }
         .owl-carousel {
             position: relative;
-            padding: 74px 30px 0 30px;
+            padding-top: 14px;
+            padding-left: 40px;
+            padding-right: 40px;
             .owl-stage-outer {
                 .owl-stage {
                     .owl-item {
@@ -1700,7 +1709,7 @@
                 .owl-prev {
                     position: absolute;
                     top: 50%;
-                    left: 21px;
+                    left: 0;
                     width: 22px;
                     height: 35px;
                     &:before {
@@ -1713,7 +1722,7 @@
                 .owl-next {
                     position: absolute;
                     top: 50%;
-                    right: 21px;
+                    right: 0;
                     width: 22px;
                     height: 35px;
                     &:before {
@@ -1726,7 +1735,7 @@
             }
             .owl-dots {
                 @include w-center ($position: absolute, $w-percent: 50%);
-                bottom: -50px;
+                bottom: -47px;
                 .owl-dot {
                     display: inline-block;
                     width: 16px;
@@ -1753,27 +1762,64 @@
                 }
             }
         }
-        @include susy-breakpoint(em($max-mobile)) {
+        @include susy-breakpoint(em($max-mobile) em($tablet)) {
             .owl-carousel {
-                padding: 74px 90px 0 90px;
-                .owl-nav {
-                    .owl-prev {
-                        left: 0;
-                    }
-                    .owl-next {
-                        right: 0;
-                    }
-                }
+                padding-left: 60px;
+                padding-right: 60px;
             }
         }
         @include susy-breakpoint(em($tablet) em($desktop)) {
             .owl-carousel {
-                padding: 74px 120px 0 120px;
+                padding-left: 100px;
+                padding-right: 100px;
             }
         }
         @include susy-breakpoint(em($desktop)) {
             .owl-carousel {
-                padding: 74px 50px 0 50px;
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 자료검색 > 연속간행물 검색 > 국내연속간행물 > 상세
+/* (html/domestic-serials-view.html)
+/* =======================================*/
+.domestic-serials-view {
+    @extend .resources-search-view;
+    .table-view-type-02 {
+        td {
+            &:nth-of-type(1) {
+                &:before {
+                    content: "번호";
+                }
+            }
+            &:nth-of-type(2) {
+                &:before {
+                    content: "권호";
+                }
+            }
+            &:nth-of-type(3) {
+                &:before {
+                    content: "소장위치";
+                }
+            }
+            &:nth-of-type(4) {
+                &:before {
+                    content: "발행일";
+                }
+            }
+            &:nth-of-type(5) {
+                &:before {
+                    content: "입수일";
+                }
+            }
+            &:nth-of-type(6) {
+                &:before {
+                    content: "상태";
+                }
             }
         }
     }

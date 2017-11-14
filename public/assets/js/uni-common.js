@@ -170,7 +170,6 @@
     // -------------------------------------------------------------
     $('.domestic-serials-list .serial-carousel .owl-carousel').owlCarousel({
         loop: true,
-        margin: 55,
         nav: true,
         responsiveClass: true,
         navText: ['', ''],
@@ -185,15 +184,15 @@
                 items: 2,
                 slideBy: 2
             },
-            720: {
+            640: {
                 items: 3,
                 slideBy: 3
             },
-            900: {
+            800: {
                 items: 4,
                 slideBy: 4
             },
-            1100: {
+            960: {
                 items: 5,
                 slideBy: 5
             }
