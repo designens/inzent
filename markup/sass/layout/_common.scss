@@ -29,8 +29,11 @@
 /* =======================================*/
 /* Point Color 설정
 /* =======================================*/
+.blue {
+    color: $font-point-blue;
+}
 .orange {
-    color: $font-point;
+    color: $font-point-orange;
 }
 
 /* =======================================*/
@@ -1075,20 +1078,10 @@
         margin-bottom: 0;
     }
     dt {
-        position: relative;
         padding-left: 13px;
         font-weight: 500;
         color: #333;
-        &:before {
-            position: absolute;
-            top: 16px;
-            left: 0;
-            display: block;
-            width: 3px;
-            height: 3px;
-            background: #454c5f;
-            content: "";
-        }
+        @include blet;
     }
     dt, dd {
         display: block;
@@ -1132,7 +1125,7 @@
     padding: 25px 0;
     .search-word {
         span {
-            color: $font-point;
+            color: $font-point-orange;
         }
     }
     &.bottom-line {
@@ -1328,10 +1321,10 @@
                 margin-right: 0;
             }
             &:hover, &:focus, &:active, &.active {
-                color: #09c;
+                color: $font-point-blue;
                 svg {
                     [class^="icon-"][class$="type-1"] {
-                        fill: #09c;
+                        fill: $font-point-blue;
                     }
                 }
             }
@@ -1375,7 +1368,7 @@
 .all-table-views {
     padding: 7px 15px;
     span {
-        color: $font-point;
+        color: $font-point-orange;
     }
     @include susy-breakpoint(em($tablet) em($desktop)) {
         padding: 16px 15px 7px;

@@ -1,0 +1,14 @@
+// 말줄임 처리
+@mixin blet($top: 16px, $left: 0, $bg: #454c5f) {
+    position: relative;
+    &:before {
+        position: absolute;
+        top: $top;
+        left: $left;
+        display: block;
+        width: 3px;
+        height: 3px;
+        background: $bg;
+        content: "";
+    }
+}
