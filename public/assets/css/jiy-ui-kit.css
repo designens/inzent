@@ -2074,7 +2074,7 @@ table .checkbox-type + label, table .radio-type + label, table .radio-type + lab
 
 [class*="table-board-type"][class*="list-type"] td { position: relative; min-height: 40px; padding: 9px 10px 9px 53%; }
 
-[class*="table-board-type"][class*="list-type"] td:before { display: inline-block; position: absolute; top: 0; left: 0; width: 50%; height: 100%; font-weight: 500; color: #333; padding: 9px 10px; background: #f1f5f7; content: ""; }
+[class*="table-board-type"][class*="list-type"] td:before { display: inline-block; position: absolute; top: 0; left: 0; width: 50%; height: 100%; font-weight: 500; color: #333; padding: 9px 10px; background: #f7f7f7; content: ""; }
 
 [class*="table-board-type"][class*="list-type"] td:first-child { border-top: 2px solid #999; }
 
