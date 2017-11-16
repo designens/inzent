@@ -959,7 +959,46 @@
             }
         }
         .book-review-text {
+            font-weight: 300;
             color: #858585;
+        }
+    }
+    &.list-box {
+        li {
+            padding: 0;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+            &:first-child {
+                margin-top: 0;
+            }
+            .title {
+                padding: 12px 15px;
+                border-bottom: 1px dashed #d5d5d5;
+                @extend %clearfix;
+                span {
+                    &:first-child {
+                        float: left;
+                        display: block;
+                        width: 40px;
+                        text-align: center;
+                        border: 1px solid #e5e6e8;
+                        background: #f2f4f8;
+                    }
+                    &:last-child {
+                        float: left;
+                        width: -webkit-calc( 100% - 44px);
+                        width: -moz-calc( 100% - 44px);
+                        width: calc( 100% - 44px);
+                        padding: 0 10px;
+                        color: #1397c1;
+                        font-weight: 500;
+                    }
+                }
+            }
+            .wrap {
+                padding: 15px;
+                background: #f1f5f7;
+            }
         }
     }
     @include susy-breakpoint(em($tablet)) {
