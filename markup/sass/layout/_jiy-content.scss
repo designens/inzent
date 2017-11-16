@@ -396,7 +396,7 @@
                     }
                 }
                 .item-keyword {
-                    margin-top: 6px;
+                    margin-top: 7px;
                     span {
                         padding: 0 10px;
                         margin-right: 5px;
@@ -1949,4 +1949,65 @@
 }
 .calendar-table tbody td a {
     height: 70% !important;
+}
+
+/* =======================================*/
+/* Mylibrary > 나의활동 > 리스트
+/* (html/my-activities-list.html)
+/* =======================================*/
+.search-history-list {
+    li {
+        position: relative;
+        padding: 10px 15px 8px 15px;
+        border-bottom: 1px solid #dedfe2;
+        &:first-child {
+            border-top: 2px solid $font-point-blue;
+        }
+        .order, .title {
+            display: inline-block;
+        }
+        .order {
+            vertical-align: top;
+            span {
+                display: block;
+                width: 40px;
+                text-align: center;
+                border: 1px solid #e5e6e8;
+                margin-top: 2px;
+                background: #f2f4f8;
+            }
+        }
+        .title {
+            width: -webkit-calc( 100% - 44px );
+            width: -moz-calc( 100% - 44px );
+            width: calc( 100% - 44px );
+            padding-left: 10px;
+            h6 {
+                font-weight: 500;
+                color: #2373c8;
+                margin-bottom: 4px;
+            }
+        }
+        .dete {
+            padding-left: 54px;
+            color: #888;
+        }
+        @include susy-breakpoint(em($max-mobile)) {
+            .order {
+                width: 40px;
+            }
+            .title {
+                width: -webkit-calc( 100% - 120px );
+                width: -moz-calc( 100% - 120px );
+                width: calc( 100% - 120px );
+                padding: 0 10px;
+            }
+            .dete {
+                position: absolute;
+                right: 15px;
+                bottom: 10px;
+                padding-left: 0;
+            }
+        }
+    }
 }

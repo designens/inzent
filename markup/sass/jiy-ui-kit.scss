@@ -33,7 +33,7 @@
             padding: 20px;
             margin-bottom: 30px;
             border: 1px solid #e2e2e2;
-            h2 {
+            > h2 {
                 color: #002847;
                 padding-bottom: 10px;
                 margin-bottom: 20px;
@@ -173,6 +173,49 @@
     }
     .blue {
         color: #257de0;
+    }
+}
+
+// =======================================
+// 타이포그라피
+// =======================================
+.typography-area {
+    @extend %clearfix;
+    padding: $base-line;
+    .typography-wrap {
+        width: 100%;
+        padding: 0 10px;
+        @include susy-breakpoint(em($tablet)) {
+            width: percentage(1/2);
+        }
+    }
+    h6, h5, h4, h3, h2, p {
+        margin-top: $base-line;
+    }
+    h3:first-child {
+        margin-top: 0;
+    }
+    h6 {
+        padding: 9px 0;
+    }
+    h5 {
+        padding: 7px 0;
+    }
+    h4 {
+        padding: 6px 0;
+    }
+    h3 {
+        padding: 4px 0;
+    }
+    h2 {
+        padding: 2px 0;
+    }
+    &:hover, &:focus {
+        background: linear-gradient(transparent ($base-line - 1), rgba(205, 205, 205, 1) $base-line);
+        background-size: 1px $base-line;
+        h6, h5, h4, h3, h2, p {
+            background: hsla(0, 0%, 0%, 0.2);
+        }
     }
 }
 
