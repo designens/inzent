@@ -218,7 +218,7 @@
                 }
             }
         }
-        @include susy-breakpoint(em($desktop)) {
+        @include susy-breakpoint(em($max-mobile)) {
             display: block;
         }
     }
@@ -377,7 +377,6 @@
 .main-content {
     margin: 30px auto 20px auto;
     [class$="-zone"] {
-        padding: 0 21px;
         .headline {
             position: relative;
             margin-bottom: 12px;
@@ -421,7 +420,9 @@
         height: 196px;
         .ui-carousel__tabpanel-wrapper {
             article {
-                width: 100vw;
+                width: -webkit-calc( 100vw - 40px );
+                width: -moz-calc( 100vw - 40px );
+                width: calc( 100vw - 40px );
                 text-align: center;
                 > a {
                     display: block;
