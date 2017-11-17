@@ -1098,6 +1098,45 @@
 /* =======================================*/
 /* 별점 선택 스타일
 /* =======================================*/
+.page-review-star {
+    position: relative;
+    background: #f4f4f4;
+    padding: 24px 30px;
+    margin-bottom: 20px;
+    .message {
+        @include psd-fz(16px);
+        color: #333;
+        padding: 5px 0;
+    }
+    .review-star {
+        height: 30px;
+        line-height: 30px;
+        .fa {
+            @include psd-fz(16px);
+            color: #d5d5d5;
+            margin-right: 2px;
+            &.on {
+                color: #ffb700;
+            }
+        }
+    }
+    .btn-rating {
+        width: 100%;
+        margin-top: 7px;
+    }
+    @include susy-breakpoint(em(860px)) {
+        .review-star {
+            display: inline-block;
+        }
+        .btn-rating {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            width: auto;
+            margin-top: 0;
+        }
+    }
+}
 .review-star {
     height: 30px;
     line-height: 30px;

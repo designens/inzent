@@ -78,11 +78,11 @@
 /* =======================================*/
 // 컨텐츠 버튼 기본 사이즈
 .btn-content-size {
-    @include btn-size($h: 27px);
+    @include btn-size($h: 27px, $fz: 14px);
 }
 // 아이템 버튼 기본 사이즈
 .btn-item-size {
-    @include btn-size($h: 30px);
+    @include btn-size($h: 30px, $fz: 14px);
 }
 // 테이블 내부 버튼 기본 사이즈
 .btn-in-size {
@@ -94,7 +94,7 @@
 }
 // 테이블 상세 버튼(table-view-type) 기본 사이즈
 .btn-table-view-size {
-    @include btn-size($w: 45px, $h: 23px, $p: 0 10px);
+    @include btn-size($w: 45px, $h: 23px, $fz: 14px, $p: 0 10px);
 }
 // 테이블 게시판(table-board-type) 기본 사이즈
 .btn-table-board-size {
