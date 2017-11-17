@@ -2,6 +2,55 @@
 /* 테이블 스타일
 /* =======================================*/
 table {
+    // 모바일, PC 영역 숨김 / 표시 설정
+    &.mobile-btn-hidden {
+        .mobile {
+            display: none;
+        }
+        .tablet, .desktap {
+            display: block;
+        }
+        @include susy-breakpoint(em($max-mobile)) {
+            .mobile {
+                display: block;
+            }
+            .tablet, .desktap {
+                display: none;
+            }
+        }
+    }
+    &.tablet-btn-hidden {
+        .mobile {
+            display: block;
+        }
+        .tablet, .desktap {
+            display: none;
+        }
+        @include susy-breakpoint(em($tablet)) {
+            .mobile {
+                display: none;
+            }
+            .tablet, .desktap {
+                display: block;
+            }
+        }
+    }
+    &.desktap-btn-hidden {
+        .mobile {
+            display: block;
+        }
+        .tablet, .desktap {
+            display: none;
+        }
+        @include susy-breakpoint(em(860px)) {
+            .mobile {
+                display: none;
+            }
+            .tablet, .desktap {
+                display: block;
+            }
+        }
+    }
     // 테이블 컬럼 좌측 정렬
     .align-left {
         @for $i from 1 through 10 {
@@ -24,6 +73,12 @@ table {
                     }
                 }
             }
+        }
+    }
+    [class^="br-"] {
+        display: inline-block;
+        @include susy-breakpoint(em(860px)) {
+            display: block;
         }
     }
     // 테이블 컬럼 감추기
@@ -277,13 +332,13 @@ table {
         td {
             position: relative;
             min-height: 40px;
-            padding: 9px 10px 9px 53%;
+            padding: 9px 10px 9px 43%;
             &:before {
                 display: inline-block;
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 50%;
+                width: 40%;
                 height: 100%;
                 font-weight: 500;
                 color: #333;
@@ -309,7 +364,6 @@ table {
                     padding: 9px 10px 9px 32%;
                     &:before {
                         width: 30%;
-                        content: "";
                     }
                 }
             }

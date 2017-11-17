@@ -1115,6 +1115,13 @@
         color: #333;
         margin-left: 6px;
     }
+    input {
+        + label {
+            span {
+                @include a11y-visible(false);
+            }
+        }
+    }
 }
 
 /* =======================================*/
@@ -1263,11 +1270,30 @@
 }
 // 설명박스 스타일
 .explan {
+    position: relative;
     color: #888;
     border-top: 1px solid #e5e6e6;
     border-bottom: 1px solid #e5e6e6;
     background: url($bg-dashed01);
     padding: 20px;
+    &.btn-add {
+        padding-bottom: 75px;
+        button, a[role="button"] {
+            position: absolute;
+            right: 20px;
+            bottom: 23px;
+        }
+    }
+    @include susy-breakpoint(em($tablet)) {
+        &.btn-add {
+            padding-bottom: 20px;
+            button, a[role="button"] {
+                position: absolute;
+                right: 20px;
+                bottom: 23px;
+            }
+        }
+    }
 }
 // 공공누리 저작물 안내
 .gong-gongnuli-info {
