@@ -1093,15 +1093,12 @@
     }
     tbody {
         td {
-            position: relative;
-            height: 70px;
+            height: 60px;
             border: 1px solid #ddd;
             vertical-align: top;
             .btn-day-link {
+                position: relative;
                 display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
                 width: 100%;
                 height: 100%;
                 padding: 10px 6px;
@@ -1109,32 +1106,51 @@
                 p {
                     color: $font-base;
                 }
-            }
-            .icon-application-status {
-                display: block;
-                position: absolute;
-                width: 17px;
-                height: 20px;
-                right: 7px;
-                bottom: 6px;
-                color: #596273;
-                text-indent: -9999px;
-                z-index: 9997;
-                &:before {
+                .icon-application-status {
                     position: absolute;
-                    left: 0;
+                    display: block;
                     width: 17px;
                     height: 20px;
-                    background: url($icon-link-04) no-repeat;
-                    background-size: auto 100%;
-                    content: "";
+                    right: 7px;
+                    bottom: 6px;
+                    color: #596273;
+                    text-indent: -9999px;
+                    z-index: 9997;
+                    &:before {
+                        position: absolute;
+                        left: 0;
+                        width: 17px;
+                        height: 20px;
+                        background: url($icon-link-04) no-repeat;
+                        background-size: auto 100%;
+                        content: "";
+                    }
+                }
+                &:hover, &:focus, &:active, &.active {
+                    position: relative;
+                    &:after {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 100%;
+                        border: 1px solid #333;
+                        outline: 1px solid #333;
+                        content: "";
+                    }
+                    + .application-status-area {
+                        display: block;
+                    }
                 }
             }
             .application-status-area {
                 display: none;
                 position: absolute;
-                top: 70px;
-                height: 140px;
+                left: 0;
+                width: 100%;
+                height: 120px;
                 padding: 6px 10px;
                 border: 1px solid #7aaecd;
                 background: #e5f4fd;
@@ -1147,7 +1163,7 @@
                     padding-left: 12px;
                 }
                 .btn-set-mobile {
-                    display: none;
+                    display: block;
                     text-align: right;
                     margin: 4px 0 6px 0;
                     [class^="btn-"] {
@@ -1159,9 +1175,6 @@
                 }
             }
             &:hover, &:focus, &:active, &.active {
-                .application-status-area {
-                    display: block;
-                }
                 &.inactive {
                     .application-status-area {
                         display: none;
@@ -1170,50 +1183,36 @@
             }
         }
         tr {
+            position: relative;
             .can-not-apply {
                 .btn-day-link {
+                    position: relative;
                     p {
                         background: #edba9d;
                     }
                 }
             }
-            td:first-child {
-                .btn-day-link {
-                    p {
-                        color: #e35000;
+            &:first-child {
+                td {
+                    border-top: 1px solid #2e5d99;
+                    &.day {
+                        &.inactive, &.can-not-apply {
+                            &:hover, &:focus {
+                                border-top: 1px solid #2e5d99;
+                            }
+                        }
                     }
                 }
             }
-            .day {
-                .btn-day-link {
-                    &:hover, &:focus {
-                        position: relative;
-                        &:after {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            border: 1px solid #333;
-                            outline: 1px solid #333;
-                            content: "";
+            td {
+                &.inactive {
+                    .btn-day-link {
+                        .day {
+                            color: #ccc;
                         }
                     }
-                }
-                .icon-application-status {
-                    &:hover, &:focus {
-                        + .btn-day-link {
-                            &:after {
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                width: 100%;
-                                height: 100%;
-                                border: 1px solid #333;
-                                outline: 1px solid #333;
-                                content: "";
-                            }
-                        }
+                    .icon-application-status {
+                        display: none;
                     }
                 }
                 &.inactive, &.can-not-apply {
@@ -1227,89 +1226,10 @@
                         }
                     }
                 }
-            }
-            .inactive {
-                .btn-day-link {
-                    p {
-                        color: #ccc;
-                    }
-                }
-                .icon-application-status {
-                    display: none;
-                }
-            }
-        }
-        tr:first-child {
-            td {
-                border-top: 1px solid #2e5d99;
-                &.day {
-                    &.inactive, &.can-not-apply {
-                        &:hover, &:focus {
-                            border-top: 1px solid #2e5d99;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    @include susy-breakpoint(0 em($tablet)) {
-        tbody {
-            td {
-                .application-status-area {
-                    .btn-set-mobile {
-                        display: block;
-                    }
-                }
-            }
-            tr {
-                @for $i from 1 through 5 {
-                    &:nth-of-type(#{$i}) {
-                        td {
-                            .application-status-area {
-                                width: 700%;
-                            }
-                            &:first-child {
-                                .application-status-area {
-                                    left: 0;
-                                }
-                            }
-                            &:nth-of-type(2) {
-                                .application-status-area {
-                                    left: -100%;
-                                }
-                            }
-                            &:nth-of-type(3) {
-                                .application-status-area {
-                                    left: -200%;
-                                }
-                            }
-                            &:nth-of-type(4) {
-                                .application-status-area {
-                                    left: -300%;
-                                }
-                            }
-                            &:nth-of-type(5) {
-                                .application-status-area {
-                                    left: -400%;
-                                }
-                            }
-                            &:nth-of-type(6) {
-                                .application-status-area {
-                                    left: -500%;
-                                }
-                            }
-                            &:last-child {
-                                .application-status-area {
-                                    left: -600%;
-                                }
-                            }
-                        }
-                    }
-                }
-                &:nth-of-type(5) {
-                    td {
-                        .application-status-area {
-                            top: -141px;
+                &:first-child {
+                    .btn-day-link {
+                        .day {
+                            color: #e35000;
                         }
                     }
                 }
@@ -1319,11 +1239,34 @@
     @include susy-breakpoint(em($tablet)) {
         tbody {
             td {
+                position: relative;
+                &:hover {
+                    .btn-day-link {
+                        &:after {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            width: 100%;
+                            height: 100%;
+                            border: 1px solid #596273;
+                            outline: 1px solid #596273;
+                            content: "";
+                        }
+                    }
+                    .application-status-area {
+                        display: block;
+                    }
+                }
                 .application-status-area {
-                    top: 70px;
+                    top: 60px;
                     left: 0;
                     width: 202%;
-                    height: 140px;
+                    height: 120px;
+                    .btn-set-mobile {
+                        display: none;
+                    }
                 }
             }
             tr {
@@ -1333,7 +1276,6 @@
                             &:last-child {
                                 .application-status-area {
                                     left: -101%;
-                                    top: 70px;
                                 }
                             }
                         }
@@ -1342,12 +1284,12 @@
                 &:nth-of-type(4), &:nth-of-type(5) {
                     td {
                         .application-status-area {
-                            top: -141px;
+                            top: -121px;
                         }
                         &:last-child {
                             .application-status-area {
                                 left: -101%;
-                                top: -141px;
+                                top: -121px;
                             }
                         }
                     }
@@ -1358,17 +1300,19 @@
     @include susy-breakpoint(em(860px)) {
         tbody {
             td {
-                .icon-application-status {
-                    right: 9px;
-                    bottom: 8px;
-                    width: auto;
-                    height: auto;
-                    line-height: 24px;
-                    text-indent: inherit;
-                    padding-left: 30px;
-                    &:before {
-                        width: 21px;
-                        height: 24px;
+                .btn-day-link {
+                    .icon-application-status {
+                        right: 9px;
+                        bottom: 8px;
+                        width: auto;
+                        height: auto;
+                        line-height: 24px;
+                        text-indent: inherit;
+                        padding-left: 30px;
+                        &:before {
+                            width: 21px;
+                            height: 24px;
+                        }
                     }
                 }
             }
@@ -1378,11 +1322,6 @@
         tbody {
             td {
                 height: 100px;
-                .icon-application-status {
-                    position: absolute;
-                    bottom: 10px;
-                    right: 10px;
-                }
                 .application-status-area {
                     left: 0;
                     width: 202%;
