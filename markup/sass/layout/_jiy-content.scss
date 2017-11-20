@@ -1080,6 +1080,7 @@
     width: 100%;
     thead {
         th {
+            font-weight: 400;
             height: 33px;
             line-height: 33px;
             color: #fff;
@@ -1092,40 +1093,150 @@
     }
     tbody {
         td {
-            height: 50px;
+            position: relative;
+            height: 70px;
             border: 1px solid #ddd;
             vertical-align: top;
-            a {
+            .btn-day-link {
                 display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
                 width: 100%;
                 height: 100%;
                 padding: 10px 6px;
+                z-index: 9998;
+                p {
+                    color: $font-base;
+                }
+            }
+            .icon-application-status {
+                display: block;
+                position: absolute;
+                width: 17px;
+                height: 20px;
+                right: 7px;
+                bottom: 6px;
+                color: #596273;
+                text-indent: -9999px;
+                z-index: 9997;
+                &:before {
+                    position: absolute;
+                    left: 0;
+                    width: 17px;
+                    height: 20px;
+                    background: url($icon-link-04) no-repeat;
+                    background-size: auto 100%;
+                    content: "";
+                }
+            }
+            .application-status-area {
+                display: none;
+                position: absolute;
+                top: 70px;
+                height: 140px;
+                padding: 6px 10px;
+                border: 1px solid #7aaecd;
+                background: #e5f4fd;
+                z-index: 9999;
+                overflow: auto;
+                p {
+                    @include psd-fz(14px);
+                    color: #333;
+                    @include blet($size: 6px, $top: 7px, $left: 0, $bg: #333);
+                    padding-left: 12px;
+                }
+                .btn-set-mobile {
+                    display: none;
+                    text-align: right;
+                    margin: 4px 0 6px 0;
+                    [class^="btn-"] {
+                        margin-right: 6px;
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+            &:hover, &:focus, &:active, &.active {
+                .application-status-area {
+                    display: block;
+                }
+                &.inactive {
+                    .application-status-area {
+                        display: none;
+                    }
+                }
             }
         }
         tr {
-            td:first-child, .can-not-apply {
-                color: #e35000;
-            }
             .can-not-apply {
-                p {
-                    background: #edba9d;
+                .btn-day-link {
+                    p {
+                        background: #edba9d;
+                    }
+                }
+            }
+            td:first-child {
+                .btn-day-link {
+                    p {
+                        color: #e35000;
+                    }
                 }
             }
             .day {
-                &:hover, &:focus {
-                    border: 2px solid #333;
+                .btn-day-link {
+                    &:hover, &:focus {
+                        position: relative;
+                        &:after {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            border: 1px solid #333;
+                            outline: 1px solid #333;
+                            content: "";
+                        }
+                    }
+                }
+                .icon-application-status {
+                    &:hover, &:focus {
+                        + .btn-day-link {
+                            &:after {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                border: 1px solid #333;
+                                outline: 1px solid #333;
+                                content: "";
+                            }
+                        }
+                    }
                 }
                 &.inactive, &.can-not-apply {
-                    &:hover, &:focus {
-                        border: 1px solid #ddd;
-                        a {
+                    .btn-day-link {
+                        &:hover, &:focus {
                             cursor: no-drop;
+                            &:after {
+                                border: 0;
+                                outline: 0;
+                            }
                         }
                     }
                 }
             }
             .inactive {
-                color: #ccc;
+                .btn-day-link {
+                    p {
+                        color: #ccc;
+                    }
+                }
+                .icon-application-status {
+                    display: none;
+                }
             }
         }
         tr:first-child {
@@ -1141,10 +1252,172 @@
             }
         }
     }
+    @include susy-breakpoint(0 em($tablet)) {
+        tbody {
+            td {
+                .application-status-area {
+                    .btn-set-mobile {
+                        display: block;
+                    }
+                }
+            }
+            tr {
+                @for $i from 1 through 5 {
+                    &:nth-of-type(#{$i}) {
+                        td {
+                            .application-status-area {
+                                width: 700%;
+                            }
+                            &:first-child {
+                                .application-status-area {
+                                    left: 0;
+                                }
+                            }
+                            &:nth-of-type(2) {
+                                .application-status-area {
+                                    left: -100%;
+                                }
+                            }
+                            &:nth-of-type(3) {
+                                .application-status-area {
+                                    left: -200%;
+                                }
+                            }
+                            &:nth-of-type(4) {
+                                .application-status-area {
+                                    left: -300%;
+                                }
+                            }
+                            &:nth-of-type(5) {
+                                .application-status-area {
+                                    left: -400%;
+                                }
+                            }
+                            &:nth-of-type(6) {
+                                .application-status-area {
+                                    left: -500%;
+                                }
+                            }
+                            &:last-child {
+                                .application-status-area {
+                                    left: -600%;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:nth-of-type(5) {
+                    td {
+                        .application-status-area {
+                            top: -141px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include susy-breakpoint(em($tablet)) {
+        tbody {
+            td {
+                .application-status-area {
+                    top: 70px;
+                    left: 0;
+                    width: 202%;
+                    height: 140px;
+                }
+            }
+            tr {
+                @for $i from 1 through 4 {
+                    &:nth-of-type(#{$i}) {
+                        td {
+                            &:last-child {
+                                .application-status-area {
+                                    left: -101%;
+                                    top: 70px;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:nth-of-type(4), &:nth-of-type(5) {
+                    td {
+                        .application-status-area {
+                            top: -141px;
+                        }
+                        &:last-child {
+                            .application-status-area {
+                                left: -101%;
+                                top: -141px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include susy-breakpoint(em(860px)) {
+        tbody {
+            td {
+                .icon-application-status {
+                    right: 9px;
+                    bottom: 8px;
+                    width: auto;
+                    height: auto;
+                    line-height: 24px;
+                    text-indent: inherit;
+                    padding-left: 30px;
+                    &:before {
+                        width: 21px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+    }
     @include susy-breakpoint(em($desktop)) {
         tbody {
             td {
                 height: 100px;
+                .icon-application-status {
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                }
+                .application-status-area {
+                    left: 0;
+                    width: 202%;
+                    height: 100px;
+                }
+            }
+            tr {
+                @for $i from 1 through 4 {
+                    &:nth-of-type(#{$i}) {
+                        td {
+                            .application-status-area {
+                                top: 100px;
+                            }
+                            &:last-child {
+                                .application-status-area {
+                                    left: -101%;
+                                    top: 100px;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:nth-of-type(5) {
+                    td {
+                        .application-status-area {
+                            top: -101px;
+                        }
+                        &:last-child {
+                            .application-status-area {
+                                left: -101%;
+                                top: -101px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -1987,7 +2260,7 @@
     opacity: 1 !important;
 }
 .calendar-table tbody td a {
-    height: 70% !important;
+    // height: 70% !important;
 }
 
 /* =======================================*/
