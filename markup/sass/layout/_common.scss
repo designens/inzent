@@ -883,7 +883,6 @@
 .tab-area {
     position: relative;
     .tab-menu {
-        height: 40px;
         border-left: 1px solid $bd-tab-menu-ber;
         border-bottom: 1px solid $bd-tab-menu-ber;
         margin-bottom: 20px;
@@ -898,6 +897,8 @@
             color: $font-tab-menu-default;
             border-top: 1px solid $bd-tab-menu-ber;
             border-right: 1px solid $bd-tab-menu-ber;
+            border-bottom: 1px solid $bd-tab-menu-ber;
+            margin-bottom: -1px;
             &:focus, &:active, &.active {
                 color: $font-tab-menu-active;
                 background: $bg-tab-menu-active;
@@ -911,19 +912,25 @@
                 }
             }
         }
+        @include susy-breakpoint(em($max-mobile)) {
+            @for $i from 2 through 5 {
+                &.col-#{$i} {
+                    a[role="tab"] {
+                        width: percent(2);
+                    }
+                }
+            }
+        }
         @include susy-breakpoint(em($tablet)) {
+            height: 40px;
             a[role="tab"] {
                 width: auto;
                 padding: 0 40px;
             }
-        }
-        @include susy-breakpoint(em($tablet) em($desktop)) {
             @for $i from 2 through 5 {
                 &.col-#{$i} {
                     a[role="tab"] {
                         width: percent($i - 1);
-                        border-bottom: 1px solid $bd-tab-menu-ber;
-                        margin-bottom: -1px;
                     }
                 }
             }
@@ -933,7 +940,6 @@
                 &.col-#{$i} {
                     a[role="tab"] {
                         width: percent($i);
-                        margin-bottom: -1px;
                     }
                 }
             }

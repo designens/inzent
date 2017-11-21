@@ -1103,7 +1103,7 @@
                 width: 100%;
                 height: 60px;
                 padding: 10px 6px;
-                z-index: 9998;
+                z-index: 998;
                 p {
                     color: $font-base;
                 }
@@ -1116,7 +1116,7 @@
                     bottom: 6px;
                     color: #596273;
                     text-indent: -9999px;
-                    z-index: 9997;
+                    z-index: 997;
                     &:before {
                         position: absolute;
                         left: 0;
@@ -1172,7 +1172,7 @@
                 margin-top: 1px;
                 border: 1px solid #7aaecd;
                 background: #e5f4fd;
-                z-index: 9999;
+                z-index: 999;
                 overflow: auto;
                 p {
                     @include psd-fz(14px);
