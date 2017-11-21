@@ -1001,9 +1001,6 @@
                 border: 1px solid #ccc;
                 border-bottom: 0;
             }
-            &:first-child {
-                @include a11y-invisible(false);
-            }
             &:last-child {
                 div {
                     border-bottom: 1px solid #ccc;
