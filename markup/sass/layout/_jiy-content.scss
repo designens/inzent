@@ -1767,12 +1767,15 @@
             padding: 4px;
             border: 1px solid #ccc;
             margin-top: 15px;
-            img {
-                width: 100%;
-                height: auto;
-            }
             &:hover, &:focus {
                 border: 1px solid #333;
+            }
+            a[href] {
+                display: block;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
             }
         }
         h6 {
@@ -1810,12 +1813,28 @@
         li {
             @include layout(2 34px/343px);
             @include gallery(1 of 2);
+            &:nth-of-type(1), &:nth-of-type(2) {
+                &:before {
+                    display: none;
+                }
+                .img-box {
+                    margin-top: 0;
+                }
+            }
         }
     }
     @include susy-breakpoint(em(900px)) {
         li {
             @include layout(3 34px/256px);
             @include gallery(1 of 3);
+            &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3) {
+                &:before {
+                    display: none;
+                }
+                .img-box {
+                    margin-top: 0;
+                }
+            }
         }
     }
 }

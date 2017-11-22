@@ -3,6 +3,7 @@ node_modules
 
 # PSD & File
 resource
+public
 
 # Windows image file caches
 Thumbs.db
