@@ -132,11 +132,14 @@
     display: none;
     min-width: $min-mobile;
     height: 35px;
-    line-height: 35px;
     background: $bg-top-menu;
     .wrap {
         .menu {
             text-align: right;
+            line-height: 33px;
+            @media screen and (-webkit-min-device-pixel-ratio:0) {
+                line-height: 35px;
+            }
             a {
                 @include psd-fz(13px);
                 font-weight: 100;
@@ -158,6 +161,10 @@
         }
         .link {
             display: none;
+            line-height: 33px;
+            @media screen and (-webkit-min-device-pixel-ratio:0) {
+                line-height: 35px;
+            }
             a {
                 display: block;
                 height: 35px;
@@ -207,7 +214,6 @@
 .top-area {
     min-width: $min-mobile;
     height: 80px;
-    padding: 0;
     @extend %clearfix;
     .wrap {
         position: relative;
