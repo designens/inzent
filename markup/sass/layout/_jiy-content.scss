@@ -7,7 +7,7 @@
         .sub-title {
             @include psd-fz(30px);
             color: #333;
-            padding-bottom: 10px;
+            padding: 23px 0 10px;
             border-bottom: 2px solid #666;
             clear: both;
         }
@@ -489,44 +489,61 @@
 /* 자료검색 > 소장자료 검색 > 리스트 (list)
 /* (html/resources-search-list-item.html)
 /* =======================================*/
-.accordion-result-search {
-    margin-top: 20px;
+.accordion-search-title {
+    color: #fff;
+    text-align: center;
+    height: 40px;
+    line-height: 36px;
+    margin-top: 50px;
+    background: #5f7a8f;
+}
+.accordion-search-area {
+    border-left: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
     h6, .title {
-        background: #ddd;
-        padding: 4px 10px;
+        color: #005bb3;
+        padding: 4px 15px;
+        background: #f1f1f1;
     }
     .aco-open {
-        padding: 4px 10px;
+        padding: 10px 15px;
         li {
-            padding: 4px 0;
+            a[href] {
+                @include psd-fz(14px);
+                .amount {
+                    font-weight: 300;
+                    color: #888;
+                    margin-left: 2px;
+                }
+            }
             [class*="link"] {
                 position: relative;
-                color: $font-lnb-title;
-                @include psd-fz(16px);
+                padding: 4px 0;
                 .icon-toggle {
                     position: absolute;
                     display: block;
                     top: 50%;
-                    right: 20px;
-                    width: 13px;
-                    height: 13px;
-                    margin-top: -7px;
+                    right: 0;
+                    width: 9px;
+                    height: 9px;
+                    margin-top: -4px;
                     &:before {
                         position: absolute;
-                        top: 5px;
+                        top: 4px;
                         right: 0;
-                        width: 13px;
-                        height: 3px;
-                        background: #b1b1b3;
+                        width: 9px;
+                        height: 1px;
+                        background: #0066b3;
                         content: "";
                     }
                     &:after {
                         position: absolute;
                         top: 0;
-                        right: 5px;
-                        width: 3px;
-                        height: 13px;
-                        background: #b1b1b3;
+                        right: 4px;
+                        width: 1px;
+                        height: 9px;
+                        background: #0066b3;
                         content: "";
                         transform: rotate(0deg);
                         transition: transform 0.25s ease;
@@ -537,14 +554,31 @@
                 border-bottom: 0;
             }
             &.open {
-                background: $bg-lnb-title-open;
                 [class*="link"] {
-                    color: $font-lnb-title-active;
                     .icon-toggle {
                         &:after {
-                            background: $font-lnb-title-active;
                             transform: rotate(90deg);
                             transition: transform 0.25s ease;
+                        }
+                    }
+                }
+                .sub-menu {
+                    padding: 4px 10px 4px 20px;
+                    background: #e9f0f5;
+                    > li {
+                        @include blet($top: 10px, $left: -10px, $bg: #888);
+                        padding: 1px 0;
+                        a[href] {
+                            font-weight: 300;
+                        }
+                        &:hover, &:focus, &:active, &.active {
+                            &:before {
+                                background: #0066b3;
+                            }
+                            a[href] {
+                                font-weight: 400;
+                                color: #0066b3;
+                            }
                         }
                     }
                 }
@@ -1760,9 +1794,6 @@
                 display: none;
             }
         }
-        &:last-child {
-            margin-bottom: 30px;
-        }
         .img-box {
             padding: 4px;
             border: 1px solid #ccc;
@@ -1804,35 +1835,38 @@
             &:before {
                 top: auto;
             }
-            &:last-child {
-                margin-bottom: 10px;
-            }
         }
     }
     @include susy-breakpoint(em(560px) em(900px)) {
         li {
-            @include layout(2 34px/343px);
-            @include gallery(1 of 2);
-            &:nth-of-type(1), &:nth-of-type(2) {
-                &:before {
-                    display: none;
-                }
-                .img-box {
-                    margin-top: 0;
+            $columns: 2;
+            @include layout($columns 34px/343px);
+            @include gallery(1 of $columns);
+            @for $i from 1 through $columns {
+                &:nth-of-type(#{$i}) {
+                    &:before {
+                        display: none;
+                    }
+                    .img-box {
+                        margin-top: 0;
+                    }
                 }
             }
         }
     }
     @include susy-breakpoint(em(900px)) {
         li {
-            @include layout(3 34px/256px);
-            @include gallery(1 of 3);
-            &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3) {
-                &:before {
-                    display: none;
-                }
-                .img-box {
-                    margin-top: 0;
+            $columns: 3;
+            @include layout($columns 34px/256px);
+            @include gallery(1 of $columns);
+            @for $i from 1 through $columns {
+                &:nth-of-type(#{$i}) {
+                    &:before {
+                        display: none;
+                    }
+                    .img-box {
+                        margin-top: 0;
+                    }
                 }
             }
         }
