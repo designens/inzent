@@ -1103,13 +1103,26 @@
 /* 별점 선택 스타일
 /* =======================================*/
 .page-review-star {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    @include susy-breakpoint(em($tablet)) {
+        margin-top: 0;
+        padding-top: 10px;
+    }
+    @include susy-breakpoint(em($tablet) em($desktop)) {
+        margin-top: 60px;
+    }
+    @include susy-breakpoint(em($desktop)) {
+        margin-top: 120px;
+    }
+}
+.page-review-star {
     position: relative;
     background: #f4f4f4;
-    padding: 24px 30px;
-    margin-bottom: 20px;
+    padding: 10px 30px 20px;
     .message {
         @include psd-fz(16px);
-        color: #333;
+        color: #888;
         padding: 5px 0;
     }
     .review-star {
@@ -1135,7 +1148,7 @@
         .btn-rating {
             position: absolute;
             right: 30px;
-            bottom: 30px;
+            bottom: 23px;
             width: auto;
             margin-top: 0;
         }

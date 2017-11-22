@@ -213,13 +213,6 @@
 .sub-search-view-area {
     display: none;
     border: 1px solid #e7e7e7;
-    .btn-result-search-view {
-        display: block;
-        margin: 0 auto;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        clear: both;
-    }
     .result-accordion {
         li {
             .result-link {
@@ -255,15 +248,19 @@
                 height: 80px;
                 overflow-y: auto;
                 @extend %clearfix;
-                .checkbox-type {
+                a[href], button {
                     display: block;
-                    margin-top: 8px;
-                    label {
+                    margin-top: 6px;
+                    &:hover, &:focus {
+                        color: #005bb3;
                         span {
-                            font-weight: 300;
                             color: #888;
-                            margin-left: 4px;
                         }
+                    }
+                    span {
+                        font-weight: 300;
+                        color: #888;
+                        margin-left: 4px;
                     }
                 }
             }
@@ -272,7 +269,7 @@
     @include susy-breakpoint(em($max-mobile) em($tablet)) {
         li {
             .sub-result {
-                .checkbox-type {
+                a[href], button {
                     @include layout(2 20px/230px);
                     @include gallery(1 of 2);
                 }
@@ -282,7 +279,7 @@
     @include susy-breakpoint(em($tablet) em($desktop)) {
         li {
             .sub-result {
-                .checkbox-type {
+                a[href], button {
                     @include layout(3 20px/226px);
                     @include gallery(1 of 3);
                 }
@@ -292,7 +289,7 @@
     @include susy-breakpoint(em($desktop)) {
         li {
             .sub-result {
-                .checkbox-type {
+                a[href], button {
                     @include layout(8 20px/83px);
                     @include gallery(2 of 8);
                 }
@@ -492,6 +489,69 @@
 /* 자료검색 > 소장자료 검색 > 리스트 (list)
 /* (html/resources-search-list-item.html)
 /* =======================================*/
+.accordion-result-search {
+    margin-top: 20px;
+    h6, .title {
+        background: #ddd;
+        padding: 4px 10px;
+    }
+    .aco-open {
+        padding: 4px 10px;
+        li {
+            padding: 4px 0;
+            [class*="link"] {
+                position: relative;
+                color: $font-lnb-title;
+                @include psd-fz(16px);
+                .icon-toggle {
+                    position: absolute;
+                    display: block;
+                    top: 50%;
+                    right: 20px;
+                    width: 13px;
+                    height: 13px;
+                    margin-top: -7px;
+                    &:before {
+                        position: absolute;
+                        top: 5px;
+                        right: 0;
+                        width: 13px;
+                        height: 3px;
+                        background: #b1b1b3;
+                        content: "";
+                    }
+                    &:after {
+                        position: absolute;
+                        top: 0;
+                        right: 5px;
+                        width: 3px;
+                        height: 13px;
+                        background: #b1b1b3;
+                        content: "";
+                        transform: rotate(0deg);
+                        transition: transform 0.25s ease;
+                    }
+                }
+            }
+            &:last-child, [class*="link"] {
+                border-bottom: 0;
+            }
+            &.open {
+                background: $bg-lnb-title-open;
+                [class*="link"] {
+                    color: $font-lnb-title-active;
+                    .icon-toggle {
+                        &:after {
+                            background: $font-lnb-title-active;
+                            transform: rotate(90deg);
+                            transition: transform 0.25s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 .search-select-content {
     .list-item-list {
         @extend .list-item-img;
@@ -1680,17 +1740,25 @@
 /* ============================================================*/
 .item-gallery-area {
     @extend %clearfix;
+    border-bottom: 1px solid #ccc;
+    margin-top: 20px;
     li {
-        margin-top: 30px;
-        &:after {
+        @extend %clearfix;
+        position: relative;
+        &:before {
             display: block;
             position: absolute;
+            top: -15px;
             left: 0;
             right: 0;
             height: 1px;
-            margin-top: 13px;
             background: #ccc;
             content: "";
+        }
+        &:first-child {
+            &:before {
+                display: none;
+            }
         }
         &:last-child {
             margin-bottom: 30px;
@@ -1698,6 +1766,7 @@
         .img-box {
             padding: 4px;
             border: 1px solid #ccc;
+            margin-top: 15px;
             img {
                 width: 100%;
                 height: auto;
@@ -1721,10 +1790,17 @@
             span {
                 color: #888;
             }
+            &:last-child {
+                padding-bottom: 13px;
+            }
         }
     }
     @include susy-breakpoint(em(560px)) {
         li {
+            position: static;
+            &:before {
+                top: auto;
+            }
             &:last-child {
                 margin-bottom: 10px;
             }
@@ -1779,8 +1855,8 @@
             padding: 7px 20px 7px 30px;
             background: #ccc;
             .owl-item {
-                width: 68px !important;
-                height: 53px !important;
+                width: 110px !important;
+                height: 85px !important;
                 a {
                     display: block;
                     img {
@@ -1796,8 +1872,8 @@
                     position: absolute;
                     top: 0;
                     width: 20px;
-                    height: 67px;
-                    line-height: 67px;
+                    height: 99px;
+                    line-height: 99px;
                     text-align: center;
                     background: #999;
                     &.disabled {

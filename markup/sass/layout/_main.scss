@@ -387,7 +387,6 @@
         margin: 30px auto;
         @include layout(6 22px/165px);
         [class$="-zone"] {
-            padding: 0;
             @include span(2);
             &:last-child {
                 @include span(2 last);
