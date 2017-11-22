@@ -928,9 +928,8 @@
             }
         }
         @include susy-breakpoint(em($tablet)) {
-            height: 40px;
             a[role="tab"] {
-                width: auto;
+                width: percent(3);
                 padding: 0 40px;
             }
             @for $i from 2 through 5 {
@@ -941,7 +940,12 @@
                 }
             }
         }
-        @include susy-breakpoint(em($desktop)) {
+        @include susy-breakpoint(em(860px)) {
+            height: 40px;
+            a[role="tab"] {
+                width: auto;
+                padding: 0 40px;
+            }
             @for $i from 2 through 5 {
                 &.col-#{$i} {
                     a[role="tab"] {
