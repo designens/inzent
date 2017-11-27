@@ -405,47 +405,8 @@
                 }
             }
             &.item-table-area {
-                margin-top: 10px;
-                margin-bottom: 10px;
-                .table-view-type-01 {
-                    td {
-                        &:nth-of-type(1) {
-                            &:before {
-                                content: "번호";
-                            }
-                        }
-                        &:nth-of-type(2) {
-                            &:before {
-                                content: "등록번호";
-                            }
-                        }
-                        &:nth-of-type(3) {
-                            &:before {
-                                content: "소장위치";
-                            }
-                        }
-                        &:nth-of-type(4) {
-                            &:before {
-                                content: "청구기호";
-                            }
-                        }
-                        &:nth-of-type(5) {
-                            &:before {
-                                content: "도서상태";
-                            }
-                        }
-                        &:nth-of-type(6) {
-                            &:before {
-                                content: "반납예정일";
-                            }
-                        }
-                        &:nth-of-type(7) {
-                            &:before {
-                                content: "서비스";
-                            }
-                        }
-                    }
-                }
+                padding: 10px 0;
+                clear: both;
             }
         }
         @include susy-breakpoint(em($tablet)) {
@@ -658,9 +619,6 @@
                         padding-left: 33px;
                     }
                 }
-                &:before {
-                    content: "번호";
-                }
             }
             &:nth-of-type(2) {
                 &:before {
@@ -669,16 +627,6 @@
                     line-height: 1.5;
                     padding-top: 10px;
                     content: "서명 / 저자 / \A출판사 / 출판년";
-                }
-            }
-            &:nth-of-type(3) {
-                &:before {
-                    content: "유형";
-                }
-            }
-            &:nth-of-type(4) {
-                &:before {
-                    content: "부가서비스";
                 }
             }
         }
@@ -793,12 +741,12 @@
 /* =======================================*/
 .resources-search-view {
     .sub-search-area {
-        height: 40px;
-        padding:0 15px;
+        height: auto;
+        padding: 4px 15px;
         button, a {
             font-weight: 300;
-            line-height: 40px;
-            margin-right: 20px;
+            line-height: 30px;
+            margin-right: 10px;
             &:last-child {
                 margin-right: 0;
             }
@@ -808,57 +756,29 @@
             }
             &.btn-url-copy {
                 padding-left: 36px;
-                background: url($icon-url-copy) left top 12px no-repeat;
+                background: url($icon-url-copy) left top 8px no-repeat;
             }
             &.btn-marc-view {
-                display: none;
                 padding-left: 22px;
                 background: url($icon-marc-view) left center no-repeat;
+            }
+        }
+        @include susy-breakpoint(em($max-mobile)) {
+            height: 40px;
+            padding: 0s 15px;
+            button, a {
+                margin-right: 20px;
+                line-height: 40px;
+                &.btn-url-copy {
+                    padding-left: 36px;
+                    background: url($icon-url-copy) left top 12px no-repeat;
+                }
             }
         }
         @include susy-breakpoint(em($tablet)) {
             button {
                 &.btn-marc-view {
                     display: inline-block;
-                }
-            }
-        }
-    }
-    .table-view-type-01 {
-        td {
-            &:nth-of-type(1) {
-                &:before {
-                    content: "번호";
-                }
-            }
-            &:nth-of-type(2) {
-                &:before {
-                    content: "등록번호";
-                }
-            }
-            &:nth-of-type(3) {
-                &:before {
-                    content: "소장위치";
-                }
-            }
-            &:nth-of-type(4) {
-                &:before {
-                    content: "청구기호";
-                }
-            }
-            &:nth-of-type(5) {
-                &:before {
-                    content: "도서상태";
-                }
-            }
-            &:nth-of-type(6) {
-                &:before {
-                    content: "반납예정일";
-                }
-            }
-            &:nth-of-type(7) {
-                &:before {
-                    content: "서비스";
                 }
             }
         }
@@ -960,7 +880,7 @@
             margin-top: 28px;
             margin-bottom: 13px;
             font-weight: 500;
-            + button, + .select-box {
+            + a[role="button"], + button, + .select-box {
                 margin: 10px 0;
             }
             + .select-box {
@@ -989,7 +909,7 @@
         }
         @include susy-breakpoint(em(860px)) {
             h5 {
-                + button, + .select-box {
+                + a[role="button"], + button, + .select-box {
                     margin-top: 31px;
                 }
                 &.full-color {
@@ -1597,6 +1517,9 @@
     }
 }
 .popular-loans-resources {
+    .sub-list-title {
+        padding-bottom: 7px;
+    }
     .table-board-type {
         margin-top: 20px;
         .title {

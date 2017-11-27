@@ -177,7 +177,13 @@ table {
                 color: #333;
                 padding: 4px 10px;
                 background: #f1f5f7;
-                content: "";
+            }
+            @for $i from 1 through 10 {
+                &:nth-of-type(#{$i}) {
+                    &:before {
+                        content: attr(data-before);
+                    }
+                }
             }
             &:last-child {
                 &:before {
@@ -193,7 +199,6 @@ table {
                     padding: 4px 10px 4px 32%;
                     &:before {
                         width: 30%;
-                        content: "";
                     }
                 }
             }
@@ -353,6 +358,13 @@ table {
                 margin-bottom: 10px;
                 &:before {
                     border-bottom: 0;
+                }
+            }
+            @for $i from 1 through 10 {
+                &:nth-of-type(#{$i}) {
+                    &:before {
+                        content: attr(data-before);
+                    }
                 }
             }
         }

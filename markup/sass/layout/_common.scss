@@ -122,6 +122,24 @@
 }
 
 /* =======================================*/
+/* 슬라이드 다운 팝업 배너
+/* =======================================*/
+.popup-slidedown-banner {
+    height: 100px;
+    text-align: center;
+    background: #fcf3d2;
+    .wrap {
+        position: relative;
+        line-height: 100px;
+    }
+    .btn-banner-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+/* =======================================*/
 /* Header : Top menu & GNB
 /* =======================================*/
 .header {
