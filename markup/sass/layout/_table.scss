@@ -181,7 +181,7 @@ table {
             @for $i from 1 through 10 {
                 &:nth-of-type(#{$i}) {
                     &:before {
-                        content: attr(data-before);
+                        content: attr(aria-label);
                     }
                 }
             }
@@ -363,7 +363,7 @@ table {
             @for $i from 1 through 10 {
                 &:nth-of-type(#{$i}) {
                     &:before {
-                        content: attr(data-before);
+                        content: attr(aria-label);
                     }
                 }
             }

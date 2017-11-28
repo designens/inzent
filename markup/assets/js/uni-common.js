@@ -48,20 +48,37 @@
 // =================================================================
 (function(global, $) {
 
-    var columnHead = $('table[class*="list-type"] thead tr th'),
-        rowHead = $('table[class*="list-type"] tbody tr td');
+    function assignAriaLabelTableColumnHeading($table) {
 
-    // thead th 타이틀 텍스트 가져오기
-    var tdArr = columnHead.map(function(){
-            var $this = $(this);
-            return $.trim($this.text());
-        }).get();
+        // 함수가 요구하는 인자의 유형 검증
+        if (!$table.jquery) {
+            throw new Error('jQuery 객체를 전달해야 합니다.');
+        }
 
-    // tbody td:before content 속성에 thead th 타이틀 삽입 하기
-    rowHead.each(function(i) {
-        var $this = $(this);
-        $this.attr( 'data-before' , tdArr[i] );
-    });
+         var columnHead = $table.find('th[scope="col"]'),
+             tbodyRow   = $table.find('tbody tr');
+
+        // table > th title 수집
+        var tdArr = columnHead.map(function(index, el){
+            return el.innerHTML;
+        });
+
+        tbodyRow.each(function(index, el) {
+            // table > td 수집
+            var $tds = $(el).children('td');
+            // 순환 > 데이터 배열화
+            $tds.each(function(i){
+                var $td = $tds.eq(i);
+                // 데이터 배열을 순환
+                $td.attr( 'aria-label', tdArr[i] );
+            });
+        });
+    }
+
+    // assignAriaLabelTableColumnHeading( document.querySElector('.table') );
+    // table > th title 값을 td에 할당
+    assignAriaLabelTableColumnHeading( $('#demo-data-table-01') );
+    assignAriaLabelTableColumnHeading( $('#demo-data-table-02') );
 
 })(window, window.jQuery);
 
