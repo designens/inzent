@@ -44,43 +44,46 @@
 })(window, window.jQuery);
 
 // =================================================================
-// 테이블 컨텐츠 설정 실행
+// 테이블 컨텐츠 모바일 list-type으로 설정 시 실행 (css content 설정)
 // =================================================================
-(function(global, $) {
+function assignTableHeading($table) {
 
-    function assignAriaLabelTableColumnHeading($table) {
-
-        // 함수가 요구하는 인자의 유형 검증
-        if (!$table.jquery) {
-            throw new Error('jQuery 객체를 전달해야 합니다.');
-        }
-
-         var columnHead = $table.find('th[scope="col"]'),
-             tbodyRow   = $table.find('tbody tr');
-
-        // table > th title 수집
-        var tdArr = columnHead.map(function(index, el){
-            return el.innerHTML;
-        });
-
-        tbodyRow.each(function(index, el) {
-            // table > td 수집
-            var $tds = $(el).children('td');
-            // 순환 > 데이터 배열화
-            $tds.each(function(i){
-                var $td = $tds.eq(i);
-                // 데이터 배열을 순환
-                $td.attr( 'aria-label', tdArr[i] );
-            });
-        });
+    // 함수가 요구하는 인자의 유형 검증
+    if (!$table.jquery) {
+        throw new Error('jQuery 객체를 전달해야 합니다.');
     }
 
-    // assignAriaLabelTableColumnHeading( document.querySElector('.table') );
-    // table > th title 값을 td에 할당
-    assignAriaLabelTableColumnHeading( $('#demo-data-table-01') );
-    assignAriaLabelTableColumnHeading( $('#demo-data-table-02') );
+     var columnHead = $table.find('th[scope="col"]'),
+         tbodyRow   = $table.find('tbody tr');
 
-})(window, window.jQuery);
+    // table > th Column title 수집
+    var tdArr = columnHead.map(function(index, el){
+        return el.innerHTML;
+    });
+
+    tbodyRow.each(function(index, el) {
+        // table > td 수집
+        var $tds = $(el).children('td');
+        // 순환 > 데이터 배열화
+        $tds.each(function(i){
+            var $td = $tds.eq(i);
+            // 데이터 배열을 순환
+            $td.attr( 'aria-label', tdArr[i] );
+        });
+    });
+}
+// UI Kit 테이블 적용
+// table > th의 Column title 값을 td:before에 할당
+assignTableHeading( $('#demo-data-table-01') );
+assignTableHeading( $('#demo-data-table-02') );
+
+// table > th의 Column title 값을 td:before에 할당
+(function(doc, global, $) {
+
+    assignTableHeading( $('#data-table-01') );
+    assignTableHeading( $('#data-table-02') );
+
+})(document, window, window.jQuery);
 
 // =================================================================
 // 팝업 플러그인 실행

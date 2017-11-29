@@ -3,12 +3,12 @@
 /* =======================================*/
 .unibook-search {
     width: 100%;
-    height: 207px;
+    height: 133px;
     background: url($bg-top-area) left center;
     .top-search-area {
         @include span(full);
-        min-width: 320px;
-        padding: 0 21px;
+        min-width: 260px;
+        padding-top: 20px;
         .search-wrap {
             position: relative;
             .btn-lang-input {
@@ -30,7 +30,6 @@
                 line-height: 35px;
                 text-align: center;
                 color: #fff;
-                margin-top: 46px;
                 background: $bg-top-menu;
             }
             input[type="text"] {
@@ -58,6 +57,7 @@
             }
         }
         .searh-keyword {
+            display: none;
             position: relative;
             @include span(full);
             height: 30px;
@@ -96,6 +96,17 @@
                     }
                 }
             }
+        }
+    }
+    @include susy-breakpoint(em($min-mobile)) {
+        .top-search-area {
+            padding-top: 20px;
+        }
+    }
+    @include susy-breakpoint(em($tablet)) {
+        height: 207px;
+        .top-search-area {
+            padding: 46px 21px 0 21px;
         }
     }
     @include susy-breakpoint(em($tablet) em($desktop)) {
@@ -630,17 +641,29 @@
                     position: absolute;
                     right: 10px;
                     top: 50%;
-                    width: 23px;
-                    height: 23px;
-                    line-height: 25px;
-                    @include fa($icon: "\f054", $fz: 12px, $color: #d4d9df);
+                    width: 16px;
+                    height: 16px;
+                    line-height: 16px;
+                    @include fa($icon: "\f054", $fz: 9px, $color: #d4d9df);
                     text-align: center;
                     border-radius: 50%;
-                    margin-top: -12px;
+                    margin-top: -8px;
                     background: #a8b2be;
                 }
                 span {
                     display: none;
+                }
+            }
+            @include susy-breakpoint(em($max-mobile)) {
+                a {
+                    &:after {
+                        position: absolute;
+                        width: 23px;
+                        height: 23px;
+                        line-height: 25px;
+                        @include fa($icon: "\f054", $fz: 12px, $color: #d4d9df);
+                        margin-top: -12px;
+                    }
                 }
             }
             &:nth-of-type(1), &:nth-of-type(3) {
