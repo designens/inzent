@@ -1517,9 +1517,6 @@
     }
 }
 .popular-loans-resources {
-    .sub-list-title {
-        padding-bottom: 7px;
-    }
     .table-board-type {
         margin-top: 20px;
         .title {
@@ -1802,6 +1799,10 @@
     }
 }
 
+/* ============================================================*/
+/* 통일북한자료실 > 북한영화 > 북한영화 해설 > 과학영화 > 상세완료
+/* (html/north-korean-movie-commentary-science-movie-view.html)
+/* ============================================================*/
 .movie-views-area {
     .movie-headline {
         padding: 12px 20px;
@@ -1833,14 +1834,25 @@
         border-top: 1px solid #dedede;
         border-bottom: 1px solid #dedede;
         background: #f7f7f7;
-        .owl-carousel {
-            padding: 7px 20px 7px 30px;
+        .thumbnail-gallery {
+            padding: 7px 15px;
             background: #ccc;
-            .owl-item {
-                width: 110px !important;
-                height: 85px !important;
-                a {
-                    display: block;
+            .mCustomScrollbar {
+                white-space: nowrap;
+                .mCSB_horizontal.mCSB_inside > .mCSB_container {
+                    margin-bottom: 20px;
+                }
+                .mCSB_horizontal > .mCSB_container.mCS_no_scrollbar_x.mCS_x_hidden {
+                    margin-bottom: 0;
+                }
+                a.thumbnail {
+                    display: inline-block;
+                    width: 110px;
+                    height: 85px;
+                    margin-right: 3px;
+                    &:last-child {
+                        margin-right: 0;
+                    }
                     img {
                         width: 100%;
                         height: 100%;
@@ -1848,40 +1860,26 @@
                     }
                 }
             }
-            .owl-nav {
-                display: block !important;
-                .owl-prev, .owl-next {
-                    position: absolute;
-                    top: 0;
-                    width: 20px;
-                    height: 99px;
-                    line-height: 99px;
-                    text-align: center;
-                    background: #999;
-                    &.disabled {
-                        background: #c1c1c1;
-                    }
-                }
-                .owl-prev {
-                    left: 0;
-                    &:before {
-                        @include fa($icon: "\f104", $fz: 18px, $color: #fff);
-                    }
-                }
-                .owl-next {
-                    right: 0;
-                    &:before {
-                        @include fa($icon: "\f105", $fz: 18px, $color: #fff);
-                    }
-                }
-            }
         }
     }
     .movie-views {
         border-bottom: 1px solid #dedede;
-        pre {
-            padding: 17px 20px;
+        padding: 17px 20px;
+    }
+}
+.movie-thumbnail-views {
+    background: #323840;
+    .popup-headline {
+        background: #06a2ae;
+    }
+    .popup-content {
+        .owl-carousel {
+            height: 100%;
         }
+    }
+    @include susy-breakpoint(em(860px)) {
+        width: 680px;
+        min-height: 490px;
     }
 }
 
@@ -2311,62 +2309,117 @@
     }
 }
 
+/* ==============================================*/
+/*  참여서비스 > 북한영화 신청 > 리스트완료
+/* (html/north-korean-film-application-list.html)
+/* ==============================================*/
 .north-korean-film-application-list {
-    td {
-        &:nth-of-type(1) {
-            &:before {
-                content: "번호";
+    > li {
+        padding: 20px 15px;
+        border-bottom: 1px solid #ccc;
+        ul {
+            width: 100%;
+            li {
+                vertical-align: top;
+                .ranking-num {
+                    display: block;
+                    width: 29px;
+                    height: 29px;
+                    line-height: 29px;
+                    text-align: center;
+                    border: 1px solid #dedede;
+                    background: #fff9e9;
+                }
+            }
+            .application-information-box {
+                margin-top: 7px;
+                dl {
+                    display: table;
+                    height: 24px;
+                    @extend %clearfix;
+                    dt, dd {
+                        display: table-cell;
+                    }
+                    &:nth-of-type(1), &:nth-of-type(2) {
+                        margin-bottom: 7px;
+                        dt {
+                            &:before {
+                                background: transparent;
+                            }
+                        }
+                    }
+                    dt {
+                        width: 65px;
+                        position: relative;
+                        &:before {
+                            position: absolute;
+                            top: 4px;
+                            right: 0;
+                            width: 1px;
+                            height: 13px;
+                            background: #bdbdbd;
+                            content: "";
+                        }
+                        span {
+                            &.important {
+                                display: inline-block;
+                                color: #405a89;
+                                text-align: center;
+                                width: 100%;
+                                background: #dbebff;
+                            }
+                        }
+                    }
+                    dd {
+                        font-weight: 300;
+                        padding: 0 10px;
+                    }
+                    &:first-child, &:last-child {
+                        dd {
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+            .btn-table-area {
+                text-align: right;
+                margin-top: 10px;
+                a[role="button"], button {
+                    margin-right: 2px;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
             }
         }
-        &:nth-of-type(2) {
-            &:before {
-                content: "단체명";
-            }
-        }
-        &:nth-of-type(3) {
-            &:before {
-                content: "희망장소";
-            }
-        }
-        &:nth-of-type(4) {
-            &:before {
-                content: "희망일";
-            }
-        }
-        &:nth-of-type(5) {
-            &:before {
-                content: "신청일";
-            }
-        }
-        &:nth-of-type(6) {
-            &:before {
-                content: "상태";
-            }
-        }
-        &:nth-of-type(7) {
-            &:before {
-                content: "비고";
-            }
-        }
-    }
-    .btn-table-area {
-        margin-bottom: -6px;
-        a[role="button"], button {
-            margin-right: 2px;
-            margin-bottom: 6px;
-            &:last-child {
-                margin-right: 0;
-            }
-        }
-        @include susy-breakpoint(em(860px)) {
-            margin-top: 2px;
-            margin-bottom: 0;
-            a[role="button"], button {
-                min-width: 50px;
-                height: 23px;
-                line-height: 19px;
-                padding: 0 10px;
-                margin-bottom: 0;
+        @include susy-breakpoint(em($tablet)) {
+            ul {
+                display: table;
+                li {
+                    display: table-cell;
+                    &:first-child {
+                        width: 40px;
+                    }
+                    &:last-child {
+                        width: 111px;
+                        text-align: right;
+                    }
+                }
+                .application-information-box {
+                    margin-top: 0;
+                }
+                .btn-table-area {
+                    text-align: center;
+                    margin-top: 0;
+                    a[role="button"], button {
+                        display: block;
+                        margin-right: 0;
+                        margin-bottom: 10px;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
             }
         }
     }

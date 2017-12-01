@@ -56,6 +56,7 @@ var js_order = [
     dir.js + '/jquery.tabs.js',
     dir.js + '/jquery.carousel.js',
     dir.js + '/owl.carousel.min.js',
+    dir.js + '/jquery.mCustomScrollbar.concat.min.js',
 ];
 
 // 자바스크립트 유지관리 파일 이동
