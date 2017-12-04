@@ -1874,16 +1874,70 @@
     }
     .popup-content {
         .owl-carousel {
-            position: relative;
+            padding: 0 36px;
             .owl-nav {
-                position: absolute;
-                top: 0;
+                @extend %clearfix;
+                .owl-prev, .owl-next {
+                    position: absolute;
+                    top: 50%;
+                    display: inline-block;
+                    width: 22px;
+                    height: 42px;
+                    margin-top: -21px;
+                    opacity: 0.2;
+                    background-size: 100% 100%;
+                    &:hover, &:fouce {
+                        opacity: 1;
+                    }
+                    &.disabled {
+                        opacity: 0;
+                    }
+                }
+                .owl-prev {
+                    left: 0;
+                    background: url($icon-movie-img-prev) center left no-repeat;
+                }
+                .owl-next {
+                    right: 0;
+                    background: url($icon-movie-img-next) center right no-repeat;
+                }
+            }
+        }
+    }
+    @include susy-breakpoint(em($tablet) em(860px - 1)) {
+        .popup-content {
+            max-height: max-content;
+            padding: 20px;
+            .owl-carousel {
+                padding: 0 70px;
+                .owl-nav {
+                    .owl-prev, .owl-next {
+                        width: 42px;
+                        height: 82px;
+                        margin-top: -41px;
+                    }
+                }
             }
         }
     }
     @include susy-breakpoint(em(860px)) {
         width: 680px;
         min-height: 490px;
+        height: auto;
+        .popup-content {
+            max-height: max-content;
+            padding: 20px;
+            .owl-carousel {
+                padding: 0 70px;
+                .owl-nav {
+                    .owl-prev, .owl-next {
+                        width: 42px;
+                        height: 82px;
+                        margin-top: -41px;
+                    }
+                }
+            }
+        }
     }
 }
 
