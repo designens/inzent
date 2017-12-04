@@ -1874,7 +1874,11 @@
     }
     .popup-content {
         .owl-carousel {
-            height: 100%;
+            position: relative;
+            .owl-nav {
+                position: absolute;
+                top: 0;
+            }
         }
     }
     @include susy-breakpoint(em(860px)) {
