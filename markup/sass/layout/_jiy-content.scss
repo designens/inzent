@@ -304,6 +304,7 @@
             @extend %clearfix;
             dt, dd {
                 display: inline-block;
+                font-weight: 300;
             }
             dt {
                 color: #888;
