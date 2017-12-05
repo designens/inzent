@@ -299,24 +299,55 @@
 }
 .search-select-content {
     .item-info {
-        color: #888;
-        span {
+        dl {
             position: relative;
-            padding-right: 20px;
-            display: inline-block;
-            &:before {
-                position: absolute;
-                top: 6px;
-                right: 0;
-                width: 1px;
-                height: 11px;
-                margin-right: 9px;
-                background: #ccc;
-                content: "";
+            @extend %clearfix;
+            dt, dd {
+                display: inline-block;
             }
-            &:last-child {
+            dt {
+                color: #888;
+                &:after {
+                    content: " : ";
+                }
+            }
+        }
+        @include susy-breakpoint(em($max-mobile)) {
+            dl {
+                display: inline-block;
+                padding-right: 20px;
                 &:before {
-                    background-color: transparent;
+                    position: absolute;
+                    top: 5px;
+                    right: 0;
+                    width: 1px;
+                    height: 11px;
+                    margin-right: 7px;
+                    background: #ccc;
+                    content: "";
+                }
+                &:last-child {
+                    padding-right: 0;
+                    &:before {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+        @include susy-breakpoint(em($max-mobile) em($tablet)) {
+            @include clearfix(false);
+            dl {
+                float: left;
+                display: inline-block;
+                width: 50%;
+                padding-right: 0;
+                &:nth-child(2n + 1) {
+                    clear: both;
+                }
+                &:nth-child(2n + 2) {
+                    &:before {
+                        background-color: transparent;
+                    }
                 }
             }
         }
@@ -376,21 +407,26 @@
                 }
             }
             &.item-text {
-                .icon-list-item {
-                    position: absolute;
-                    top: 18px;
-                    right: 15px;
-                    height: 24px;
-                    line-height: 24px;
-                    font-weight: 500;
-                    img {
-                        vertical-align: -2px;
-                        margin-right: 5px;
-                    }
-                }
                 h6 {
                     span {
-                        font-weight: 300;
+                        &.icon-list-item {
+                            display: inline-block;
+                            height: 24px;
+                            line-height: 24px;
+                            font-weight: 500;
+                            color: $font-point-blue;
+                            font-weight: 400;
+                            img, svg {
+                                vertical-align: -2px;
+                                margin: 0 2px;
+                                &.injected-svg [class*="icon-list-item-"] {
+                                    fill: $font-point-blue;
+                                }
+                            }
+                        }
+                        &:last-child {
+                            font-weight: 300;
+                        }
                     }
                 }
                 .item-keyword {
@@ -434,9 +470,6 @@
                 &.item-text {
                     @include span(7 last);
                     padding-left: 10px;
-                    h6 {
-                        padding-right: 130px;
-                    }
                 }
                 &.item-table-area {
                     clear: both;

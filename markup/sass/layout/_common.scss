@@ -1231,6 +1231,38 @@
         margin-top: -10px;
     }
 }
+.page-service-area {
+    text-align: right;
+    margin-bottom: 5px;
+    [class*="btn-"] {
+        margin-right: 4px;
+        span {
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            font-size: 14px;
+            border-radius: 50%;
+            margin-left: 3px;
+            color: #fff;
+            background: #999;
+            margin-right: 4px;
+        }
+        &:hover, &:focus {
+            color: $font-point-blue;
+            span {
+                background: $font-point-blue;
+            }
+        }
+    }
+    .btn-print {
+        @include a11y-invisible(false);
+    }
+    @include susy-breakpoint(em($tablet)) {
+        .btn-print {
+            @include a11y-visible(false);
+        }
+    }
+}
 
 // 페이지 전체 건 수
 .all-table-views {
