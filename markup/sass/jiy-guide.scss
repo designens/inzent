@@ -50,26 +50,33 @@ body {
             border: 1px solid #ddd;
             margin-bottom: rem(20px);
             background: #fff;
+            @extend %clearfix;
             .link {
+                width: 100%;
+                @include susy-breakpoint(em($tablet)) {
+                    @include gallery(4 of 8);
+                }
                 line-height: rem(24px);
                 letter-spacing: -0.03em;
                 &.check {
-                    &:before {
-                        content: "\f00c";
-                        color: #e51d68;
+                    a {
+                        &:before {
+                            content: "\f00c";
+                            color: #e51d68;
+                        }
                     }
-                }
-                &:before {
-                    content: "\f0c1";
-                    font-family: "FontAwesome";
-                    font-size: rem(10px);
-                    color: #ccc;
-                    padding-right: rem(5px);
-                    vertical-align: top;
                 }
                 a {
                     color: #333;
                     display: inline-block;
+                    &:before {
+                        content: "\f0c1";
+                        font-family: "FontAwesome";
+                        font-size: rem(10px);
+                        color: #ccc;
+                        padding-right: rem(5px);
+                        vertical-align: top;
+                    }
                     > span {
                         display: inline-block;
                         margin-left: 4px;
@@ -87,7 +94,7 @@ body {
                     color: #aaa;
                     letter-spacing: 0.05em;
                     display: block;
-                    margin-left: 20px;
+                    margin-left: 15px;
                     margin-bottom: 6px;
                     &:before {
                         content: "(";

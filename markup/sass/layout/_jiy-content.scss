@@ -2316,9 +2316,6 @@
         position: relative;
         padding: 10px 15px 8px 15px;
         border-bottom: 1px solid #dedfe2;
-        &:first-child {
-            border-top: 2px solid $font-point-blue;
-        }
         .order, .title {
             display: inline-block;
         }
