@@ -59,6 +59,9 @@ table {
                     td {
                         &:nth-of-type(#{$i}) {
                             text-align: left;
+                            &:before {
+                                text-align: center;
+                            }
                         }
                     }
                 }
