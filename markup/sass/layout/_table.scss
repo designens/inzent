@@ -57,18 +57,8 @@ table {
             &.col-#{$i} {
                 tr {
                     td {
-                        text-align: left;
-                    }
-                }
-            }
-            @include susy-breakpoint(em(860px)) {
-                &.col-#{$i} {
-                    tr {
-                        td {
-                            text-align: center;
-                            &:nth-of-type(#{$i}) {
-                                text-align: left;
-                            }
+                        &:nth-of-type(#{$i}) {
+                            text-align: left;
                         }
                     }
                 }
