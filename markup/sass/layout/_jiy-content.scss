@@ -413,6 +413,7 @@
             &.item-text {
                 h6 {
                     span {
+                        color: #ff8134;
                         &.icon-list-item {
                             display: inline-block;
                             height: 24px;
@@ -427,9 +428,6 @@
                                     fill: $font-point-blue;
                                 }
                             }
-                        }
-                        &:last-child {
-                            color: #ff8134;
                         }
                     }
                 }
