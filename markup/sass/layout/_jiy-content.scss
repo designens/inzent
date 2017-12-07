@@ -354,11 +354,14 @@
         }
     }
     .item-keyword {
-        color: #405a89;
-        span {
-            background: #dbebff;
+        color: #fff;
+        a[href] {
+            background: #b1b1b3;
             &:last-child {
                 margin-right: 0 !important;
+            }
+            &:hover, &:focus {
+                background: #5f7a8f;
             }
         }
     }
@@ -432,7 +435,7 @@
                 }
                 .item-keyword {
                     margin-top: 7px;
-                    span {
+                    a[href] {
                         padding: 0 10px;
                         margin-right: 5px;
                     }
@@ -620,7 +623,7 @@
     .list-item-table {
         margin-top: 10px;
         .item-keyword {
-            span {
+            a[href] {
                 @include psd-fz(12px);
                 padding: 0 4px;
                 margin-right: 3px;
@@ -2176,40 +2179,6 @@
 /* =======================================*/
 .domestic-serials-view {
     @extend .resources-search-view;
-    .table-view-type-02 {
-        td {
-            &:nth-of-type(1) {
-                &:before {
-                    content: "번호";
-                }
-            }
-            &:nth-of-type(2) {
-                &:before {
-                    content: "권호";
-                }
-            }
-            &:nth-of-type(3) {
-                &:before {
-                    content: "소장위치";
-                }
-            }
-            &:nth-of-type(4) {
-                &:before {
-                    content: "발행일";
-                }
-            }
-            &:nth-of-type(5) {
-                &:before {
-                    content: "입수일";
-                }
-            }
-            &:nth-of-type(6) {
-                &:before {
-                    content: "상태";
-                }
-            }
-        }
-    }
 }
 
 /* =======================================*/
@@ -2236,7 +2205,7 @@
             }
         }
     }
-
+}
 
 /* =======================================*/
 /* 라이브러리 기본 속성 변경
