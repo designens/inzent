@@ -429,7 +429,7 @@
                             }
                         }
                         &:last-child {
-                            font-weight: 300;
+                            color: #ff8134;
                         }
                     }
                 }
@@ -642,7 +642,7 @@
         td {
             h6, p {
                 white-space: pre-wrap;
-                .btn-item-table-icon {
+                .btn-item-table {
                     margin-left: 6px;
                 }
             }
