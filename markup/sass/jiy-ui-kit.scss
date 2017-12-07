@@ -316,6 +316,21 @@
 // =======================================
 // 폰트어썸 활용 방법 스타일
 // =======================================
+.icon-fortawesome-before:before {
+    font-family: FontAwesome;
+    content: "\f286";
+    margin-right: 4px;
+}
+.icon-fortawesome-after {
+    color: #999;
+    &:after {
+        font-family: FontAwesome;
+        font-size: 14px;
+        color: #4d52de;
+        content: "\f286";
+        margin-left: 4px;
+    }
+}
 .fortawesome-area {
     ol {
         padding: 0 20px 0 30px;
@@ -330,6 +345,7 @@
                 .fa {
                     font-size: 12px;
                     margin-right: 2px;
+                    color: #0a52a3;
                 }
             }
         }
