@@ -54,7 +54,8 @@
 // 마크업 스킨 다운 스타일
 // =======================================
 .ui-kit {
-    code[class*="language-"], pre[class*="language-"] {
+    pre[class*="language-"] {
+        position: relative;
         font-family: $font-family-ko;
         color: inherit;
         background: none;
@@ -68,39 +69,47 @@
         -moz-hyphens: none;
         -ms-hyphens: none;
         hyphens: none;
-        &::-moz-selection, ::-moz-selection {
-            text-shadow: none;
-        }
-        .toolbar {
-            .toolbar-item {
-                position: absolute;
-                top: 22px;
-                left: 30px;
-                font-size: 20px;
-                font-weight: bold;
-                color: #002847;
-                text-transform: uppercase
-            }
-        }
-    }
-    code[class*="language-"] {
-        &::-moz-selection, ::-moz-selection {
-            text-shadow: none;
-        }
-        &::selection, ::selection {
-            text-shadow: none;
-        }
-        &::selection, ::selection {
-            text-shadow: none;
-        }
-    }
-    pre[class*="language-"] {
-        position: relative;
-        padding: 70px 30px 30px 30px;
+        padding: 65px 30px 30px 30px;
         margin-top: 30px;
         border-radius: 10px;
         background: #eff4f7;
         overflow: auto;
+        &::-moz-selection, ::-moz-selection {
+            text-shadow: none;
+        }
+        &:before {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #002847;
+        }
+        &[class*="-html"] {
+            &:before {
+                content: "HTML";
+            }
+        }
+        &[class*="-css"] {
+            &:before {
+                content: "CSS";
+            }
+        }
+        &[class*="-js"] {
+            &:before {
+                content: "JS";
+            }
+        }
+        .copy {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 14px;
+            color: #fff;
+            padding: 2px 8px 4px 8px;
+            border-radius: 6px;
+            background: #07a;
+        }
     }
     :not(pre) > code[class*="language-"] {
         padding: .1em;
@@ -149,6 +158,7 @@
         opacity: .7;
     }
 }
+
 .code-box-copy {
     position: relative;
     .code-box-copy__btn {
