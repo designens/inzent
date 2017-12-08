@@ -2334,8 +2334,11 @@
                     dd {
                         font-weight: 300;
                         padding: 0 10px;
+                        &.orange, &.blue {
+                            font-weight: 400;
+                        }
                     }
-                    &:first-child, &:last-child {
+                    &:first-child {
                         dd {
                             font-weight: 400;
                         }
@@ -2353,7 +2356,7 @@
                 }
             }
         }
-        @include susy-breakpoint(em($tablet)) {
+        @include susy-breakpoint(em($max-mobile)) {
             ul {
                 display: table;
                 li {
@@ -2362,12 +2365,21 @@
                         width: 40px;
                     }
                     &:last-child {
-                        width: 111px;
+                        width: 130px;
                         text-align: right;
                     }
                 }
                 .application-information-box {
                     margin-top: 0;
+                    dl {
+                        float: left;
+                        dd {
+                            min-width: 170px;
+                        }
+                        &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(2n + 1) {
+                            clear: both;
+                        }
+                    }
                 }
                 .btn-table-area {
                     text-align: center;
