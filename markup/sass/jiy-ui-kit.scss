@@ -108,7 +108,11 @@
             color: #fff;
             padding: 2px 8px 4px 8px;
             border-radius: 6px;
-            background: #07a;
+            background: #bcd0dc;
+            cursor: pointer;
+            &:hover, &:focus {
+                background: #002847;
+            }
         }
     }
     :not(pre) > code[class*="language-"] {
